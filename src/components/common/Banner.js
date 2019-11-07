@@ -1,7 +1,7 @@
 import React from 'react';
 import TextHeading from './TextHeading';
 
-export default Banner => {
+const Banner = () => {
   return (
     <div style={{
       display: 'flex',
@@ -25,3 +25,5 @@ export default Banner => {
     </div>
   );
 }
+
+export default Banner;

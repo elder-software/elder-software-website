@@ -4,5 +4,5 @@ import Home from './components/pages/Home';
 
 ReactDOM.render(
   <Home />,
-  document.getElementById('root')
+  document.querySelector('#root')
 );
