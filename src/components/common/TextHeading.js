@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 
 class TextHeading extends Component {
@@ -12,13 +13,11 @@ class TextHeading extends Component {
 
   //set the text
   onMouseover(e) {
-    console.log('hover');
     this.setState({ opacity: 0.5 });
   }
 
   //clear the text
   onMouseout(e) {
-    console.log('not hover');
     this.setState({ opacity: 1 });
   }
 
@@ -26,14 +25,17 @@ class TextHeading extends Component {
     return (
       <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
         <div>
-          <a
-            style={{ opacity: this.state.opacity, color: 'black', textDecoration: 'none' }}
-            href={`/${this.props.linkRef}`}
+          <li
+            style={{
+              opacity: this.state.opacity,
+              color: 'black',
+              textDecoration: 'none'
+            }}
             onMouseEnter={this.onMouseover.bind(this)}
             onMouseLeave={this.onMouseout.bind(this)}
           >
-            {this.props.text}
-          </a>
+            <Link to={`/${this.props.linkRef}`}>{this.props.text}</Link>
+          </li>
         </div>
       </div>
     );
