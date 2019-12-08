@@ -17,16 +17,20 @@ const Header = () => {
         borderBottom: '1px solid black'
       }}>
         <TextHeading
-          text={'HOME'}
+          text={'Home'}
           linkRef={''}
         />
         <TextHeading
-          text={'WORK'}
+          text={'Work'}
           linkRef={'work'}
         />
         <TextHeading
-          text={'ABOUT'}
+          text={'About'}
           linkRef={'about'}
+        />
+        <TextHeading
+          text={'Contact'}
+          linkRef={'contact'}
         />
       </div>
     </div>
