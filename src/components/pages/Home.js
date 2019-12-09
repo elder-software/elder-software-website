@@ -18,7 +18,15 @@ class Home extends Component {
             />
           </div>
         </div>
-        <div style={{ display: 'flex', flex: 1, justifyContent: 'center', alignSelf: '', flexDirection: 'column' }}>
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            justifyContent: 'center',
+            alignSelf: '',
+            flexDirection: 'column'
+          }}
+        >
           <h1>
             James Elder
           </h1>
