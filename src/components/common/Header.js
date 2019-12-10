@@ -5,7 +5,7 @@ import Logo from '../assets/logo.jpg';
 const Header = () => {
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'row', flex: 1, justifyContent: 'center', margin: 30 }}>
+      <div style={{ display: 'flex', flexDirection: 'row', flex: 1, justifyContent: 'center', padding: 30 }}>
         <img style={{ width: 200 }} src={Logo} alt={'something'} />
       </div>
 
@@ -17,7 +17,10 @@ const Header = () => {
         borderRadius: 15,
         marginRight: 30,
         marginLeft: 30,
-        background: 'black'
+        background: 'black',
+        webkitBoxShadow: "2px 2px 2px #DFDFDF",
+        mozBoxShadow: "2px 2px 2px #DFDFDF",
+        boxShadow: "2px 2px 2px #DFDFDF"
       }}>
         <TextHeading
           text={'Home'}

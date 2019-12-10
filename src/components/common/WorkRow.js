@@ -37,15 +37,15 @@ const WorkRow = ({
   return (
     <div style={{
       borderColor: 'black',
-      border: '2px solid black',
+      // border: '2px solid black',
       background: 'lightgrey',
-      marginTop: 30,
+      marginTop: 10,
       marginLeft: 30,
       marginRight: 30,
       borderRadius: 15,
-      webkitBoxShadow: "1px 3px 3px #9E9E9E",
-      mozBoxShadow: "1px 3px 3px #9E9E9E",
-      boxShadow: "1px 3px 3px #9E9E9E"
+      webkitBoxShadow: "2px 2px 2px #DFDFDF",
+      mozBoxShadow: "2px 2px 2px #DFDFDF",
+      boxShadow: "2px 2px 2px #DFDFDF"
     }}>
       <div style={{
         display: 'flex',
@@ -69,12 +69,15 @@ const WorkRow = ({
               backgroundColor: 'white',
               margin: 30,
               padding: 10,
-              border: '1px solid black',
+              // border: '1px solid black',
               borderRadius: 15
             }}
           >
             <img
-              style={{ width: 50, height: 50, alignSelf: 'center' }}
+              style={{
+                width: 50, height: 50, alignSelf: 'center'
+
+              }}
               src={require(`../assets/companyLogos/${logoImage}.png`)}
               alt={logoImage}
             />
@@ -92,10 +95,9 @@ const WorkRow = ({
         >
           {technologies.map((values) => {
             return <div style={{
-              width: 50, 
+              width: 50,
               height: 50,
-              alignSelf:
-                'center',
+              alignSelf: 'center',
               marginRight: 30,
               marginBottom: 20,
             }}>
@@ -116,7 +118,8 @@ const WorkRow = ({
         display: 'flex',
         background: 'white',
         borderRadius: 15,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        border: '1px solid lightgrey',
       }}>
         {renderWorkInfo()}
       </div>

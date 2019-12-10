@@ -6,30 +6,30 @@ class Home extends Component {
     return (
       <div style={{
         display: 'flex',
-        flexDirection: 'row'
+        flex: 1,
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignContent: 'center',
       }}>
-        <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
-          <div>
-            <img
-              style={{
-                width: 400,
-                border: '1px solid black',
-                borderRadius: 230
-              }}
-              src={Profile}
-              alt={'hey hey'}
-            />
-          </div>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'center',
-            alignSelf: '',
-            flexDirection: 'column'
-          }}
-        >
+        <div style={{
+          display: 'flex',
+          flex: 1,
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignSelf: 'center'
+        }}>
+          <img
+            style={{
+              width: 200,
+              border: '1px solid lightgrey',
+              borderRadius: 15,
+              webkitBoxShadow: "2px 2px 2px #DFDFDF",
+              mozBoxShadow: "2px 2px 2px #DFDFDF",
+              boxShadow: "2px 2px 2px #DFDFDF"
+            }}
+            src={Profile}
+            alt={'hey hey'}
+          />
           <h1>
             James Elder
           </h1>
@@ -37,7 +37,9 @@ class Home extends Component {
             Mobile app developer
           </h1>
         </div>
+
       </div>
+
     );
   }
 }
