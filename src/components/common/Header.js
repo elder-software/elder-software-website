@@ -13,8 +13,11 @@ const Header = () => {
         display: 'flex',
         paddingTop: 5,
         paddingBottom: 5,
-        borderTop: '1px solid black',
-        borderBottom: '1px solid black'
+        border: '1px solid black',
+        borderRadius: 15,
+        marginRight: 30,
+        marginLeft: 30,
+        background: 'black'
       }}>
         <TextHeading
           text={'Home'}

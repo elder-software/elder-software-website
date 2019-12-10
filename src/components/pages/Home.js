@@ -4,7 +4,10 @@ import Profile from '../assets/jamie-photo.jpg';
 class Home extends Component {
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row'
+      }}>
         <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
           <div>
             <img

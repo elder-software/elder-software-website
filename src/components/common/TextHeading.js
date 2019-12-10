@@ -23,18 +23,24 @@ class TextHeading extends Component {
 
   render() {
     return (
-      <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center', padding: 5 }}>
         <div>
-          <li
-            style={{
-              opacity: this.state.opacity,
-              color: 'black',
-              textDecoration: 'none'
-            }}
-            onMouseEnter={this.onMouseover.bind(this)}
-            onMouseLeave={this.onMouseout.bind(this)}
-          >
-            <Link to={`/${this.props.linkRef}`}>{this.props.text}</Link>
+          <li>
+            <Link
+              style={{
+                opacity: this.state.opacity,
+                color: 'white',
+                textDecoration: 'none',
+                listStyleType: 'none',
+                padding: 0,
+                margin: 20,
+                fontSize: 15
+              }}
+              onMouseEnter={this.onMouseover.bind(this)}
+              onMouseLeave={this.onMouseout.bind(this)}
+              to={`/${this.props.linkRef}`}>
+              {this.props.text}
+            </Link>
           </li>
         </div>
       </div>
