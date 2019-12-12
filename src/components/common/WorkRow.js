@@ -38,7 +38,7 @@ const WorkRow = ({
     <div style={{
       borderColor: 'black',
       // border: '2px solid black',
-      background: 'lightgrey',
+      background: '#f2f2f2',
       marginTop: 10,
       marginLeft: 30,
       marginRight: 30,
@@ -52,7 +52,7 @@ const WorkRow = ({
         flexDirection: 'column',
         flex: 1,
         justifyContent: 'start',
-        background: 'lightgrey',
+        background: '#f2f2f2',
         borderColor: 'black',
         borderWidth: 3,
         borderTopLeftRadius: 30,
@@ -119,7 +119,7 @@ const WorkRow = ({
         background: 'white',
         borderRadius: 15,
         flexDirection: 'column',
-        border: '1px solid lightgrey',
+        border: '1px solid #f2f2f2',
       }}>
         {renderWorkInfo()}
       </div>
