@@ -14,7 +14,14 @@ const App = () => {
   return (
     <div style={{ position: 'relative' }}>
       <BrowserRouter>
-        <div style={{ backgroundColor: '', minHeight: '100vh', height: '100%', width: '100%', position: 'relative', paddingBottom: 200 }}>
+        <div style={{
+          backgroundColor: '',
+          minHeight: '100vh',
+          height: '100%',
+          width: '100%',
+          position: 'relative',
+          paddingBottom: 110
+        }}>
           <Header />
           <Route path="/" exact component={Home} />
           <Route path="/work" component={Work} />

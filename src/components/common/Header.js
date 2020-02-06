@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div>
       <div style={{ display: 'flex', flexDirection: 'row', flex: 1, justifyContent: 'center', padding: 30 }}>
-        <img style={{ width: 200 }} src={Logo} alt={'something'} />
+        <img style={{ width: 200, height: "100%" }} src={Logo} alt={'something'}  />
       </div>
 
       <div style={{

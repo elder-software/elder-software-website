@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../assets/jamie-photo.jpg';
-import { FaHome, FaCode, FaJava, FaAndroid, FaApple, FaReact } from 'react-icons/fa';
-import { IoLogoJavascript } from 'react-icons/io';
-import { GoCircuitBoard } from 'react-icons/go';
-import CPlusPlus from '../assets/technologiesLogos/CPlusPlus.png';
-import { 
-  JavascriptIcon, 
+import {
+  JavascriptIcon,
   ReactIcon,
   AndroidIcon,
   AppleIcon,
@@ -36,7 +32,7 @@ class Home extends Component {
           webkitBoxShadow: "2px 2px 2px #DFDFDF",
           mozBoxShadow: "2px 2px 2px #DFDFDF",
           boxShadow: "2px 2px 2px #DFDFDF",
-          background: '#f2f2f2',
+          background: '#e8e8e8',
           padding: 5
         }}>
           <div style={{
@@ -72,7 +68,7 @@ class Home extends Component {
               }}>
                 <img
                   style={{
-                    width: '40%',
+                    width: '38%',
                     borderTopLeftRadius: 15,
                     borderBottomLeftRadius: 15,
                     alignSelf: 'left',
@@ -82,15 +78,14 @@ class Home extends Component {
                 />
 
                 <div style={{
-                  width: '50%',
+                  width: '62%',
                   padding: 30,
+                  // background: 'green',
+                  justifyContent: 'center',
+                  alignContent: 'center'
                 }}>
-                  <h1 style={{ margin: 0 }}>Hello,</h1>
-                  <h1 style={{ margin: 0 }}>I'm James Elder</h1>
-                  <h1 style={{ margin: 0 }}>A mobile developer</h1>
-                  <h1 style={{ margin: 0 }}>From New Zealand</h1>
-                  <h1 style={{ margin: 0 }}>Thank you</h1>
-                  <h1 style={{ margin: 0 }}>Goodbye</h1> 
+                  <h1 style={{ margin: 0, fontSize: 40, textAlign: 'center' }}>James Elder</h1>
+                  <h1 style={{ margin: 0, fontSize: 26, textAlign: 'center' }}>Mobile Developer</h1>
                 </div>
               </div>
             </div>
@@ -121,25 +116,6 @@ class Home extends Component {
         </div>
       </div>
     );
-  }
-}
-
-
-
-const styles = {
-  iconContainerStyle: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: 5,
-    opacity: '70%'
-  },
-  iconStyle: {
-    width: 80,
-    height: 80,
-    padding: 20,
-    border: '1px solid #DFDFDF',
-    borderRadius: 15,
   }
 }
 

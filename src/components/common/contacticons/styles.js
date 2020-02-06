@@ -8,7 +8,7 @@ export const iconStyles = {
   iconStyle: {
     width: 80,
     height: 80,
-    padding: 20,
+    padding: 25,
     border: '1px solid #DFDFDF',
     backgroundColor: 'white',
     borderRadius: 15,
