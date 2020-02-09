@@ -7,24 +7,32 @@ class TextHeading extends Component {
     super();
 
     this.state = {
-      opacity: 1
+      opacity: 1,
+      isMobile: false
     }
   }
 
-  //set the text
-  onMouseover(e) {
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
+
+  resize() {
+    this.setState({ isMobile: window.innerWidth <= 1000 });
+  }
+
+  onMouseover() {
     this.setState({ opacity: 0.5 });
   }
 
-  //clear the text
-  onMouseout(e) {
+  onMouseout() {
     this.setState({ opacity: 1 });
   }
 
   render() {
     return (
-      <div style={{ display: 'flex', flex: 1, justifyContent: 'center', padding: 5 }}>
-        <div>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+        <div style={{ listStyleType: 'none' }}>
           <li>
             <Link
               style={{
@@ -33,8 +41,7 @@ class TextHeading extends Component {
                 textDecoration: 'none',
                 listStyleType: 'none',
                 padding: 0,
-                margin: 20,
-                fontSize: 15
+                fontSize: this.state.isMobile ? 10 : 15
               }}
               onMouseEnter={this.onMouseover.bind(this)}
               onMouseLeave={this.onMouseout.bind(this)}

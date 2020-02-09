@@ -1,62 +1,67 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { GithubSmallIcon, LinkedInSmallIcon } from './contacticons';
-import { FaGithub } from 'react-icons/fa';
-import TextHeading from './TextHeading';
 
 const Footer = () => {
   return (
-    <div style={{
-      display: 'flex',
-      flex: 1,
-      paddingTop: 5,
-      border: '1px solid black',
-      borderTopLeftRadius: 15,
-      borderTopRightRadius: 15,
-      background: 'black',
-      webkitBoxShadow: "2px 2px 2px #DFDFDF",
-      mozBoxShadow: "2px 2px 2px #DFDFDF",
-      boxShadow: "2px 2px 2px #DFDFDF",
-      bottom: 0,
-      left: 0,
-      right: 0,
-      marginLeft: 30,
-      marginRight: 30,
-      position: 'absolute',
-      padding: 20,
-      alignItems: 'center',
-    }}>
-      <TextHeading
-        text={'Home'}
-        linkRef={''}
-      />
-      <TextHeading
-        text={'Work'}
-        linkRef={'work'}
-      />
-      <TextHeading
-        text={'About'}
-        linkRef={'about'}
-      />
-      <TextHeading
-        text={'Contact'}
-        linkRef={'contact'}
-      />
-
-      <div style={{
-        // opacity: this.state.opacity,
-        display: 'flex',
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
-        alignContent: 'center'
-      }}>
-        <GithubSmallIcon />
-        <LinkedInSmallIcon />
+    <div style={styles.mainDiv}>
+      <div style={styles.innerDiv}>
+        <div style={styles.textDiv}>
+          <div>Website created using ReactJS</div>
+          <div>Code available on GitHub</div>
+        </div>
+        <div style={styles.iconsDiv}>
+          <GithubSmallIcon />
+          <LinkedInSmallIcon />
+        </div>
       </div>
-
     </div>
   );
+}
+
+
+const styles = {
+  mainDiv: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    paddingTop: 5,
+    border: '1px solid black',
+    borderRadius: 15,
+    background: 'black',
+    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
+    MozBoxShadow: "2px 2px 2px #DFDFDF",
+    boxShadow: "2px 2px 2px #DFDFDF",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 10,
+    marginBottom: 10,
+    alignItems: 'center',
+  },
+  innerDiv: {
+    display: 'flex',
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center'
+  },
+  textDiv: {
+    display: 'flex',
+    flexDirection: 'column',
+    color: 'white',
+    padding: 10,
+    fontSize: 12,
+    textAlign: 'center'
+  },
+  iconsDiv: {
+    display: 'flex',
+    justifyContent: 'row',
+    alignContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  }
 }
 
 export default Footer;

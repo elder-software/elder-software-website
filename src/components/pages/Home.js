@@ -11,107 +11,62 @@ import {
 } from '../common/icons';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMobile: false
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
+
+  resize() {
+    this.setState({ isMobile: window.innerWidth <= 900 });
+  }
+
   render() {
+    const { isMobile } = this.state;
+
     return (
-      <div style={{
-        display: 'flex',
-        flex: 1,
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignContent: 'center',
-        marginTop: 10,
-      }}>
-        <div style={{
-          display: 'flex',
-          flex: 1,
-          justifyContent: 'center',
-          flexDirection: 'column',
-          marginLeft: 30,
-          marginRight: 30,
-          borderRadius: 15,
-          webkitBoxShadow: "2px 2px 2px #DFDFDF",
-          mozBoxShadow: "2px 2px 2px #DFDFDF",
-          boxShadow: "2px 2px 2px #DFDFDF",
-          background: '#e8e8e8',
-          padding: 5
-        }}>
+      <div style={styles.mainContainerDiv}>
+        <div style={styles.mainCardDiv}>
           <div style={{
-            display: 'flex',
-            flex: 1,
-            justifyContent: 'center',
-            flexDirection: 'column',
-            border: '0px solid lightgrey',
-            marginBottom: 0,
-            paddingLeft: '20%',
-            paddingRight: '20%',
-            paddingTop: '5%',
-            paddingBottom: '5%',
-            borderTopLeftRadius: 15,
-            borderTopRightRadius: 15,
+            ...styles.imageAndTitleDiv,
+            paddingLeft: isMobile ? '5%' : '20%',
+            paddingRight: isMobile ? '5%' : '20%',
           }}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'row',
-              alignSelf: 'center',
-              flexDirection: 'column',
-              borderRadius: 15,
-              background: 'white',
-              width: '100%',
-              // webkitBoxShadow: "2px 2px 2px #DFDFDF",
-              // mozBoxShadow: "2px 2px 2px #DFDFDF",
-              // boxShadow: "2px 2px 2px #DFDFDF"
-            }}>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'row',
-                alignItems: 'center'
-              }}>
+            <div style={styles.imageAndTitleInnerDiv}>
+              <div style={{ display: 'flex', justifyContent: 'row', alignItems: 'center' }}>
                 <img
-                  style={{
-                    width: '38%',
-                    borderTopLeftRadius: 15,
-                    borderBottomLeftRadius: 15,
-                    alignSelf: 'left',
-                  }}
+                  style={styles.profilePicDiv}
                   src={Profile}
-                  alt={'hey hey'}
+                  alt={'james-potrait'}
                 />
 
-                <div style={{
-                  width: '62%',
-                  padding: 30,
-                  // background: 'green',
-                  justifyContent: 'center',
-                  alignContent: 'center'
-                }}>
-                  <h1 style={{ margin: 0, fontSize: 40, textAlign: 'center' }}>James Elder</h1>
-                  <h1 style={{ margin: 0, fontSize: 26, textAlign: 'center' }}>Mobile Developer</h1>
+                <div style={styles.headingTextDiv}>
+                  <h1 style={{ margin: 0, fontSize: isMobile ? 20 : 40, textAlign: 'center' }}>
+                    James Elder
+                  </h1>
+                  <h1 style={{ margin: 0, fontSize: isMobile ? 13 : 26, textAlign: 'center' }}>
+                    Mobile Developer
+                  </h1>
                 </div>
               </div>
             </div>
           </div>
 
-          <div style={{
-            display: 'flex',
-            flex: 1,
-            flexDirection: 'row',
-            alignContent: 'center',
-            border: '1px solid #f2f2f2',
-            marginTop: 0,
-            borderRadius: 15,
-            justifyContent: 'space-around',
-            width: '100%',
-            background: 'white',
-            paddingTop: '5%',
-            paddingBottom: '5%',
-          }}>
-            <JavascriptIcon />
-            <ReactIcon />
-            <AndroidIcon />
-            <AppleIcon />
-            <JavaIcon />
-            <CPlusPlusIcon />
-            <CircuitBoardIcon />
+          <div style={styles.technologiesDiv}>
+            <JavascriptIcon size={isMobile ? 30 : 80} />
+            <ReactIcon size={isMobile ? 30 : 80} />
+            <AndroidIcon size={isMobile ? 30 : 80} />
+            <AppleIcon size={isMobile ? 30 : 80} />
+            <JavaIcon size={isMobile ? 30 : 80} />
+            <CPlusPlusIcon size={isMobile ? 30 : 80} />
+            <CircuitBoardIcon size={isMobile ? 30 : 80} />
           </div>
         </div>
       </div>
@@ -119,5 +74,78 @@ class Home extends Component {
   }
 }
 
+const styles = {
+  mainContainerDiv: {
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignContent: 'center',
+    marginTop: 10,
+  },
+  mainCardDiv: {
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column',
+    marginLeft: 5,
+    marginRight: 5,
+    borderRadius: 15,
+    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
+    mozBoxShadow: "2px 2px 2px #DFDFDF",
+    boxShadow: "2px 2px 2px #DFDFDF",
+    background: '#e8e8e8',
+    padding: 5
+  },
+  imageAndTitleDiv: {
+    display: 'flex',
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column',
+    border: '0px solid lightgrey',
+    marginBottom: 0,
+    paddingTop: '5%',
+    paddingBottom: '5%',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  imageAndTitleInnerDiv: {
+    display: 'flex',
+    justifyContent: 'row',
+    alignSelf: 'center',
+    flexDirection: 'column',
+    borderRadius: 15,
+    background: 'white',
+    width: '100%'
+  },
+  profilePicDiv: {
+    width: '38%',
+    borderTopLeftRadius: 15,
+    borderBottomLeftRadius: 15,
+    alignSelf: 'left',
+  },
+  headingTextDiv: {
+    width: '62%',
+    padding: 30,
+    justifyContent: 'center',
+    alignContent: 'center'
+  },
+  technologiesDiv: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    alignContent: 'center',
+    border: '1px solid #f2f2f2',
+    marginTop: 0,
+    borderRadius: 15,
+    justifyContent: 'space-around',
+    width: '100%',
+    background: 'white',
+    paddingTop: '5%',
+    paddingBottom: '5%',
+    paddingLeft: '5%',
+    paddingRight: '5%',
+  }
+}
 
 export default Home;

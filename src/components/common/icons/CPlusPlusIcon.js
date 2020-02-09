@@ -13,7 +13,7 @@ const CPlusPlusIcon = ({ size }) => {
         src={CPlusPlus}
         alt={'CPlusPlus'}
       />
-      <h5 style={{ margin: 0 }}>C++</h5>
+      <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>C++</h5>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { iconStyles } from './styles';
 
-const GithubIcon = ({ size, colour, background }) => {
+const GithubIcon = ({ size }) => {
   return (
     <div style={iconStyles.iconContainerStyle}>
       <FaGithub style={{

@@ -1,21 +1,36 @@
 import React, { Component } from 'react';
 import WorkRow from '../common/WorkRow';
 import {
-  JavascriptIcon,
   ReactIcon,
   AndroidIcon,
   AppleIcon,
   JavaIcon,
-  CPlusPlusIcon,
-  CircuitBoardIcon
 } from '../common/icons';
 
 
 class Work extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMobile: false
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
+
+  resize() {
+    this.setState({ isMobile: window.innerWidth <= 1000 });
+  }
+
   renderList = () => {
     return (
       workInfo.map(item => {
-        return <WorkRow
+        return (<WorkRow
+          key={item.name}
           text={item.name}
           logoImage={item.logoImage}
           technologies={item.technologies}
@@ -24,7 +39,8 @@ class Work extends Component {
           title={item.title}
           testimonial={item.testimonial}
           testimonialAuthor={item.testimonialAuthor}
-        />
+          isMobile={this.state.isMobile}
+        />)
       })
     );
   };
@@ -61,7 +77,7 @@ const workInfo = [
       "in the construction sector meant he had a good understanding of our requirements. " +
       "We have a had a great payback for the time & money invested in developing this tool " +
       "and have no hesitation in recommending James services.",
-      testimonialAuthor: "Ron Hanley - Lautrec Director"
+    testimonialAuthor: "Ron Hanley - Lautrec Director"
   },
   {
     name: 'Structural Coating Services',

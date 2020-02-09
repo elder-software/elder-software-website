@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 
-const GithubSmallIcon = ({ size, colour, background }) => {
+const GithubSmallIcon = ({ colour }) => {
   return (
     <a
       href="https://github.com/elder-software"
@@ -12,6 +12,7 @@ const GithubSmallIcon = ({ size, colour, background }) => {
         height: 30,
         color: colour ? colour : 'white',
         margin: 10,
+        backgroundColor: 'black'
       }} />
     </a>
   );

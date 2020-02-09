@@ -10,7 +10,7 @@ const AppleIcon = ({ size }) => {
         height: size ? size : 80,
         width: size ? size : 80
       }} />
-      <h5 style={{ margin: 0 }}>Apple/iOS</h5>
+      <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>Apple/iOS</h5>
     </div>
   );
 }

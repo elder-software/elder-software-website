@@ -8,9 +8,10 @@ const CircuitBoardIcon = ({ size }) => {
       <GoCircuitBoard style={{
         ...iconStyles.iconStyle,
         height: size ? size : 80,
-        width: size ? size : 80
+        width: size ? size : 80,
+        padding: '5%'
       }} />
-      <h5 style={{ margin: 0 }}>Embedded Systems</h5>
+      <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>Embedded</h5>
     </div>
   );
 }

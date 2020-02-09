@@ -20,7 +20,7 @@ const App = () => {
           height: '100%',
           width: '100%',
           position: 'relative',
-          paddingBottom: 110
+          // paddingBottom: 110
         }}>
           <Header />
           <Route path="/" exact component={Home} />
