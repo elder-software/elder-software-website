@@ -7,8 +7,8 @@ import Home from "./components/pages/Home";
 import Work from "./components/pages/Work";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
-import Header from "./components/common/Header";
-import Footer from "./components/common/Footer";
+import Header from "./components/common/pageElements/Header";
+import Footer from "./components/common/pageElements/Footer";
 
 const App = () => {
   return (
@@ -20,13 +20,12 @@ const App = () => {
           height: '100%',
           width: '100%',
           position: 'relative',
-          // paddingBottom: 110
         }}>
           <Header />
           <Route path="/" exact component={Home} />
-          <Route path="/work" component={Work} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/work" exact component={Work} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
           <Footer />
         </div>
       </BrowserRouter>

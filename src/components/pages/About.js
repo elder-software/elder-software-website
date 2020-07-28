@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { NewZealandIcon, CertificateIcon, MusicIcon, SurfSkateIcon, ComputerIcon, CircuitBoardAboutIcon } from '../common/abouticons';
+import {
+  NewZealandIcon,
+  CertificateIcon,
+  MusicIcon,
+  SurfSkateIcon,
+  ComputerIcon,
+  CircuitBoardAboutIcon
+} from '../common/abouticons';
 
 class About extends Component {
   constructor(props) {
@@ -45,14 +52,14 @@ class About extends Component {
           <div style={styles.infoDiv}>
             <div style={styles.rowStyle}>
               <NewZealandIcon size={80} />
-              <div style={{...styles.rowTextStyle, fontSize: isMobile ? 12 : 16}}>
+              <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
                 New Zealand, Mount Maunganui is where I was born and raised.
               </div>
             </div>
 
             <div style={styles.rowStyle}>
               <CertificateIcon size={80} />
-              <div style={{...styles.rowTextStyle, fontSize: isMobile ? 12 : 16}}>
+              <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
                 I studied Electrical and Electronic Engineering and obtained
                 a BEng (Honours) from the University of Canterbury.
                 I directed my course to have a heavy focus on programming and
@@ -62,7 +69,7 @@ class About extends Component {
 
             <div style={styles.rowStyle}>
               <CircuitBoardAboutIcon size={80} />
-              <div style={{...styles.rowTextStyle, fontSize: isMobile ? 12 : 16}}>
+              <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
                 After my studies I was employed as a project manager for 2 years
                 at a switchboard company. There I also designed, programmed
                 and manufactured embedded systems.
@@ -71,7 +78,7 @@ class About extends Component {
 
             <div style={styles.rowStyle}>
               <ComputerIcon size={80} />
-              <div style={{...styles.rowTextStyle, fontSize: isMobile ? 12 : 16}}>
+              <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
                 Using the skills I developed from my degree and previous
                 work I learnt how to develop mobile applications and have been
                 freelancing this work since.
@@ -80,7 +87,7 @@ class About extends Component {
 
             <div style={styles.rowStyle}>
               <MusicIcon size={80} />
-              <div style={{...styles.rowTextStyle, fontSize: isMobile ? 12 : 16}}>
+              <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
                 I have played music since a young age, starting on the piano and
                 moving on to the guitar, vocals and drums at a later age.
                 I have a lot of experience composing and performing with bands and
@@ -90,7 +97,7 @@ class About extends Component {
 
             <div style={styles.rowStyle}>
               <SurfSkateIcon size={80} />
-              <div style={{...styles.rowTextStyle, fontSize: isMobile ? 12 : 16}}>
+              <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
                 Growing up close to the beach has resulted in surfing and
                 skateboard being my favourite sports.
               </div>

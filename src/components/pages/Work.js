@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WorkRow from '../common/WorkRow';
+import WorkRow from '../common/pageElements/WorkRow';
 import {
   ReactIcon,
   AndroidIcon,

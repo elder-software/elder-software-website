@@ -20,7 +20,7 @@ const WorkRow = ({
           style={styles.workInfoDiv}>
           <img
             style={{ width: 30, height: 30, alignSelf: 'center' }}
-            src={require(`../assets/icons/${featureIcons[i]}.png`)}
+            src={require(`../../assets/icons/${featureIcons[i]}.png`)}
             alt={logoImage}
           />
           <div style={{
@@ -43,7 +43,7 @@ const WorkRow = ({
         }}>
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
-            src={require(`../assets/companyLogos/${logoImage}.png`)}
+            src={require(`../../assets/companyLogos/${logoImage}.png`)}
             alt={logoImage}
           />
           <h1 style={styles.companyNameText}>{text}</h1>
@@ -79,12 +79,12 @@ const WorkRow = ({
           <div style={styles.screenshotsDiv}>
             <img
               style={styles.screenshotStyle}
-              src={require(`../assets/screenshots/${logoImage}SS1.png`)}
+              src={require(`../../assets/screenshots/${logoImage}SS1.png`)}
               alt={logoImage}
             />
             <img
               style={styles.screenshotStyle}
-              src={require(`../assets/screenshots/${logoImage}SS2.png`)}
+              src={require(`../../assets/screenshots/${logoImage}SS2.png`)}
               alt={logoImage}
             />
           </div>
