@@ -1,4 +1,13 @@
-export const iconStyles = {
+export interface IconProps {
+  size: number
+}
+
+type IconStyles = {
+  iconContainerStyle: React.CSSProperties;
+  iconStyle: React.CSSProperties;
+}
+
+export const iconStyles: IconStyles = {
   iconContainerStyle: {
     display: 'flex',
     flexDirection: 'column',
