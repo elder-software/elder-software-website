@@ -1,5 +1,5 @@
-export interface IconProps {
-  size: number
+export interface TechIconProps {
+  size?: number
 }
 
 type IconStyles = {
