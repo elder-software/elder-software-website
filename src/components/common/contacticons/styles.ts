@@ -1,4 +1,14 @@
-export const iconStyles = {
+export interface ContactIconProps {
+  size?: number;
+  colour? : string;
+}
+
+type ContactIconStyles = {
+  iconContainerStyle: React.CSSProperties;
+  iconStyle: React.CSSProperties;
+}
+
+export const iconStyles: ContactIconStyles = {
   iconContainerStyle: {
     display: 'flex',
     flexDirection: 'column',

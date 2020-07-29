@@ -5,7 +5,7 @@ export interface AboutIconProps {
 type AboutIconStyles = {
   iconContainerStyle: React.CSSProperties;
   iconStyle: React.CSSProperties;
-}
+};
 
 export const iconStyles: AboutIconStyles = {
   iconContainerStyle: {
