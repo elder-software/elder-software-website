@@ -1,34 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import WorkRow from '../common/pageElements/WorkRow';
 import {
   ReactIcon,
-  AndroidIcon,
   AppleIcon,
   JavaIcon,
+  AndroidIcon,
 } from '../common/icons';
 
 
-class Work extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      isMobile: false
-    }
-  }
+const Work: React.FC = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  componentDidMount() {
-    window.addEventListener("resize", this.resize.bind(this));
-    this.resize();
-  }
+  React.useEffect(() => {
+    window.addEventListener("resize", resize);
+    resize();
+  }, []);
 
-  resize() {
-    this.setState({ isMobile: window.innerWidth <= 1000 });
-  }
+  const resize = () => setIsMobile(window.innerWidth <= 1000);
 
-  renderList = () => {
-    return (
-      workInfo.map(item => {
+  return (
+    <div>
+      {workInfo.map(item => {
         return (<WorkRow
           key={item.name}
           text={item.name}
@@ -39,19 +32,12 @@ class Work extends Component {
           title={item.title}
           testimonial={item.testimonial}
           testimonialAuthor={item.testimonialAuthor}
-          isMobile={this.state.isMobile}
+          isMobile={isMobile}
         />)
-      })
-    );
-  };
+      })}
+    </div>
+  );
 
-  render() {
-    return (
-      <div>
-        {this.renderList()}
-      </div>
-    );
-  }
 }
 
 const workInfo = [

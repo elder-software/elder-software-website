@@ -1,77 +1,65 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Profile from '../assets/jamie-photo.jpg';
 import {
   JavascriptIcon,
   ReactIcon,
-  AndroidIcon,
   AppleIcon,
   JavaIcon,
   CPlusPlusIcon,
   CircuitBoardIcon
 } from '../common/icons';
+import { AndroidIcon } from '../common/icons/AndroidIcon';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
+const Home: React.FC = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
 
-    this.state = {
-      isMobile: false
-    }
-  }
+  React.useEffect(() => {
+    window.addEventListener("resize", resize);
+    resize();
+  }, []);
 
-  componentDidMount() {
-    window.addEventListener("resize", this.resize.bind(this));
-    this.resize();
-  }
+  const resize = () => setIsMobile(window.innerWidth <= 900);
 
-  resize() {
-    this.setState({ isMobile: window.innerWidth <= 900 });
-  }
+  return (
+    <div style={styles.mainContainerDiv}>
+      <div style={styles.mainCardDiv}>
+        <div style={{
+          ...styles.imageAndTitleDiv,
+          paddingLeft: isMobile ? '5%' : '20%',
+          paddingRight: isMobile ? '5%' : '20%',
+        }}>
+          <div style={styles.imageAndTitleInnerDiv}>
+            <div style={{ display: 'flex', justifyContent: 'row', alignItems: 'center' }}>
+              <img
+                style={styles.profilePicDiv}
+                src={Profile}
+                alt={'james-potrait'}
+              />
 
-  render() {
-    const { isMobile } = this.state;
-
-    return (
-      <div style={styles.mainContainerDiv}>
-        <div style={styles.mainCardDiv}>
-          <div style={{
-            ...styles.imageAndTitleDiv,
-            paddingLeft: isMobile ? '5%' : '20%',
-            paddingRight: isMobile ? '5%' : '20%',
-          }}>
-            <div style={styles.imageAndTitleInnerDiv}>
-              <div style={{ display: 'flex', justifyContent: 'row', alignItems: 'center' }}>
-                <img
-                  style={styles.profilePicDiv}
-                  src={Profile}
-                  alt={'james-potrait'}
-                />
-
-                <div style={styles.headingTextDiv}>
-                  <h1 style={{ margin: 0, fontSize: isMobile ? 20 : 40, textAlign: 'center' }}>
-                    James Elder
+              <div style={styles.headingTextDiv}>
+                <h1 style={{ margin: 0, fontSize: isMobile ? 20 : 40, textAlign: 'center' }}>
+                  James Elder
                   </h1>
-                  <h1 style={{ margin: 0, fontSize: isMobile ? 13 : 26, textAlign: 'center' }}>
-                    Mobile Developer
+                <h1 style={{ margin: 0, fontSize: isMobile ? 13 : 26, textAlign: 'center' }}>
+                  Mobile Developer
                   </h1>
-                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div style={styles.technologiesDiv}>
-            <JavascriptIcon size={isMobile ? 30 : 80} />
-            <ReactIcon size={isMobile ? 30 : 80} />
-            <AndroidIcon size={isMobile ? 30 : 80} />
-            <AppleIcon size={isMobile ? 30 : 80} />
-            <JavaIcon size={isMobile ? 30 : 80} />
-            <CPlusPlusIcon size={isMobile ? 30 : 80} />
-            <CircuitBoardIcon size={isMobile ? 30 : 80} />
-          </div>
+        <div style={styles.technologiesDiv}>
+          <JavascriptIcon size={isMobile ? 30 : 80} />
+          <ReactIcon size={isMobile ? 30 : 80} />
+          <AndroidIcon size={isMobile ? 30 : 80} />
+          <AppleIcon size={isMobile ? 30 : 80} />
+          <JavaIcon size={isMobile ? 30 : 80} />
+          <CPlusPlusIcon size={isMobile ? 30 : 80} />
+          <CircuitBoardIcon size={isMobile ? 30 : 80} />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const styles = {
@@ -82,7 +70,7 @@ const styles = {
     flexDirection: 'column',
     alignContent: 'center',
     marginTop: 10,
-  },
+  } as React.CSSProperties,
   mainCardDiv: {
     display: 'flex',
     flex: 1,
@@ -96,7 +84,7 @@ const styles = {
     boxShadow: "2px 2px 2px #DFDFDF",
     background: '#e8e8e8',
     padding: 5
-  },
+  } as React.CSSProperties,
   imageAndTitleDiv: {
     display: 'flex',
     flex: 1,
@@ -108,7 +96,7 @@ const styles = {
     paddingBottom: '5%',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-  },
+  } as React.CSSProperties,
   imageAndTitleInnerDiv: {
     display: 'flex',
     justifyContent: 'row',
@@ -117,19 +105,19 @@ const styles = {
     borderRadius: 15,
     background: 'white',
     width: '100%'
-  },
+  } as React.CSSProperties,
   profilePicDiv: {
     width: '38%',
     borderTopLeftRadius: 15,
     borderBottomLeftRadius: 15,
     alignSelf: 'left',
-  },
+  } as React.CSSProperties,
   headingTextDiv: {
     width: '62%',
     padding: 30,
     justifyContent: 'center',
     alignContent: 'center'
-  },
+  } as React.CSSProperties,
   technologiesDiv: {
     display: 'flex',
     flex: 1,
@@ -145,7 +133,7 @@ const styles = {
     paddingBottom: '5%',
     paddingLeft: '5%',
     paddingRight: '5%',
-  }
+  } as React.CSSProperties
 }
 
 export default Home;
