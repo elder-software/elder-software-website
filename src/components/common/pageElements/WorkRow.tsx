@@ -1,7 +1,12 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { WorkInfoProps } from '../../pages/Work';
 
-const WorkRow = ({
+interface Props extends WorkInfoProps {
+  isMobile: boolean;
+}
+
+const WorkRow: React.FC<Props> = ({
   text,
   logoImage,
   technologies,
@@ -120,7 +125,7 @@ const styles = {
     WebkitBoxShadow: "2px 2px 2px #DFDFDF",
     MozBoxShadow: "2px 2px 2px #DFDFDF",
     boxShadow: "2px 2px 2px #DFDFDF"
-  },
+  } as React.CSSProperties,
   mainGreyDiv: {
     display: 'flex',
     flexDirection: 'column',
@@ -138,7 +143,7 @@ const styles = {
     flexDirection: 'row',
     alignSelf: 'start',
     paddingBottom: 30
-  },
+  } as React.CSSProperties,
   rowHeadingDiv: {
     display: 'flex',
     flexDirection: 'row',
@@ -147,21 +152,21 @@ const styles = {
     padding: 20,
     marginBottom: 10,
     borderRadius: 15
-  },
+  } as React.CSSProperties,
   companyNameText: {
     alignSelf: 'center',
     marginLeft: 20,
     marginTop: 0,
     marginBottom: 0,
     fontSize: 20
-  },
+  } as React.CSSProperties,
   technologiesDiv: {
     display: 'flex',
     alignSelf: 'start',
     flexDirection: 'row',
     paddingInlineStart: 30,
     paddingBottom: 30
-  },
+  } as React.CSSProperties,
   workDetailsDiv: {
     display: 'flex',
     flex: 1,
@@ -169,7 +174,7 @@ const styles = {
     flexDirection: 'column',
     borderRadius: 15,
     border: '1px solid #f2f2f2',
-  },
+  } as React.CSSProperties,
   appFeaturesDiv: {
     display: 'flex',
     flex: 1,
@@ -179,7 +184,7 @@ const styles = {
     justifyContent: 'flex-start',
     paddingLeft: 30,
     paddingTop: 30,
-  },
+  } as React.CSSProperties,
   screenshotsDiv: {
     display: 'flex',
     flex: 1,
@@ -191,7 +196,7 @@ const styles = {
     alignItems: 'space-around',
     paddingTop: 30,
     paddingBottom: 30,
-  },
+  } as React.CSSProperties,
   screenshotStyle: {
     display: 'flex',
     width: '40%',
@@ -199,12 +204,12 @@ const styles = {
     alignSelf: 'center',
     border: '1px solid lightgrey',
     borderRadius: 5,
-  },
+  } as React.CSSProperties,
   testimonialText: {
     paddingLeft: 30,
     paddingRight: 30,
     paddingBottom: 20,
     alignSelf: 'center'
-  }
+  } as React.CSSProperties
 }
 export default WorkRow;

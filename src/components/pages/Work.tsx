@@ -7,8 +7,6 @@ import {
   AndroidIcon,
 } from '../common/icons';
 
-
-
 const Work: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -40,7 +38,18 @@ const Work: React.FC = () => {
 
 }
 
-const workInfo = [
+export interface WorkInfoProps {
+  name: string;
+  logoImage: string;
+  technologies: React.ReactNode[];
+  features: string[];
+  featureIcons: string[];
+  title: string;
+  testimonial?: string;
+  testimonialAuthor?: string;
+}
+
+const workInfo: WorkInfoProps[] = [
   {
     name: 'Lautrec Façade Design',
     logoImage: 'Lautrec',
@@ -107,6 +116,7 @@ const workInfo = [
   },
   {
     name: 'King Facade International',
+    title: 'Quality Assurance for Site Inspections',
     logoImage: 'KFI',
     technologies: [
       <ReactIcon size={80} />,
