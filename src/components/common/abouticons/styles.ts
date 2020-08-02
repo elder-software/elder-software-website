@@ -21,5 +21,5 @@ export const iconStyles: AboutIconStyles = {
     border: '1px solid #DFDFDF',
     backgroundColor: 'white',
     borderRadius: 15,
-  }
-}
+  },
+};

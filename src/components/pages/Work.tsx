@@ -105,21 +105,21 @@ const workInfo = [
     ],
     featureIcons: ['FirebaseIcon', 'PushNotificationIcon', 'PdfIcon']
   },
-  // {
-  //   name: 'King Facade International',
-  //   logoImage: 'KFI',
-  //   technologies: [
-  //     <ReactIcon size={80} />,
-  //     <AndroidIcon size={80} />,
-  //     <AppleIcon size={80} />
-  //   ],
-  //   features: [
-  //     'Firebase Database / Login',
-  //     'Dropbox file sync',
-  //     'Automatically formatted PDF generation',
-  //   ],
-  //   featureIcons: ['FirebaseIcon', 'DropboxIcon', 'PdfIcon']
-  // }
+  {
+    name: 'King Facade International',
+    logoImage: 'KFI',
+    technologies: [
+      <ReactIcon size={80} />,
+      <AndroidIcon size={80} />,
+      <AppleIcon size={80} />
+    ],
+    features: [
+      'Firebase Database / Login',
+      'Dropbox file sync',
+      'Automatically formatted PDF generation',
+    ],
+    featureIcons: ['FirebaseIcon', 'DropboxIcon', 'PdfIcon']
+  }
 ];
 
 
