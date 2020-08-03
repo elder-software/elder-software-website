@@ -1,72 +1,60 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { EmailIcon, PhoneIcon } from '../common/contacticons';
 
-class Contact extends Component {
-  constructor() {
-    super();
+const Contact: React.FC = () => {
+  const [isMobile, setIsMobile] = React.useState(false);
 
-    this.state = {
-      isMobile: false
-    }
-  }
+  React.useEffect(() => {
+    window.addEventListener("resize", resize);
+    resize();
+  }, []);
 
-  componentDidMount() {
-    window.addEventListener("resize", this.resize.bind(this));
-    this.resize();
-  }
+  const resize = () => setIsMobile(window.innerWidth <= 1000);
 
-  resize() {
-    this.setState({ isMobile: window.innerWidth <= 1000 });
-  }
-
-  render() {
-    const { isMobile } = this.state;
-
-    return (
-      <div style={styles.mainContainerDiv}>
-        <div style={styles.greyCardDiv}>
-          <div style={styles.headingContainerDiv}>
-            <div style={styles.headingDiv}>
+  return (
+    <div style={styles.mainContainerDiv}>
+      <div style={styles.greyCardDiv}>
+        <div style={styles.headingContainerDiv}>
+          <div style={styles.headingDiv}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'row',
+              alignItems: 'center',
+            }}>
               <div style={{
-                display: 'flex',
-                justifyContent: 'row',
-                alignItems: 'center',
+                padding: 30,
+                alignContent: 'center'
               }}>
-                <div style={{
-                  padding: 30,
-                  alignContent: 'center'
-                }}>
-                  <h1 style={{ margin: 0, fontSize: 20 }}>Contact</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div style={styles.contactInfoDiv}>
-            <div style={styles.rowStyle}>
-              <EmailIcon size={80} />
-              <div style={{
-                ...styles.rowTextStyle, 
-                fontSize: isMobile ? 12 : 16,
-              }}>
-                james@elder-software.com
-              </div>
-            </div>
-
-            <div style={styles.rowStyle}>
-              <PhoneIcon size={80} />
-              <div style={{
-                ...styles.rowTextStyle, 
-                fontSize: isMobile ? 12 : 16,
-              }}>
-                +64 27 6930 729
+                <h1 style={{ margin: 0, fontSize: 20 }}>Contact</h1>
               </div>
             </div>
           </div>
         </div>
+
+        <div style={styles.contactInfoDiv}>
+          <div style={styles.rowStyle}>
+            <EmailIcon size={80} />
+            <div style={{
+              ...styles.rowTextStyle,
+              fontSize: isMobile ? 12 : 16,
+            }}>
+              james@elder-software.com
+              </div>
+          </div>
+
+          <div style={styles.rowStyle}>
+            <PhoneIcon size={80} />
+            <div style={{
+              ...styles.rowTextStyle,
+              fontSize: isMobile ? 12 : 16,
+            }}>
+              +64 27 6930 729
+              </div>
+          </div>
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const styles = {
@@ -77,7 +65,7 @@ const styles = {
     flexDirection: 'column',
     alignContent: 'center',
     marginTop: 10,
-  },
+  } as React.CSSProperties,
   greyCardDiv: {
     display: 'flex',
     flex: 1,
@@ -91,7 +79,7 @@ const styles = {
     boxShadow: "2px 2px 2px #DFDFDF",
     background: '#e8e8e8',
     padding: 5
-  },
+  } as React.CSSProperties,
   headingContainerDiv: {
     display: 'flex',
     flex: 1,
@@ -101,7 +89,7 @@ const styles = {
     marginBottom: 0,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-  },
+  } as React.CSSProperties,
   headingDiv: {
     display: 'flex',
     justifyContent: 'row',
@@ -110,7 +98,7 @@ const styles = {
     borderRadius: 15,
     background: 'white',
     margin: 30
-  },
+  } as React.CSSProperties,
   contactInfoDiv: {
     display: 'flex',
     flex: 1,
@@ -123,7 +111,7 @@ const styles = {
     width: '100%',
     background: 'white',
     paddingTop: 30,
-  },
+  } as React.CSSProperties,
   rowStyle: {
     display: 'flex',
     justifyContent: 'column',
@@ -131,15 +119,15 @@ const styles = {
     marginLeft: 30,
     marginRight: 30,
     marginBottom: 30
-  },
+  } as React.CSSProperties,
   rowTextStyle: {
     display: 'flex',
     alignSelf: 'center',
     justifyContent: 'center',
     marginLeft: 30,
-    fontWeight: '100',
+    fontWeight: 'lighter',
     opacity: '80%'
-  }
+  } as React.CSSProperties
 }
 
 
