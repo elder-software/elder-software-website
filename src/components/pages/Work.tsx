@@ -22,7 +22,7 @@ const Work: React.FC = () => {
       {workInfo.map(item => {
         return (<WorkRow
           key={item.name}
-          text={item.name}
+          name={item.name}
           logoImage={item.logoImage}
           technologies={item.technologies}
           features={item.features}

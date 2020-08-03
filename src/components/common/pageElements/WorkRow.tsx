@@ -7,7 +7,7 @@ interface Props extends WorkInfoProps {
 }
 
 const WorkRow: React.FC<Props> = ({
-  text,
+  name,
   logoImage,
   technologies,
   features,
@@ -51,14 +51,14 @@ const WorkRow: React.FC<Props> = ({
             src={require(`../../assets/companyLogos/${logoImage}.png`)}
             alt={logoImage}
           />
-          <h1 style={styles.companyNameText}>{text}</h1>
+          <h1 style={styles.companyNameText}>{name}</h1>
         </div>
 
         <div style={styles.technologiesDiv}>
-          {technologies.map((value) => {
+          {technologies.map((value, index) => {
             return (
               <div
-                key={value}
+                key={`${name}:technology:${index}`}
                 style={{ marginRight: 10 }}>
                 {value}
               </div>
@@ -136,8 +136,8 @@ const styles = {
     borderWidth: 3,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    fontWeight: '100'
-  },
+    fontWeight: 'lighter'
+  } as React.CSSProperties,
   workInfoDiv: {
     display: 'flex',
     flexDirection: 'row',
