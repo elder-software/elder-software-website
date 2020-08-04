@@ -1,19 +1,19 @@
 import React from 'react';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
-import { iconStyles, TechIconProps } from '../techicons/styles';
+import { headerIconStyles, HeaderIconProps } from './styles';
 
-const AboutIcon: React.FC<TechIconProps> = ({ size }) => (
-  <div style={iconStyles.iconContainerStyle}>
+const AboutIcon: React.FC<HeaderIconProps> = ({ size }) => (
+  <div style={headerIconStyles.iconContainerStyle}>
     <BsFillInfoCircleFill
       style={{
-        ...styles.iconStyle,
+        ...headerIconStyles.iconStyle,
         height: size ? size : 80,
         width: size ? size : 80
       }}
     />
     <h5 style={{
       margin: 0,
-      fontSize: size === 30 ? 8 : 15,
+      fontSize: 10,
       color: 'white'
     }}
     >
@@ -21,13 +21,5 @@ const AboutIcon: React.FC<TechIconProps> = ({ size }) => (
     </h5>
   </div>
 );
-
-const styles = {
-  iconStyle: {
-    padding: '5%',
-    color: 'white',
-    borderRadius: '15%',
-  } as React.CSSProperties
-}
 
 export { AboutIcon };

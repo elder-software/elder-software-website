@@ -1,6 +1,7 @@
 import React from 'react';
 import TextHeading from './TextHeading';
 import Logo from '../../assets/logo.jpg';
+import { AboutIcon } from '../icons/headerIcons';
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -30,10 +31,7 @@ const Header: React.FC = () => {
           text={'Work'}
           linkRef={'work'}
         />
-        <TextHeading
-          text={'About'}
-          linkRef={'about'}
-        />
+        <AboutIcon size={20} />
         <TextHeading
           text={'Contact'}
           linkRef={'contact'}
