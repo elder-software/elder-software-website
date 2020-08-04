@@ -5,7 +5,7 @@ import {
   AppleIcon,
   JavaIcon,
   AndroidIcon,
-} from '../common/icons';
+} from '../common/icons/techicons';
 
 const Work: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { GithubSmallIcon, LinkedInSmallIcon } from '../contacticons';
+import { GithubSmallIcon, LinkedInSmallIcon } from '../icons/contacticons';
 
 const Footer: React.FC = () => (
   <div style={styles.mainDiv}>

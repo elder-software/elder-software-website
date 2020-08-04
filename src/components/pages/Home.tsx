@@ -7,8 +7,8 @@ import {
   JavaIcon,
   CPlusPlusIcon,
   CircuitBoardIcon
-} from '../common/icons';
-import { AndroidIcon } from '../common/icons/AndroidIcon';
+} from '../common/icons/techicons';
+import { AndroidIcon } from '../common/icons/techicons/AndroidIcon';
 
 const Home: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);

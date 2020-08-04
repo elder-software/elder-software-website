@@ -1,5 +1,5 @@
 import React from 'react';
-import CPlusPlus from '../../assets/icons/NewZealandIcon.png';
+import NZIcon from '../../../assets/icons/NewZealandIcon.png';
 import { iconStyles, AboutIconProps } from './styles';
 
 const NewZealandIcon: React.FC<AboutIconProps> = ({ size }) => (
@@ -9,7 +9,7 @@ const NewZealandIcon: React.FC<AboutIconProps> = ({ size }) => (
       height: size ? size : 80,
       width: size ? size : 80
     }}
-      src={CPlusPlus}
+      src={NZIcon}
       alt={'NewZealand'}
     />
   </div>
