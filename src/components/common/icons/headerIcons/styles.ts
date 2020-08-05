@@ -10,6 +10,7 @@ export const headerIconStyles = {
   } as React.CSSProperties,
   iconContainerStyle: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
   } as React.CSSProperties, 

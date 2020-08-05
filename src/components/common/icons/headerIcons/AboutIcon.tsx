@@ -1,10 +1,10 @@
 import React from 'react';
-import { BsFillInfoCircleFill } from 'react-icons/bs';
+import { MdInfo } from 'react-icons/md';
 import { headerIconStyles, HeaderIconProps } from './styles';
 
 const AboutIcon: React.FC<HeaderIconProps> = ({ size }) => (
   <div style={headerIconStyles.iconContainerStyle}>
-    <BsFillInfoCircleFill
+    <MdInfo
       style={{
         ...headerIconStyles.iconStyle,
         height: size ? size : 80,

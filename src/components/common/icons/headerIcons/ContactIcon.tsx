@@ -1,17 +1,25 @@
 import React from 'react';
-import { FaAndroid } from 'react-icons/fa';
-import { iconStyles, TechIconProps } from '../techicons/styles';
+import { MdEmail } from 'react-icons/md';
+import { HeaderIconProps, headerIconStyles } from './styles';
 
-const ContactIcon: React.FC<TechIconProps> = ({ size }) => (
-  <div style={iconStyles.iconContainerStyle}>
-    <FaAndroid
+const ContactIcon: React.FC<HeaderIconProps> = ({ size }) => (
+  <div style={headerIconStyles.iconContainerStyle}>
+    <MdEmail
       style={{
-        ...iconStyles.iconStyle,
+        ...headerIconStyles.iconStyle,
         height: size ? size : 80,
         width: size ? size : 80
       }}
     />
-    <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>Android</h5>
+    <h5
+      style={{
+        margin: 0,
+        fontSize: 10,
+        color: 'white'
+      }}
+    >
+      Contact
+    </h5>
   </div>
 );
 

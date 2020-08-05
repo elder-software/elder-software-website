@@ -11,11 +11,12 @@ const HomeIcon: React.FC<HeaderIconProps> = ({ size }) => (
         width: size ? size : 80
       }}
     />
-    <h5 style={{
-      margin: 0,
-      fontSize: 10,
-      color: 'white'
-    }}
+    <h5
+      style={{
+        margin: 0,
+        fontSize: 10,
+        color: 'white'
+      }}
     >
       Home
     </h5>
