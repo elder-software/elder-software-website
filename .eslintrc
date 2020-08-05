@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "airbnb-typescript-prettier",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "quotes": "off",
+    "import/prefer-default-export": "off"
+  }
+}

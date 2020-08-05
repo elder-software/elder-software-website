@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import { WorkInfoProps } from '../../pages/Work';
+import { WorkInfoProps } from '../../assets/workInfo/workInfo';
 
 interface Props extends WorkInfoProps {
   isMobile: boolean;
