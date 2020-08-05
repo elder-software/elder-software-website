@@ -22,10 +22,10 @@ const Header: React.FC = () => {
       </div>
 
       <div style={styles.headingsDiv}>
-        <HomeIcon size={20} />
-        <WorkIcon size={20} />
-        <AboutIcon size={20} />
-        <ContactIcon size={20}
+        <HomeIcon size={23} />
+        <WorkIcon size={23} />
+        <AboutIcon size={23} />
+        <ContactIcon size={23}
         />
       </div>
     </div>
@@ -42,8 +42,8 @@ const styles = {
   } as React.CSSProperties,
   headingsDiv: {
     display: 'flex',
-    paddingTop: '1%',
-    paddingBottom: '1%',
+    paddingTop: '10px',
+    paddingBottom: '10px',
     border: '1px solid black',
     borderRadius: 15,
     marginRight: 5,

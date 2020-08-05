@@ -18,7 +18,7 @@ const WorkIcon: React.FC<HeaderIconProps> = ({ size }) => (
         color: 'white'
       }}
     >
-      Home
+      Work
     </h5>
   </div>
 );

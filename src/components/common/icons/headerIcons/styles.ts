@@ -6,7 +6,8 @@ export const headerIconStyles = {
   iconStyle: {
     backgroundColor: 'black',
     color: 'white',
-    borderRadius: '15%',
+    margin: 0,
+    padding: 0
   } as React.CSSProperties,
   iconContainerStyle: {
     display: 'flex',
