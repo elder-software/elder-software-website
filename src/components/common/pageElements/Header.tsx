@@ -25,8 +25,7 @@ const Header: React.FC = () => {
         <HomeIcon size={23} />
         <WorkIcon size={23} />
         <AboutIcon size={23} />
-        <ContactIcon size={23}
-        />
+        <ContactIcon size={23} />
       </div>
     </div>
   );

@@ -1,0 +1,25 @@
+.iconBackground {
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: 'center';
+  background-color: black;
+  align-content: center;
+  text-align: center;
+}
+
+.icon {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+  direction: ltr;
+  align-content: center;
+}
+
+.iconText {
+  margin: 0;
+  padding: 0;
+  font-size: 8;
+  color: white;
+}
