@@ -8,16 +8,16 @@ const HomeIcon: React.FC<HeaderIconProps> = ({ size }) => {
   return (
     <div className={'iconBackground'}>
       <Link to={''}>
-        <TiHome
-          className={'icon'}
-          style={{
-            height: size ? size : 80,
-            width: size ? size : 80,
-          }}
-        />
-        <h5 className={'iconText'}>
-          Home
-          </h5>
+          <TiHome
+            className={'icon'}
+            style={{
+              height: size ? size : 80,
+              width: size ? size : 80,
+            }}
+          />
+          <div className={'iconText'}>
+            Home
+          </div>
       </Link>
     </div>
   );
