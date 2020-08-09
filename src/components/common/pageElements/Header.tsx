@@ -41,6 +41,7 @@ const styles = {
   } as React.CSSProperties,
   headingsDiv: {
     display: 'flex',
+    justifyContent: 'space-around',
     paddingTop: '10px',
     paddingBottom: '10px',
     border: '1px solid black',

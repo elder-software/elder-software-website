@@ -1,26 +1,24 @@
 import React from 'react';
 import { MdWork } from 'react-icons/md';
-import { HeaderIconProps, headerIconStyles } from './styles';
+import { HeaderIconProps } from './styles';
+import { Link } from 'react-router-dom';
+import './index.css';
 
 const WorkIcon: React.FC<HeaderIconProps> = ({ size }) => (
-  <div style={headerIconStyles.iconContainerStyle}>
-    <MdWork
-      style={{
-        ...headerIconStyles.iconStyle,
-        height: size ? size : 80,
-        width: size ? size : 80
-      }}
-    />
-    <h5
-      style={{
-        margin: 0,
-        fontSize: 10,
-        color: 'white'
-      }}
-    >
-      Work
-    </h5>
-  </div>
+  <Link to={'/work'}>
+    <div className={'iconBackground'}>
+      <MdWork
+        className={'icon'}
+        style={{
+          height: size ? size : 80,
+          width: size ? size : 80,
+        }}
+      />
+      <h5 className={'iconText'}>
+        Info
+      </h5>
+    </div>
+  </Link>
 );
 
 export { WorkIcon };
