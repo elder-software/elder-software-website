@@ -1,28 +1,16 @@
 import React from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { ContactIconProps } from './styles';
+import './index.css';
 
-const GithubSmallIcon: React.FC<ContactIconProps> = ({ colour }) => (
+const GithubSmallIcon: React.FC = () => (
   <a
     href="https://github.com/elder-software"
     target="_blank"
     rel="noopener noreferrer">
-    <FaGithub
-      style={{
-        ...styles.githubIconStyle,
-        color: colour ? colour : 'white',
-      }}
-    />
+    <div className={'iconContainer'}>
+      <FaGithub className={'icon'} />
+    </div>
   </a>
 );
-
-const styles = {
-  githubIconStyle: {
-    width: 30,
-    height: 30,
-    margin: 10,
-    backgroundColor: 'black'
-  } as React.CSSProperties
-}
 
 export { GithubSmallIcon };

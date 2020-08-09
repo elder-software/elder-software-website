@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './index.css';
 
 const ContactIcon: React.FC<HeaderIconProps> = ({ size }) => (
-  <Link to={'/about'}>
+  <Link to={'/contact'}>
     <div className={'iconBackground'}>
       <MdEmail
         className={'icon'}
@@ -15,7 +15,7 @@ const ContactIcon: React.FC<HeaderIconProps> = ({ size }) => (
         }}
       />
       <h5 className={'iconText'}>
-        Info
+        Contact
       </h5>
     </div>
   </Link>
