@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/logo.jpg';
+import Logo from '../../assets/logo.jpeg';
 import { AboutIcon, HomeIcon, ContactIcon, WorkIcon } from '../icons/headerIcons';
 
 const Header: React.FC = () => {
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     <div>
       <div style={styles.logoDiv}>
         <img
-          style={{ width: isMobile ? '35%' : '20%', height: "100%" }}
+          style={{ width: isMobile ? '35%' : '15%', height: "100%" }}
           src={Logo} alt={'logo'}
         />
       </div>
@@ -37,7 +37,7 @@ const styles = {
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'center',
-    margin: '5%'
+    margin: '4%'
   } as React.CSSProperties,
   headingsDiv: {
     display: 'flex',

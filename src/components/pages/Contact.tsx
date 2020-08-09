@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
               ...styles.rowTextStyle,
               fontSize: isMobile ? 12 : 16,
             }}>
-              +64 27 6930 729
+              +64 432 770 297
               </div>
           </div>
         </div>

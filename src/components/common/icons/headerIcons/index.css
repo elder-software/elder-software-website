@@ -11,6 +11,8 @@
   text-align: center;
   border-radius: 5px;
   padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   transition: color, background-color 0.5s;
   -webkit-transition: color, background-color 0.5s;

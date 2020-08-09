@@ -15,7 +15,7 @@ const WorkIcon: React.FC<HeaderIconProps> = ({ size }) => (
         }}
       />
       <h5 className={'iconText'}>
-        Info
+        Work
       </h5>
     </div>
   </Link>
