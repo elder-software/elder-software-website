@@ -17,15 +17,23 @@ const WorkRow: React.FC<Props> = ({
   testimonialAuthor,
   isMobile
 }) => {
+  function importAll(r: __WebpackModuleApi.RequireContext) {
+    let images = {} as any;
+    r.keys().forEach((item) => { images[item.replace('./', '')] = r(item); });
+    return images;
+  }
+
   const renderWorkInfo = () => {
     let rows = [];
+
+    const featureImages = importAll(require.context('../../assets/icons', true, /\.(png|jpe?g|svg)$/));
+
     for (let i = 0; i < features.length; i++) {
       rows.push(
-        <div
-          style={styles.workInfoDiv}>
+        <div style={styles.workInfoDiv}>
           <img
             style={{ width: 30, height: 30, alignSelf: 'center' }}
-            src={require(`../../assets/icons/${featureIcons[i]}.png`)}
+            src={featureImages[`${featureIcons[i]}.png`]}
             alt={logoImage}
           />
           <div style={{
@@ -39,6 +47,9 @@ const WorkRow: React.FC<Props> = ({
     return rows;
   }
 
+  const companyLogoImages = importAll(require.context('../../assets/companyLogos', true, /\.(png|jpe?g|svg)$/));
+  const screenshotImages = importAll(require.context('../../assets/screenshots', true, /\.(png|jpe?g|svg)$/));
+
   return (
     <div style={styles.fullRowDiv}>
       <div style={styles.mainGreyDiv}>
@@ -48,7 +59,7 @@ const WorkRow: React.FC<Props> = ({
         }}>
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
-            src={require(`../../assets/companyLogos/${logoImage}.png`)}
+            src={companyLogoImages[`${logoImage}.png`]}
             alt={logoImage}
           />
           <h1 style={styles.companyNameText}>{name}</h1>
@@ -67,7 +78,6 @@ const WorkRow: React.FC<Props> = ({
         </div>
       </div>
 
-
       <h4 style={{ marginTop: 0, marginLeft: 30, fontSize: 16, }}>
         {title}
       </h4>
@@ -84,12 +94,12 @@ const WorkRow: React.FC<Props> = ({
           <div style={styles.screenshotsDiv}>
             <img
               style={styles.screenshotStyle}
-              src={require(`../../assets/screenshots/${logoImage}SS1.png`)}
+              src={screenshotImages[`${logoImage}SS1.png`]}
               alt={logoImage}
             />
             <img
               style={styles.screenshotStyle}
-              src={require(`../../assets/screenshots/${logoImage}SS2.png`)}
+              src={screenshotImages[`${logoImage}SS2.png`]}
               alt={logoImage}
             />
           </div>
@@ -99,7 +109,7 @@ const WorkRow: React.FC<Props> = ({
         {testimonial ?
           <div>
             <div style={styles.testimonialText}>
-              <FaQuoteLeft style={{ height: 30, width: 30, marginRight: 20 }} />
+              <FaQuoteLeft style={{ height: 20, width: 20, marginRight: 20 }} />
               {testimonial}
             </div>
             <div style={styles.testimonialText}>
@@ -165,7 +175,8 @@ const styles = {
     alignSelf: 'start',
     flexDirection: 'row',
     paddingInlineStart: 30,
-    paddingBottom: 30
+    paddingLeft: 30,
+    paddingBottom: 30,
   } as React.CSSProperties,
   workDetailsDiv: {
     display: 'flex',

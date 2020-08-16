@@ -20,7 +20,12 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|jpeg)$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+            },
+          },
         ],
       },
     ],
