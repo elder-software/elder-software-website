@@ -16,16 +16,16 @@ const Header: React.FC = () => {
     <div>
       <div style={styles.logoDiv}>
         <img
-          style={{ width: isMobile ? '35%' : '15%', height: "100%" }}
+          style={{ width: isMobile ? '25%' : '15%', height: "100%" }}
           src={Logo} alt={'logo'}
         />
       </div>
 
       <div style={styles.headingsDiv}>
-        <HomeIcon size={23} />
-        <WorkIcon size={23} />
-        <AboutIcon size={23} />
-        <ContactIcon size={23} />
+        <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        <AboutIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
       </div>
     </div>
   );
@@ -42,8 +42,8 @@ const styles = {
   headingsDiv: {
     display: 'flex',
     justifyContent: 'space-around',
-    paddingTop: '10px',
-    paddingBottom: '10px',
+    paddingTop: '1%',
+    paddingBottom: '1%',
     border: '1px solid black',
     borderRadius: 15,
     marginRight: 5,

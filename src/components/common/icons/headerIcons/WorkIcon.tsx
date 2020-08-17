@@ -4,7 +4,7 @@ import { HeaderIconProps } from './styles';
 import { Link } from 'react-router-dom';
 import './index.css';
 
-const WorkIcon: React.FC<HeaderIconProps> = ({ size }) => (
+const WorkIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
   <Link to={'/work'}>
     <div className={'iconBackground'}>
       <MdWork
@@ -14,7 +14,7 @@ const WorkIcon: React.FC<HeaderIconProps> = ({ size }) => (
           width: size ? size : 80,
         }}
       />
-      <h5 className={'iconText'}>
+      <h5 className={'iconText'} style={{ fontSize: textSize }}>
         Work
       </h5>
     </div>

@@ -4,7 +4,7 @@ import { HeaderIconProps } from './styles';
 import { Link } from 'react-router-dom';
 import './index.css';
 
-const HomeIcon: React.FC<HeaderIconProps> = ({ size }) => (
+const HomeIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
   <Link to={''}>
     <div className={'iconBackground'}>
       <TiHome
@@ -14,7 +14,7 @@ const HomeIcon: React.FC<HeaderIconProps> = ({ size }) => (
           width: size ? size : 80,
         }}
       />
-      <h5 className={'iconText'}>
+      <h5 className={'iconText'} style={{ fontSize: textSize }}>
         Home
       </h5>
     </div>

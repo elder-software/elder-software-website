@@ -1,5 +1,6 @@
 export interface HeaderIconProps {
   size?: number;
+  textSize?: number;
 }
 
 export const headerIconStyles = {

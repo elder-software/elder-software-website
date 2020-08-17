@@ -38,7 +38,8 @@ const WorkRow: React.FC<Props> = ({
           />
           <div style={{
             alignSelf: 'center',
-            marginInlineStart: 10
+            marginInlineStart: 10,
+            marginLeft: 10
           }}>{features[i]}</div>
         </div>
       )

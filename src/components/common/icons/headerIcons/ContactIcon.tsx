@@ -4,7 +4,7 @@ import { HeaderIconProps } from './styles';
 import { Link } from 'react-router-dom';
 import './index.css';
 
-const ContactIcon: React.FC<HeaderIconProps> = ({ size }) => (
+const ContactIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
   <Link to={'/contact'}>
     <div className={'iconBackground'}>
       <MdEmail
@@ -14,7 +14,7 @@ const ContactIcon: React.FC<HeaderIconProps> = ({ size }) => (
           width: size ? size : 80,
         }}
       />
-      <h5 className={'iconText'}>
+      <h5 className={'iconText'} style={{ fontSize: textSize }}>
         Contact
       </h5>
     </div>
