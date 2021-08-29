@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
-    window.addEventListener("resize", resize);
+    window.addEventListener('resize', resize);
     resize();
   }, []);
 
@@ -16,15 +16,19 @@ const Contact: React.FC = () => {
       <div style={styles.greyCardDiv}>
         <div style={styles.headingContainerDiv}>
           <div style={styles.headingDiv}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'row',
-              alignItems: 'center',
-            }}>
-              <div style={{
-                padding: 30,
-                alignContent: 'center'
-              }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'row',
+                alignItems: 'center'
+              }}
+            >
+              <div
+                style={{
+                  padding: 30,
+                  alignContent: 'center'
+                }}
+              >
                 <h1 style={{ margin: 0, fontSize: 20 }}>Contact</h1>
               </div>
             </div>
@@ -34,28 +38,32 @@ const Contact: React.FC = () => {
         <div style={styles.contactInfoDiv}>
           <div style={styles.rowStyle}>
             <EmailIcon size={80} />
-            <div style={{
-              ...styles.rowTextStyle,
-              fontSize: isMobile ? 12 : 16,
-            }}>
+            <div
+              style={{
+                ...styles.rowTextStyle,
+                fontSize: isMobile ? 12 : 16
+              }}
+            >
               james@elder-software.com
-              </div>
+            </div>
           </div>
 
           <div style={styles.rowStyle}>
             <PhoneIcon size={80} />
-            <div style={{
-              ...styles.rowTextStyle,
-              fontSize: isMobile ? 12 : 16,
-            }}>
+            <div
+              style={{
+                ...styles.rowTextStyle,
+                fontSize: isMobile ? 12 : 16
+              }}
+            >
               +64 432 770 297
-              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 const styles = {
   mainContainerDiv: {
@@ -64,7 +72,7 @@ const styles = {
     justifyContent: 'center',
     flexDirection: 'column',
     alignContent: 'center',
-    marginTop: 10,
+    marginTop: 10
   } as React.CSSProperties,
   greyCardDiv: {
     display: 'flex',
@@ -74,9 +82,9 @@ const styles = {
     marginLeft: 5,
     marginRight: 5,
     borderRadius: 15,
-    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
-    mozBoxShadow: "2px 2px 2px #DFDFDF",
-    boxShadow: "2px 2px 2px #DFDFDF",
+    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
+    mozBoxShadow: '2px 2px 2px #DFDFDF',
+    boxShadow: '2px 2px 2px #DFDFDF',
     background: '#e8e8e8',
     padding: 5
   } as React.CSSProperties,
@@ -88,7 +96,7 @@ const styles = {
     border: '0px solid lightgrey',
     marginBottom: 0,
     borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
+    borderTopRightRadius: 15
   } as React.CSSProperties,
   headingDiv: {
     display: 'flex',
@@ -110,7 +118,7 @@ const styles = {
     justifyContent: 'space-around',
     width: '100%',
     background: 'white',
-    paddingTop: 30,
+    paddingTop: 30
   } as React.CSSProperties,
   rowStyle: {
     display: 'flex',
@@ -128,7 +136,6 @@ const styles = {
     fontWeight: 'lighter',
     opacity: '80%'
   } as React.CSSProperties
-}
-
+};
 
 export default Contact;

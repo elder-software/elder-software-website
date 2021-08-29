@@ -1,12 +1,17 @@
 import React from 'react';
 import Logo from '../../assets/logo.jpeg';
-import { AboutIcon, HomeIcon, ContactIcon, WorkIcon } from '../icons/headerIcons';
+import {
+  AboutIcon,
+  HomeIcon,
+  ContactIcon,
+  WorkIcon
+} from '../icons/headerIcons';
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
-    window.addEventListener("resize", resize);
+    window.addEventListener('resize', resize);
     resize();
   }, []);
 
@@ -16,8 +21,9 @@ const Header: React.FC = () => {
     <div>
       <div style={styles.logoDiv}>
         <img
-          style={{ width: isMobile ? '25%' : '15%', height: "100%" }}
-          src={Logo} alt={'logo'}
+          style={{ width: isMobile ? '25%' : '15%', height: '100%' }}
+          src={Logo}
+          alt="logo"
         />
       </div>
 
@@ -29,7 +35,7 @@ const Header: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
 const styles = {
   logoDiv: {
@@ -49,10 +55,10 @@ const styles = {
     marginRight: 5,
     marginLeft: 5,
     background: 'black',
-    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
-    MozBoxShadow: "2px 2px 2px #DFDFDF",
-    boxShadow: "2px 2px 2px #DFDFDF"
+    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
+    MozBoxShadow: '2px 2px 2px #DFDFDF',
+    boxShadow: '2px 2px 2px #DFDFDF'
   } as React.CSSProperties
-}
+};
 
 export default Header;

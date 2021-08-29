@@ -14,22 +14,24 @@ const Work: React.FC = () => {
 
   return (
     <div>
-      {workInfo.map(item => {
-        return (<WorkRow
-          key={item.name}
-          name={item.name}
-          logoImage={item.logoImage}
-          technologies={item.technologies}
-          features={item.features}
-          featureIcons={item.featureIcons}
-          title={item.title}
-          testimonial={item.testimonial}
-          testimonialAuthor={item.testimonialAuthor}
-          isMobile={isMobile}
-        />)
+      {workInfo.map((item) => {
+        return (
+          <WorkRow
+            key={item.name}
+            name={item.name}
+            logoImage={item.logoImage}
+            technologies={item.technologies}
+            features={item.features}
+            featureIcons={item.featureIcons}
+            title={item.title}
+            testimonial={item.testimonial}
+            testimonialAuthor={item.testimonialAuthor}
+            isMobile={isMobile}
+          />
+        );
       })}
     </div>
   );
-}
+};
 
 export default Work;

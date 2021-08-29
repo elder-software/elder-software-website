@@ -10,8 +10,8 @@ const HomeIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
       <TiHome
         className={'icon'}
         style={{
-          height: size ? size : 80,
-          width: size ? size : 80,
+          height: size || 80,
+          width: size || 80,
         }}
       />
       <h5 className={'iconText'} style={{ fontSize: textSize }}>

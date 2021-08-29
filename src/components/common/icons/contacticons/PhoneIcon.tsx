@@ -7,8 +7,8 @@ const PhoneIcon: React.FC<ContactIconProps> = ({ size }) => (
     <FaPhone
       style={{
         ...iconStyles.iconStyle,
-        height: size ? size : 80,
-        width: size ? size : 80
+        height: size || 80,
+        width: size || 80
       }}
     />
   </div>

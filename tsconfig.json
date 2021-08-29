@@ -7,7 +7,7 @@
     "outDir": "./dist/",
     "sourceMap": true,
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "lib": [
       "dom",
@@ -24,5 +24,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true
   }
 }

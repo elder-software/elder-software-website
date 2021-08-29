@@ -1,11 +1,11 @@
 export interface TechIconProps {
-  size?: number
+  size?: number;
 }
 
 type IconStyles = {
   iconContainerStyle: React.CSSProperties;
   iconStyle: React.CSSProperties;
-}
+};
 
 export const iconStyles: IconStyles = {
   iconContainerStyle: {
@@ -20,6 +20,6 @@ export const iconStyles: IconStyles = {
     padding: '15%',
     border: '1px solid #DFDFDF',
     backgroundColor: 'white',
-    borderRadius: '15%',
+    borderRadius: '15%'
   }
-}
+};

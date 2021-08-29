@@ -4,11 +4,13 @@ import { iconStyles, AboutIconProps } from './styles';
 
 const SurfSkateIcon: React.FC<AboutIconProps> = ({ size }) => (
   <div style={iconStyles.iconContainerStyle}>
-    <GiWaveSurfer style={{
-      ...iconStyles.iconStyle,
-      height: size ? size : 80,
-      width: size ? size : 80
-    }} />
+    <GiWaveSurfer
+      style={{
+        ...iconStyles.iconStyle,
+        height: size || 80,
+        width: size || 80
+      }}
+    />
   </div>
 );
 

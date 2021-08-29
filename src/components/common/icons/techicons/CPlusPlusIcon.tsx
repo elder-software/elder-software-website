@@ -7,11 +7,11 @@ const CPlusPlusIcon: React.FC<TechIconProps> = ({ size }) => (
     <img
       style={{
         ...iconStyles.iconStyle,
-        height: size ? size : 80,
-        width: size ? size : 80
+        height: size || 80,
+        width: size || 80
       }}
       src={CPlusPlus}
-      alt={'CPlusPlus'}
+      alt="CPlusPlus"
     />
     <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>C++</h5>
   </div>

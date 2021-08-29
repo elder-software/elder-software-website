@@ -18,46 +18,61 @@ const WorkRow: React.FC<Props> = ({
   isMobile
 }) => {
   function importAll(r: __WebpackModuleApi.RequireContext) {
-    let images = {} as any;
-    r.keys().forEach((item) => { images[item.replace('./', '')] = r(item); });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const images = {} as any;
+    r.keys().forEach((item) => {
+      images[item.replace('./', '')] = r(item);
+    });
     return images;
   }
 
   const renderWorkInfo = () => {
-    let rows = [];
+    const rows: React.ReactNode[] = [];
 
-    const featureImages = importAll(require.context('../../assets/icons', true, /\.(png|jpe?g|svg)$/));
+    const featureImages = importAll(
+      require.context('../../assets/icons', true, /\.(png|jpe?g|svg)$/)
+    );
 
-    for (let i = 0; i < features.length; i++) {
+    features.forEach((value, index) => {
       rows.push(
         <div style={styles.workInfoDiv}>
           <img
             style={{ width: 30, height: 30, alignSelf: 'center' }}
-            src={featureImages[`${featureIcons[i]}.png`]}
+            src={featureImages[`${featureIcons[index]}.png`]}
             alt={logoImage}
           />
-          <div style={{
-            alignSelf: 'center',
-            marginInlineStart: 10,
-            marginLeft: 10
-          }}>{features[i]}</div>
+          <div
+            style={{
+              alignSelf: 'center',
+              marginInlineStart: 10,
+              marginLeft: 10
+            }}
+          >
+            {value}
+          </div>
         </div>
-      )
-    }
+      );
+    });
 
     return rows;
-  }
+  };
 
-  const companyLogoImages = importAll(require.context('../../assets/companyLogos', true, /\.(png|jpe?g|svg)$/));
-  const screenshotImages = importAll(require.context('../../assets/screenshots', true, /\.(png|jpe?g|svg)$/));
+  const companyLogoImages = importAll(
+    require.context('../../assets/companyLogos', true, /\.(png|jpe?g|svg)$/)
+  );
+  const screenshotImages = importAll(
+    require.context('../../assets/screenshots', true, /\.(png|jpe?g|svg)$/)
+  );
 
   return (
     <div style={styles.fullRowDiv}>
       <div style={styles.mainGreyDiv}>
-        <div style={{
-          ...styles.rowHeadingDiv,
-          alignSelf: isMobile ? 'stretch' : 'start',
-        }}>
+        <div
+          style={{
+            ...styles.rowHeadingDiv,
+            alignSelf: isMobile ? 'stretch' : 'start'
+          }}
+        >
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
             src={companyLogoImages[`${logoImage}.png`]}
@@ -67,11 +82,9 @@ const WorkRow: React.FC<Props> = ({
         </div>
 
         <div style={styles.technologiesDiv}>
-          {technologies.map((value, index) => {
+          {technologies.map((value) => {
             return (
-              <div
-                key={`${name}:technology:${index}`}
-                style={{ marginRight: 10 }}>
+              <div key={`${name}:technology`} style={{ marginRight: 10 }}>
                 {value}
               </div>
             );
@@ -79,18 +92,16 @@ const WorkRow: React.FC<Props> = ({
         </div>
       </div>
 
-      <h4 style={{ marginTop: 0, marginLeft: 30, fontSize: 16, }}>
-        {title}
-      </h4>
+      <h4 style={{ marginTop: 0, marginLeft: 30, fontSize: 16 }}>{title}</h4>
 
       <div style={styles.workDetailsDiv}>
-        <div style={{
-          display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
-        }}>
-          <div style={styles.appFeaturesDiv}>
-            {renderWorkInfo()}
-          </div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row'
+          }}
+        >
+          <div style={styles.appFeaturesDiv}>{renderWorkInfo()}</div>
 
           <div style={styles.screenshotsDiv}>
             <img
@@ -104,25 +115,21 @@ const WorkRow: React.FC<Props> = ({
               alt={logoImage}
             />
           </div>
-
         </div>
 
-        {testimonial ?
+        {testimonial ? (
           <div>
             <div style={styles.testimonialText}>
               <FaQuoteLeft style={{ height: 20, width: 20, marginRight: 20 }} />
               {testimonial}
             </div>
-            <div style={styles.testimonialText}>
-              {testimonialAuthor}
-            </div>
+            <div style={styles.testimonialText}>{testimonialAuthor}</div>
           </div>
-          : null}
+        ) : null}
       </div>
     </div>
   );
-}
-
+};
 
 const styles = {
   fullRowDiv: {
@@ -133,9 +140,9 @@ const styles = {
     marginRight: 5,
     borderRadius: 15,
     padding: 5,
-    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
-    MozBoxShadow: "2px 2px 2px #DFDFDF",
-    boxShadow: "2px 2px 2px #DFDFDF"
+    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
+    MozBoxShadow: '2px 2px 2px #DFDFDF',
+    boxShadow: '2px 2px 2px #DFDFDF'
   } as React.CSSProperties,
   mainGreyDiv: {
     display: 'flex',
@@ -177,7 +184,7 @@ const styles = {
     flexDirection: 'row',
     paddingInlineStart: 30,
     paddingLeft: 30,
-    paddingBottom: 30,
+    paddingBottom: 30
   } as React.CSSProperties,
   workDetailsDiv: {
     display: 'flex',
@@ -185,7 +192,7 @@ const styles = {
     background: 'white',
     flexDirection: 'column',
     borderRadius: 15,
-    border: '1px solid #f2f2f2',
+    border: '1px solid #f2f2f2'
   } as React.CSSProperties,
   appFeaturesDiv: {
     display: 'flex',
@@ -195,7 +202,7 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     paddingLeft: 30,
-    paddingTop: 30,
+    paddingTop: 30
   } as React.CSSProperties,
   screenshotsDiv: {
     display: 'flex',
@@ -207,7 +214,7 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'space-around',
     paddingTop: 30,
-    paddingBottom: 30,
+    paddingBottom: 30
   } as React.CSSProperties,
   screenshotStyle: {
     display: 'flex',
@@ -215,7 +222,7 @@ const styles = {
     height: 'auto',
     alignSelf: 'center',
     border: '1px solid lightgrey',
-    borderRadius: 5,
+    borderRadius: 5
   } as React.CSSProperties,
   testimonialText: {
     paddingLeft: 30,
@@ -223,5 +230,5 @@ const styles = {
     paddingBottom: 20,
     alignSelf: 'center'
   } as React.CSSProperties
-}
+};
 export default WorkRow;

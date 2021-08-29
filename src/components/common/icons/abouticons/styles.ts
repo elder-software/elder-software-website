@@ -20,6 +20,6 @@ export const iconStyles: AboutIconStyles = {
     padding: 20,
     border: '1px solid #DFDFDF',
     backgroundColor: 'white',
-    borderRadius: 15,
-  },
+    borderRadius: 15
+  }
 };

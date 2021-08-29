@@ -26,9 +26,9 @@ const styles = {
     border: '1px solid black',
     borderRadius: 15,
     background: 'black',
-    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
-    MozBoxShadow: "2px 2px 2px #DFDFDF",
-    boxShadow: "2px 2px 2px #DFDFDF",
+    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
+    MozBoxShadow: '2px 2px 2px #DFDFDF',
+    boxShadow: '2px 2px 2px #DFDFDF',
     bottom: 0,
     left: 0,
     right: 0,
@@ -36,7 +36,7 @@ const styles = {
     marginRight: 5,
     marginTop: 10,
     marginBottom: 10,
-    alignItems: 'center',
+    alignItems: 'center'
   } as React.CSSProperties,
   innerDiv: {
     display: 'flex',
@@ -58,8 +58,8 @@ const styles = {
     justifyContent: 'row',
     alignContent: 'center',
     alignItems: 'center',
-    padding: 10,
-  } as React.CSSProperties,
-}
+    padding: 10
+  } as React.CSSProperties
+};
 
 export default Footer;

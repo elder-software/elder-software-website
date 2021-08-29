@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 interface Props {
   linkRef: string;
   text: string;
 }
 
-const TextHeading: React.FC<Props> = props => {
+const TextHeading: React.FC<Props> = ({ linkRef, text }) => {
   const [opacity, setOpacity] = React.useState(1);
   const [isMobile, setisMobile] = React.useState(window.innerWidth <= 1000);
 
   React.useEffect(() => {
-    window.addEventListener("resize", resize);
+    window.addEventListener('resize', resize);
   }, []);
 
   const resize = () => setisMobile(window.innerWidth <= 1000);
@@ -26,7 +26,7 @@ const TextHeading: React.FC<Props> = props => {
         <li>
           <Link
             style={{
-              opacity: opacity,
+              opacity,
               color: 'white',
               textDecoration: 'none',
               listStyleType: 'none',
@@ -35,13 +35,14 @@ const TextHeading: React.FC<Props> = props => {
             }}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            to={`/${props.linkRef}`}>
-            {props.text}
+            to={`/${linkRef}`}
+          >
+            {text}
           </Link>
         </li>
       </div>
     </div>
   );
-}
+};
 
 export default TextHeading;

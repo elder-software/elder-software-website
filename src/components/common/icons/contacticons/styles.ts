@@ -1,12 +1,12 @@
 export interface ContactIconProps {
   size?: number;
-  colour? : string;
+  colour?: string;
 }
 
 type ContactIconStyles = {
   iconContainerStyle: React.CSSProperties;
   iconStyle: React.CSSProperties;
-}
+};
 
 export const iconStyles: ContactIconStyles = {
   iconContainerStyle: {
@@ -21,6 +21,6 @@ export const iconStyles: ContactIconStyles = {
     padding: 25,
     border: '1px solid #DFDFDF',
     backgroundColor: 'white',
-    borderRadius: 15,
+    borderRadius: 15
   }
-}
+};

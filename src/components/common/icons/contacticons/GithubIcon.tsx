@@ -7,12 +7,11 @@ const GithubIcon: React.FC<ContactIconProps> = ({ size }) => (
     <FaGithub
       style={{
         ...iconStyles.iconStyle,
-        height: size ? size : 80,
-        width: size ? size : 80,
+        height: size || 80,
+        width: size || 80
       }}
     />
   </div>
 );
-
 
 export { GithubIcon };
