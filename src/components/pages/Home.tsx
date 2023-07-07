@@ -1,14 +1,6 @@
 import React from 'react';
 import Profile from '../assets/jamie-photo.jpg';
-import {
-  JavascriptIcon,
-  ReactIcon,
-  AppleIcon,
-  JavaIcon,
-  CPlusPlusIcon,
-  CircuitBoardIcon
-} from '../common/icons/techicons';
-import { AndroidIcon } from '../common/icons/techicons/AndroidIcon';
+import { AppleIcon, AndroidIcon } from '../common/icons/techicons';
 
 const Home: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -69,13 +61,8 @@ const Home: React.FC = () => {
         </div>
 
         <div style={styles.technologiesDiv}>
-          <JavascriptIcon size={isMobile ? 30 : 80} />
-          <ReactIcon size={isMobile ? 30 : 80} />
           <AndroidIcon size={isMobile ? 30 : 80} />
           <AppleIcon size={isMobile ? 30 : 80} />
-          <JavaIcon size={isMobile ? 30 : 80} />
-          <CPlusPlusIcon size={isMobile ? 30 : 80} />
-          <CircuitBoardIcon size={isMobile ? 30 : 80} />
         </div>
       </div>
     </div>
@@ -100,7 +87,7 @@ const styles = {
     marginRight: 5,
     borderRadius: 15,
     WebkitBoxShadow: '2px 2px 2px #DFDFDF',
-    mozBoxShadow: '2px 2px 2px #DFDFDF',
+    MozBoxShadow: '2px 2px 2px #DFDFDF',
     boxShadow: '2px 2px 2px #DFDFDF',
     background: '#e8e8e8',
     padding: 5

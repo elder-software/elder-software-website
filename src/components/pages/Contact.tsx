@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
                 fontSize: isMobile ? 12 : 16
               }}
             >
-              +64 432 770 297
+              +61 432 770 297
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ const styles = {
     marginRight: 5,
     borderRadius: 15,
     WebkitBoxShadow: '2px 2px 2px #DFDFDF',
-    mozBoxShadow: '2px 2px 2px #DFDFDF',
+    MozBoxShadow: '2px 2px 2px #DFDFDF',
     boxShadow: '2px 2px 2px #DFDFDF',
     background: '#e8e8e8',
     padding: 5

@@ -1,4 +1,4 @@
-export * from './JavascriptIcon';
+export * from './TypescriptIcon';
 export * from './ReactIcon';
 export * from './AndroidIcon';
 export * from './AppleIcon';

@@ -1,18 +1,18 @@
 import React from 'react';
-import { IoLogoJavascript } from 'react-icons/io';
+import { SiTypescript } from 'react-icons/si';
 import { iconStyles, TechIconProps } from './styles';
 
-const JavascriptIcon: React.FC<TechIconProps> = ({ size }) => (
+const TypescriptIcon: React.FC<TechIconProps> = ({ size }) => (
   <div style={iconStyles.iconContainerStyle}>
-    <IoLogoJavascript
+    <SiTypescript
       style={{
         ...iconStyles.iconStyle,
         height: size || 80,
         width: size || 80
       }}
     />
-    <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>Javascript</h5>
+    <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>Typescript</h5>
   </div>
 );
 
-export { JavascriptIcon };
+export { TypescriptIcon };
