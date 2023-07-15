@@ -1,13 +1,13 @@
 import React from 'react';
-import { MdInfo } from 'react-icons/md';
+import { TbPackages } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
 import { HeaderIconProps } from './styles';
 import './index.css';
 
-const AboutIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
+const ProductsIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
   <Link to="/about">
     <div className="iconBackground">
-      <MdInfo
+      <TbPackages
         className="icon"
         style={{
           height: size || 80,
@@ -15,10 +15,10 @@ const AboutIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
         }}
       />
       <h5 className="iconText" style={{ fontSize: textSize }}>
-        Info
+        Products
       </h5>
     </div>
   </Link>
 );
 
-export { AboutIcon };
+export { ProductsIcon };

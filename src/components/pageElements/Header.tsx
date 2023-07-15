@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../assets/logo.jpeg';
 import {
-  AboutIcon,
+  ProductsIcon,
   HomeIcon,
   ContactIcon,
   WorkIcon
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
       <div style={styles.headingsDiv}>
         <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
         <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
-        <AboutIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
         <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
       </div>
     </div>
@@ -43,7 +43,8 @@ const styles = {
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'center',
-    margin: '4%'
+    margin: '3%',
+    opacity: 0.85
   } as React.CSSProperties,
   headingsDiv: {
     display: 'flex',
@@ -52,9 +53,10 @@ const styles = {
     paddingBottom: '1%',
     border: '1px solid black',
     borderRadius: 15,
-    marginRight: 5,
-    marginLeft: 5,
+    marginRight: 20,
+    marginLeft: 20,
     background: 'black',
+    opacity: 0.85,
     WebkitBoxShadow: '2px 2px 2px #DFDFDF',
     MozBoxShadow: '2px 2px 2px #DFDFDF',
     boxShadow: '2px 2px 2px #DFDFDF'

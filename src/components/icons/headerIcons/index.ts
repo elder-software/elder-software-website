@@ -1,4 +1,4 @@
 export * from './HomeIcon';
 export * from './WorkIcon';
-export * from './AboutIcon';
+export * from './ProductsIcon';
 export * from './ContactIcon';
