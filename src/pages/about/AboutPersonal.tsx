@@ -4,8 +4,7 @@ import {
   CertificateIcon,
   MusicIcon,
   SurfSkateIcon,
-  ComputerIcon,
-  CircuitBoardAboutIcon
+  ComputerIcon
 } from '../../components/icons/abouticons';
 import { AndroidIcon, AppleIcon } from '../../components/icons/techicons';
 
@@ -21,75 +20,51 @@ const HomeAboutSection: React.FC = () => {
 
   return (
     <div style={styles.mainDiv}>
-      <div style={styles.greyInnerDiv}>
-        <div style={styles.infoDiv}>
-          <div style={styles.rowStyle}>
-            <AndroidIcon size={isMobile ? 30 : 80} />
-            <AppleIcon size={isMobile ? 30 : 80} />
-          </div>
+      <div style={styles.infoDiv}>
+        <div style={styles.rowStyle}>
+          <AndroidIcon size={styles.icon.size} />
+          <AppleIcon size={isMobile ? 30 : styles.icon.size} />
+        </div>
 
-          <div style={styles.rowStyle}>
-            <NewZealandIcon size={80} />
-            <div
-              style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}
-            >
-              New Zealand, Mount Maunganui is where I was born and raised.
-            </div>
+        <div style={styles.rowStyle}>
+          <NewZealandIcon size={styles.icon.size} />
+          <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
+            New Zealand, Mount Maunganui is where I was born and raised.
           </div>
+        </div>
 
-          <div style={styles.rowStyle}>
-            <CertificateIcon size={80} />
-            <div
-              style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}
-            >
-              I studied Electrical and Electronic Engineering and obtained a
-              BEng (Honours) from the University of Canterbury. I directed my
-              course to have a heavy focus on programming and embedded systems.
-            </div>
+        <div style={styles.rowStyle}>
+          <CertificateIcon size={styles.icon.size} />
+          <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
+            I studied Electrical and Electronic Engineering and obtained a BEng
+            (Honours) from the University of Canterbury. I directed my course to
+            have a heavy focus on programming and embedded systems.
           </div>
+        </div>
 
-          <div style={styles.rowStyle}>
-            <CircuitBoardAboutIcon size={80} />
-            <div
-              style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}
-            >
-              After my studies I was employed as a project manager for 2 years
-              at a switchboard company. There I also designed, programmed and
-              manufactured embedded systems.
-            </div>
+        <div style={styles.rowStyle}>
+          <ComputerIcon size={styles.icon.size} />
+          <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
+            Using the skills I developed from my degree and previous work I
+            learnt how to develop mobile applications and have been freelancing
+            this work since.
           </div>
+        </div>
 
-          <div style={styles.rowStyle}>
-            <ComputerIcon size={80} />
-            <div
-              style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}
-            >
-              Using the skills I developed from my degree and previous work I
-              learnt how to develop mobile applications and have been
-              freelancing this work since.
-            </div>
+        <div style={styles.rowStyle}>
+          <MusicIcon size={styles.icon.size} />
+          <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
+            I have played music since a young age, starting on the piano and
+            moving on to the guitar, vocals and drums at a later age. I have a
+            lot of experience composing and performing with bands and by myself.
           </div>
+        </div>
 
-          <div style={styles.rowStyle}>
-            <MusicIcon size={80} />
-            <div
-              style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}
-            >
-              I have played music since a young age, starting on the piano and
-              moving on to the guitar, vocals and drums at a later age. I have a
-              lot of experience composing and performing with bands and by
-              myself.
-            </div>
-          </div>
-
-          <div style={styles.rowStyle}>
-            <SurfSkateIcon size={80} />
-            <div
-              style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}
-            >
-              Growing up close to the beach has resulted in surfing and
-              skateboard being my favourite sports.
-            </div>
+        <div style={styles.rowStyle}>
+          <SurfSkateIcon size={styles.icon.size} />
+          <div style={{ ...styles.rowTextStyle, fontSize: isMobile ? 12 : 16 }}>
+            Growing up close to the beach has resulted in surfing and skateboard
+            being my favourite sports.
           </div>
         </div>
       </div>
@@ -105,20 +80,6 @@ const styles = {
     flexDirection: 'column',
     alignContent: 'center',
     marginTop: 10
-  } as React.CSSProperties,
-  greyInnerDiv: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    marginLeft: 5,
-    marginRight: 5,
-    borderRadius: 15,
-    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
-    MozBoxShadow: '2px 2px 2px #DFDFDF',
-    boxShadow: '2px 2px 2px #DFDFDF',
-    background: '#e8e8e8',
-    padding: 5
   } as React.CSSProperties,
   greyInnerDiv2: {
     display: 'flex',
@@ -157,6 +118,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'column',
     flex: 1,
+    flexDirection: 'column',
     marginLeft: 30,
     marginRight: 30,
     marginBottom: 30
@@ -169,7 +131,10 @@ const styles = {
     fontSize: 16,
     fontWeight: 'lighter',
     opacity: '80%'
-  } as React.CSSProperties
+  } as React.CSSProperties,
+  icon: {
+    size: 80
+  }
 };
 
 export default HomeAboutSection;

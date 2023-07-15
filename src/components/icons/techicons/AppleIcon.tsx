@@ -2,7 +2,7 @@ import React from 'react';
 import { FaApple } from 'react-icons/fa';
 import { iconStyles, TechIconProps } from './styles';
 
-const AppleIcon: React.FC<TechIconProps> = ({ size }) => (
+const AppleIcon: React.FC<TechIconProps> = ({ size, fontSize }) => (
   <div style={iconStyles.iconContainerStyle}>
     <FaApple
       style={{
@@ -11,7 +11,7 @@ const AppleIcon: React.FC<TechIconProps> = ({ size }) => (
         width: size || 80
       }}
     />
-    <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>iOS</h5>
+    <h5 style={{ margin: 0, fontSize }}>iOS</h5>
   </div>
 );
 

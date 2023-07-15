@@ -1,6 +1,5 @@
 import React from 'react';
 import Profile from '../../assets/jamie-photo.jpg';
-import { AppleIcon, AndroidIcon } from '../../components/icons/techicons';
 import HomeAboutSection from './AboutPersonal';
 
 const About: React.FC = () => {
@@ -59,11 +58,6 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        <div style={styles.technologiesDiv}>
-          <AndroidIcon size={isMobile ? 30 : 80} />
-          <AppleIcon size={isMobile ? 30 : 80} />
         </div>
 
         <HomeAboutSection />
@@ -127,22 +121,6 @@ const styles = {
     padding: 30,
     justifyContent: 'center',
     alignContent: 'center'
-  } as React.CSSProperties,
-  technologiesDiv: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'row',
-    alignContent: 'center',
-    border: '1px solid #f2f2f2',
-    marginTop: 0,
-    borderRadius: 15,
-    justifyContent: 'space-around',
-    width: '100%',
-    background: 'white',
-    paddingTop: '5%',
-    paddingBottom: '5%',
-    paddingLeft: '5%',
-    paddingRight: '5%'
   } as React.CSSProperties
 };
 

@@ -3,8 +3,7 @@ import React from 'react';
 import {
   ReactIcon,
   AndroidIcon,
-  AppleIcon,
-  JavaIcon
+  AppleIcon
 } from '../../components/icons/techicons';
 
 export interface WorkInfoProps {
@@ -84,7 +83,7 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'Lautrec Façade Design',
     logoImage: 'Lautrec',
-    technologies: [<AndroidIcon size={80} />, <JavaIcon size={80} />],
+    technologies: [<AndroidIcon size={80} />],
     title: 'Quality Assurance for Site Inspections',
     features: [
       'Automatically formatted PDF generation.',
@@ -106,7 +105,7 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'Structural Coating Services',
     logoImage: 'SCS',
-    technologies: [<AndroidIcon size={80} />, <JavaIcon size={80} />],
+    technologies: [<AndroidIcon size={80} />],
     title: 'Quality Assurance for Site Inspections',
     features: [
       'Automatically formatted PDF generation',

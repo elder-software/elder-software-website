@@ -3,4 +3,3 @@ export * from './CertificateIcon';
 export * from './MusicIcon';
 export * from './SurfSkateIcon';
 export * from './ComputerIcon';
-export * from './CircuitBoardAboutIcon';
