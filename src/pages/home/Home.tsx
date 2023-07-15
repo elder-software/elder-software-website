@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from '../assets/jamie-photo.jpg';
-import { AppleIcon, AndroidIcon } from '../components/icons/techicons';
+import { AppleIcon, AndroidIcon } from '../../components/icons/techicons';
 
 const Home: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);

@@ -6,7 +6,7 @@ import {
   SurfSkateIcon,
   ComputerIcon,
   CircuitBoardAboutIcon
-} from '../components/icons/abouticons';
+} from '../../components/icons/abouticons';
 
 const About: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
