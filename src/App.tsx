@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './components/pageElements/Header';
-import Footer from './components/pageElements/Footer';
-import { Home, Work, Products, Contact } from './pages';
+import Header from './components/shared/Header';
+import Footer from './components/shared/Footer';
+import { About, Work, Products, Contact } from './pages';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const App: React.FC = () => {
           }}
         >
           <Header />
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={About} />
           <Route path="/work" exact component={Work} />
           <Route path="/products" exact component={Products} />
           <Route path="/contact" exact component={Contact} />

@@ -1,9 +1,9 @@
 import React from 'react';
 import Profile from '../../assets/jamie-photo.jpg';
 import { AppleIcon, AndroidIcon } from '../../components/icons/techicons';
-import HomeAboutSection from './HomeAboutSection';
+import HomeAboutSection from './AboutPersonal';
 
-const Home: React.FC = () => {
+const About: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -146,4 +146,4 @@ const styles = {
   } as React.CSSProperties
 };
 
-export default Home;
+export default About;
