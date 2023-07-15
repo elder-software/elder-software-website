@@ -7,6 +7,7 @@ import {
   ComputerIcon,
   CircuitBoardAboutIcon
 } from '../../components/icons/abouticons';
+import { AndroidIcon, AppleIcon } from '../../components/icons/techicons';
 
 const HomeAboutSection: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -22,6 +23,11 @@ const HomeAboutSection: React.FC = () => {
     <div style={styles.mainDiv}>
       <div style={styles.greyInnerDiv}>
         <div style={styles.infoDiv}>
+          <div style={styles.rowStyle}>
+            <AndroidIcon size={isMobile ? 30 : 80} />
+            <AppleIcon size={isMobile ? 30 : 80} />
+          </div>
+
           <div style={styles.rowStyle}>
             <NewZealandIcon size={80} />
             <div

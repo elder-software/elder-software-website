@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About: React.FC = () => {
+const Products: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isMobile, setIsMobile] = React.useState(false);
 
@@ -85,4 +85,4 @@ const styles = {
   } as React.CSSProperties
 };
 
-export default About;
+export default Products;

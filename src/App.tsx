@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './components/pageElements/Header';
 import Footer from './components/pageElements/Footer';
-import { Home, Work, About, Contact } from './pages';
+import { Home, Work, Products, Contact } from './pages';
 
 const App: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const App: React.FC = () => {
           <Header />
           <Route path="/" exact component={Home} />
           <Route path="/work" exact component={Work} />
-          <Route path="/about" exact component={About} />
+          <Route path="/products" exact component={Products} />
           <Route path="/contact" exact component={Contact} />
           <Footer />
         </div>
