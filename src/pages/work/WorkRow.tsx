@@ -18,7 +18,8 @@ const WorkRow: React.FC<Props> = ({
   isMobile
 }) => {
   function importAll(r: __WebpackModuleApi.RequireContext) {
-    const images = {} as any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const images: any = {};
     r.keys().forEach((item) => {
       images[item.replace(/^\.\//, '')] = r(item);
     });
