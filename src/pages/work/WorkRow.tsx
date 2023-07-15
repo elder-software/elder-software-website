@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import { WorkInfoProps } from '../../assets/workInfo/workInfo';
+import { WorkInfoProps } from './WorkInfo';
 
 interface Props extends WorkInfoProps {
   isMobile: boolean;
@@ -18,7 +18,6 @@ const WorkRow: React.FC<Props> = ({
   isMobile
 }) => {
   function importAll(r: __WebpackModuleApi.RequireContext) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const images = {} as any;
     r.keys().forEach((item) => {
       images[item.replace(/^\.\//, '')] = r(item);
