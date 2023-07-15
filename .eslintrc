@@ -7,6 +7,7 @@
     "quotes": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "warn"
   }
 }

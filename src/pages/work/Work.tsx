@@ -1,6 +1,6 @@
 import React from 'react';
-import WorkRow from '../common/pageElements/WorkRow';
-import { workInfo } from '../assets/workInfo/workInfo';
+import WorkRow from './WorkRow';
+import { workInfo } from '../../assets/workInfo/workInfo';
 
 const Work: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);

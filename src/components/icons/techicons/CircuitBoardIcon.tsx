@@ -1,10 +1,10 @@
 import React from 'react';
-import { GoCircuitBoard } from 'react-icons/go';
+import { GoCircle } from 'react-icons/go';
 import { iconStyles, TechIconProps } from './styles';
 
 const CircuitBoardIcon: React.FC<TechIconProps> = ({ size }) => (
   <div style={iconStyles.iconContainerStyle}>
-    <GoCircuitBoard
+    <GoCircle
       style={{
         ...iconStyles.iconStyle,
         height: size || 80,

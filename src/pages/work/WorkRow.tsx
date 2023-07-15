@@ -21,7 +21,7 @@ const WorkRow: React.FC<Props> = ({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const images = {} as any;
     r.keys().forEach((item) => {
-      images[item.replace('./', '')] = r(item);
+      images[item.replace(/^\.\//, '')] = r(item);
     });
     return images;
   }

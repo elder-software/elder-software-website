@@ -24,6 +24,10 @@ module.exports = {
             loader: 'file-loader',
             options: {
               esModule: false,
+              outputPath: '',
+              compilerOptions: {
+                noEmit: false,
+              }
             },
           },
         ],

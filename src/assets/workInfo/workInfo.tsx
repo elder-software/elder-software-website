@@ -5,7 +5,7 @@ import {
   AndroidIcon,
   AppleIcon,
   JavaIcon
-} from '../../common/icons/techicons';
+} from '../../components/icons/techicons';
 
 export interface WorkInfoProps {
   name: string;

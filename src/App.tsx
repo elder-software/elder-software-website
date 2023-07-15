@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Header from './components/common/pageElements/Header';
-import Footer from './components/common/pageElements/Footer';
-import { Home, Work, About, Contact } from './components/pages';
+import Header from './components/pageElements/Header';
+import Footer from './components/pageElements/Footer';
+import { Home, Work, About, Contact } from './pages';
 
 const App: React.FC = () => {
   return (

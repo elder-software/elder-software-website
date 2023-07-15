@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmailIcon, PhoneIcon } from '../common/icons/contacticons';
+import { EmailIcon, PhoneIcon } from '../components/icons/contacticons';
 
 const Contact: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
