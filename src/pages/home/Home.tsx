@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from '../../assets/jamie-photo.jpg';
 import { AppleIcon, AndroidIcon } from '../../components/icons/techicons';
+import HomeAboutSection from './HomeAboutSection';
 
 const Home: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -64,6 +65,8 @@ const Home: React.FC = () => {
           <AndroidIcon size={isMobile ? 30 : 80} />
           <AppleIcon size={isMobile ? 30 : 80} />
         </div>
+
+        <HomeAboutSection />
       </div>
     </div>
   );

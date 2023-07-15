@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     <div>
       <div style={styles.logoDiv}>
         <img
-          style={{ width: isMobile ? '25%' : '15%', height: '100%' }}
+          style={{ width: isMobile ? '25%' : '12%', height: '100%' }}
           src={Logo}
           alt="logo"
         />

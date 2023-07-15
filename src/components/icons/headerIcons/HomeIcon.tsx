@@ -1,5 +1,5 @@
 import React from 'react';
-import { TiHome } from 'react-icons/ti';
+import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { HeaderIconProps } from './styles';
 import './index.css';
@@ -7,7 +7,7 @@ import './index.css';
 const HomeIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
   <Link to="/">
     <div className="iconBackground">
-      <TiHome
+      <FaUserAlt
         className="icon"
         style={{
           height: size || 80,

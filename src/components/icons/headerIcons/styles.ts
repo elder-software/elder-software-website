@@ -14,6 +14,6 @@ export const headerIconStyles = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    alignItems: 'center',
-  } as React.CSSProperties, 
-}
+    alignItems: 'center'
+  } as React.CSSProperties
+};
