@@ -2,8 +2,8 @@ import React from 'react';
 import { GiWaveSurfer } from 'react-icons/gi';
 import { iconStyles, AboutIconProps } from './styles';
 
-const SurfSkateIcon: React.FC<AboutIconProps> = ({ size }) => (
-  <div style={iconStyles.iconContainerStyle}>
+const SurfSkateIcon: React.FC<AboutIconProps> = ({ size, onMouseEnter }) => (
+  <div style={iconStyles.iconContainerStyle} onMouseEnter={onMouseEnter}>
     <GiWaveSurfer
       style={{
         ...iconStyles.iconStyle,

@@ -57,10 +57,9 @@ const About: React.FC = () => {
                 </h1>
               </div>
             </div>
+            <HomeAboutSection />
           </div>
         </div>
-
-        <HomeAboutSection />
       </div>
     </div>
   );
@@ -114,7 +113,8 @@ const styles = {
     width: '38%',
     borderTopLeftRadius: 15,
     borderBottomLeftRadius: 15,
-    alignSelf: 'left'
+    alignSelf: 'left',
+    opacity: 0.95
   } as React.CSSProperties,
   headingTextDiv: {
     width: '62%',

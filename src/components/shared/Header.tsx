@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     <div>
       <div style={styles.logoDiv}>
         <img
-          style={{ width: isMobile ? '25%' : '12%', height: '100%' }}
+          style={{ width: isMobile ? '20%' : '10%', height: '100%' }}
           src={Logo}
           alt="logo"
         />
@@ -43,7 +43,7 @@ const styles = {
     flexDirection: 'row',
     flex: 1,
     justifyContent: 'center',
-    margin: '3%',
+    margin: '2%',
     opacity: 0.85
   } as React.CSSProperties,
   headingsDiv: {

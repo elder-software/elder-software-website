@@ -2,8 +2,8 @@ import React from 'react';
 import { FaMusic } from 'react-icons/fa';
 import { iconStyles, AboutIconProps } from './styles';
 
-const MusicIcon: React.FC<AboutIconProps> = ({ size }) => (
-  <div style={iconStyles.iconContainerStyle}>
+const MusicIcon: React.FC<AboutIconProps> = ({ size, onMouseEnter }) => (
+  <div style={iconStyles.iconContainerStyle} onMouseEnter={onMouseEnter}>
     <FaMusic
       style={{
         ...iconStyles.iconStyle,
