@@ -31,7 +31,7 @@ const About: React.FC = () => {
               }}
             >
               <img
-                style={styles.profilePicDiv}
+                style={styles.profilePic}
                 src={Profile}
                 alt="james-potrait"
               />
@@ -96,8 +96,8 @@ const styles = {
     flexDirection: 'column',
     border: '0px solid lightgrey',
     marginBottom: 0,
-    paddingTop: '5%',
-    paddingBottom: '5%',
+    paddingTop: '3%',
+    paddingBottom: '3%',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15
   } as React.CSSProperties,
@@ -110,7 +110,7 @@ const styles = {
     background: 'white',
     width: '100%'
   } as React.CSSProperties,
-  profilePicDiv: {
+  profilePic: {
     width: '38%',
     borderTopLeftRadius: 15,
     borderBottomLeftRadius: 15,
