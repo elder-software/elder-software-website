@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaMusic } from 'react-icons/fa';
 import { iconStyles, AboutIconProps } from './styles';
 
-const MusicIcon: React.FC<AboutIconProps> = ({ size, onMouseEnter }) => (
-  <div style={iconStyles.iconContainerStyle} onMouseEnter={onMouseEnter}>
-    <FaMusic
-      style={{
-        ...iconStyles.iconStyle,
-        height: size || 80,
-        width: size || 80
+const MusicIcon: React.FC<AboutIconProps> = ({ size, onMouseEnter }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      style={iconStyles.iconContainerStyle}
+      onMouseEnter={() => {
+        setIsHovered(true);
+        onMouseEnter();
       }}
-    />
-  </div>
-);
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <FaMusic
+        style={{
+          ...iconStyles.iconStyle,
+          height: size || 80,
+          width: size || 80,
+          opacity: isHovered ? 1.0 : 0.5
+        }}
+      />
+    </div>
+  );
+};
 
 export { MusicIcon };

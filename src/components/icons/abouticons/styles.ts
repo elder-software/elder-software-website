@@ -13,14 +13,16 @@ export const iconStyles: AboutIconStyles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    opacity: '70%'
+    opacity: '70%',
+    transition: 'background-color 0.2s ease'
   },
   iconStyle: {
     width: 80,
     height: 80,
     padding: 20,
-    border: '1px solid #DFDFDF',
+    border: '3px solid #DFDFDF',
     backgroundColor: 'white',
-    borderRadius: 15
+    borderRadius: 15,
+    transition: 'background-color 0.2s ease'
   }
 };

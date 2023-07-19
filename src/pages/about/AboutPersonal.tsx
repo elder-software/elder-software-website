@@ -50,7 +50,7 @@ const HomeAboutSection: React.FC = () => {
           />
         </div>
 
-        <div style={{ ...styles.rowTextStyle }}>
+        <div style={{ ...styles.rowTextStyle, height: 200 }}>
           <body style={styles.infoTextStyle}>{infoText}</body>
         </div>
       </div>
@@ -103,7 +103,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     flexWrap: 'wrap',
-    margin: 48
+    margin: 54
   } as React.CSSProperties,
   rowTextStyle: {
     display: 'flex',
@@ -116,7 +116,7 @@ const styles = {
     margin: 50
   } as React.CSSProperties,
   infoTextStyle: {
-    fontSize: 24,
+    fontSize: 20,
     opacity: '80%',
     textAlign: 'center'
   } as React.CSSProperties,
