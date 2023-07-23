@@ -1,6 +1,7 @@
 export interface AboutIconProps {
   size?: number;
   onMouseEnter: () => void;
+  isFocused: boolean;
 }
 
 type AboutIconStyles = {
