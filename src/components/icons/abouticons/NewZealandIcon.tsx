@@ -1,29 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NZIcon from '../../../assets/icons/NewZealandIcon.png';
 import { iconStyles, AboutIconProps } from './styles';
 
 const NewZealandIcon: React.FC<AboutIconProps> = ({
   size,
   onMouseEnter,
+  onMouseLeave,
   isFocused
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
       style={iconStyles.iconContainerStyle}
-      onMouseEnter={() => {
-        setIsHovered(true);
-        onMouseEnter();
-      }}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <img
         style={{
           ...iconStyles.iconStyle,
           height: size || 80,
           width: size || 80,
-          opacity: isHovered || isFocused ? 1.0 : 0.5
+          opacity: isFocused ? 1.0 : 0.5
         }}
         src={NZIcon}
         alt="NewZealand"

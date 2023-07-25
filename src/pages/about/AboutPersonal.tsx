@@ -20,18 +20,23 @@ const HomeAboutSection: React.FC = () => {
   }, []);
   const resize = () => setIsMobile(window.innerWidth <= 1000); */
 
-  const onMouseEnter = (text: string) => {
+  const onMouseEnter = (text: string, iconIndex: number) => {
     setIconIsHovered(true);
     setInfoText(text);
+    setFocusedIcon(iconIndex);
   };
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setFocusedIcon((focusedIcon + 1) % 5);
-    }, 2000);
-    setInfoText(text[focusedIcon]);
+      if (!iconIsHovered) {
+        setFocusedIcon((focusedIcon + 1) % 5);
+      }
+    }, 2500);
+    if (!iconIsHovered) {
+      setInfoText(text[focusedIcon]);
+    }
     return () => clearInterval(interval);
-  }, [focusedIcon]);
+  }, [focusedIcon, iconIsHovered]);
 
   return (
     <div style={styles.mainDiv}>
@@ -41,28 +46,33 @@ const HomeAboutSection: React.FC = () => {
           <AppleIcon size={isMobile ? 30 : styles.icon.size} /> */}
           <NewZealandIcon
             size={styles.icon.size}
-            onMouseEnter={() => onMouseEnter(text[0])}
-            isFocused={focusedIcon === 0 && !iconIsHovered}
+            onMouseEnter={() => onMouseEnter(text[0], 0)}
+            onMouseLeave={() => setIconIsHovered(false)}
+            isFocused={focusedIcon === 0}
           />
           <CertificateIcon
             size={styles.icon.size}
-            onMouseEnter={() => onMouseEnter(text[1])}
-            isFocused={focusedIcon === 1 && !iconIsHovered}
+            onMouseEnter={() => onMouseEnter(text[1], 1)}
+            onMouseLeave={() => setIconIsHovered(false)}
+            isFocused={focusedIcon === 1}
           />
           <ComputerIcon
             size={styles.icon.size}
-            onMouseEnter={() => onMouseEnter(text[2])}
-            isFocused={focusedIcon === 2 && !iconIsHovered}
+            onMouseEnter={() => onMouseEnter(text[2], 2)}
+            onMouseLeave={() => setIconIsHovered(false)}
+            isFocused={focusedIcon === 2}
           />
           <MusicIcon
             size={styles.icon.size}
-            onMouseEnter={() => onMouseEnter(text[3])}
-            isFocused={focusedIcon === 3 && !iconIsHovered}
+            onMouseEnter={() => onMouseEnter(text[3], 3)}
+            onMouseLeave={() => setIconIsHovered(false)}
+            isFocused={focusedIcon === 3}
           />
           <SurfSkateIcon
             size={styles.icon.size}
-            onMouseEnter={() => onMouseEnter(text[4])}
-            isFocused={focusedIcon === 4 && !iconIsHovered}
+            onMouseEnter={() => onMouseEnter(text[4], 4)}
+            onMouseLeave={() => setIconIsHovered(false)}
+            isFocused={focusedIcon === 4}
           />
         </div>
 
@@ -127,12 +137,13 @@ const styles = {
     opacity: '80%',
     margin: 50,
     minHeight: 200,
-    transition: 'opacity 0.3s ease' /* Adjust the duration as needed */
+    transition: 'opacity 1.0s ease'
   } as React.CSSProperties,
   infoTextStyle: {
     fontSize: 20,
     opacity: '80%',
-    textAlign: 'center'
+    textAlign: 'center',
+    transition: 'opacity 1.0s ease'
   } as React.CSSProperties,
   icon: {
     size: 80

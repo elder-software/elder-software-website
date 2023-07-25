@@ -1,33 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MdComputer } from 'react-icons/md';
 import { iconStyles, AboutIconProps } from './styles';
 
 const ComputerIcon: React.FC<AboutIconProps> = ({
   size,
   onMouseEnter,
+  onMouseLeave,
   isFocused
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      style={iconStyles.iconContainerStyle}
-      onMouseEnter={() => {
-        setIsHovered(true);
-        onMouseEnter();
+}) => (
+  <div
+    style={iconStyles.iconContainerStyle}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+  >
+    <MdComputer
+      style={{
+        ...iconStyles.iconStyle,
+        height: size || 80,
+        width: size || 80,
+        opacity: isFocused ? 1.0 : 0.5
       }}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <MdComputer
-        style={{
-          ...iconStyles.iconStyle,
-          height: size || 80,
-          width: size || 80,
-          opacity: isHovered || isFocused ? 1.0 : 0.5
-        }}
-      />
-    </div>
-  );
-};
+    />
+  </div>
+);
 
 export { ComputerIcon };
