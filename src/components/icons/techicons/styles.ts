@@ -1,6 +1,10 @@
 export interface TechIconProps {
   size?: number;
   fontSize?: number;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  isFocused?: boolean;
+  showLabel?: boolean;
 }
 
 type IconStyles = {

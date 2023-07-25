@@ -3,10 +3,9 @@ import {
   NewZealandIcon,
   CertificateIcon,
   MusicIcon,
-  SurfSkateIcon,
-  ComputerIcon
+  SurfSkateIcon
 } from '../../components/icons/abouticons';
-// import { AndroidIcon, AppleIcon } from '../../components/icons/techicons';
+import { AndroidIcon } from '../../components/icons/techicons';
 
 const HomeAboutSection: React.FC = () => {
   const [infoText, setInfoText] = React.useState(text[0]);
@@ -42,21 +41,21 @@ const HomeAboutSection: React.FC = () => {
     <div style={styles.mainDiv}>
       <div style={styles.infoDiv}>
         <div style={styles.allIconsContainer}>
-          {/* <AndroidIcon size={styles.icon.size} />
-          <AppleIcon size={isMobile ? 30 : styles.icon.size} /> */}
+          {/* <AppleIcon size={isMobile ? 30 : styles.icon.size} /> */}
           <NewZealandIcon
             size={styles.icon.size}
             onMouseEnter={() => onMouseEnter(text[0], 0)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 0}
           />
-          <CertificateIcon
+          <AndroidIcon
             size={styles.icon.size}
             onMouseEnter={() => onMouseEnter(text[1], 1)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 1}
+            showLabel={false}
           />
-          <ComputerIcon
+          <CertificateIcon
             size={styles.icon.size}
             onMouseEnter={() => onMouseEnter(text[2], 2)}
             onMouseLeave={() => setIconIsHovered(false)}
@@ -86,16 +85,13 @@ const HomeAboutSection: React.FC = () => {
 
 const text = [
   'New Zealand, Mount Maunganui is where I was born and raised.',
+  'I am an Android developer with 6 years experience working on a variety of products in many sectors.',
   'I studied Electrical and Electronic Engineering and obtained a BEng ' +
-    '(Honours) from the University of Canterbury. I directed my course to' +
-    ' have a heavy focus on programming and embedded systems.',
-  'Using the skills I developed from my degree and previous work I ' +
-    'learnt how to develop mobile applications and have been freelancing ' +
-    'this work since.',
-  'I have played music since a young age, starting on the piano and ' +
-    'moving on to the guitar, vocals and drums at a later age. I have a ' +
+    '(Honours) from the University of Canterbury. I directed my course to ' +
+    'have a heavy focus on programming and embedded systems.',
+  'I have played music since a young age, competent at guitar, vocals and drums. I have a ' +
     'lot of experience composing and performing with bands and by myself.',
-  'Growing up close to the beach has resulted in surfing and skateboard' +
+  'Growing up close to the beach has resulted in surfing and skateboarding ' +
     'being my favourite sports.'
 ];
 
