@@ -17,9 +17,11 @@ const WorkRow: React.FC<Props> = ({
   testimonialAuthor,
   isMobile
 }) => {
-  function importAll(r: __WebpackModuleApi.RequireContext) {
+  function importAll(
+    r: __WebpackModuleApi.RequireContext
+  ): Record<string, string> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const images: any = {};
+    const images: Record<string, string> = {};
     r.keys().forEach((item) => {
       images[item.replace(/^\.\//, '')] = r(item);
     });

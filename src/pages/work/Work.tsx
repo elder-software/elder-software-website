@@ -7,7 +7,7 @@ const Work: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <div>
+    <div style={{ margin: 15 }}>
       {workInfo.map((item) => {
         return (
           <WorkRow
