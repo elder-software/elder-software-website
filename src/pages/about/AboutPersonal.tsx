@@ -13,12 +13,12 @@ const HomeAboutSection: React.FC = () => {
   const [focusedIcon, setFocusedIcon] = React.useState(0);
   const [iconIsHovered, setIconIsHovered] = React.useState(false);
 
-  /* const [isMobile, setIsMobile] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
     window.addEventListener('resize', resize);
     resize();
   }, []);
-  const resize = () => setIsMobile(window.innerWidth <= 1000); */
+  const resize = () => setIsMobile(window.innerWidth <= 1000);
 
   const onMouseEnter = (text: string, iconIndex: number) => {
     setIconIsHovered(true);
@@ -43,32 +43,32 @@ const HomeAboutSection: React.FC = () => {
       <div style={styles.infoDiv}>
         <div style={styles.allIconsContainer}>
           <NewZealandIcon
-            size={styles.icon.size}
+            size={isMobile ? 40 : 70}
             onMouseEnter={() => onMouseEnter(text[0], 0)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 0}
           />
           <AndroidIcon
-            size={styles.icon.size}
+            size={isMobile ? 40 : 70}
             onMouseEnter={() => onMouseEnter(text[1], 1)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 1}
             showLabel={false}
           />
           <CertificateIcon
-            size={styles.icon.size}
+            size={isMobile ? 40 : 70}
             onMouseEnter={() => onMouseEnter(text[2], 2)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 2}
           />
           <MusicIcon
-            size={styles.icon.size}
+            size={isMobile ? 40 : 70}
             onMouseEnter={() => onMouseEnter(text[3], 3)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 3}
           />
           <SurfSkateIcon
-            size={styles.icon.size}
+            size={isMobile ? 40 : 70}
             onMouseEnter={() => onMouseEnter(text[4], 4)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 4}
@@ -76,7 +76,14 @@ const HomeAboutSection: React.FC = () => {
         </div>
 
         <div style={{ ...styles.rowTextStyle }}>
-          <p key={infoText} className="fade-in-out">
+          <p
+            key={infoText}
+            className="fade-in-out"
+            style={{
+              fontSize: isMobile ? 10 : 20,
+              alignSelf: 'center'
+            }}
+          >
             {infoText}
           </p>
         </div>
@@ -111,7 +118,6 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     border: '0px solid #f2f2f2',
-    marginTop: 0,
     borderRadius: 15,
     width: '100%',
     paddingLeft: '5%',
@@ -123,29 +129,28 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     flexWrap: 'wrap',
-    margin: 54
+    padding: '5%',
+    paddingBottom: 0,
+    paddingTop: '15%'
   } as React.CSSProperties,
   rowTextStyle: {
     display: 'flex',
     alignSelf: 'center',
     justifyContent: 'center',
-    marginLeft: 30,
-    fontSize: 16,
+    alignContent: 'center',
     fontWeight: 'lighter',
     opacity: '80%',
-    margin: 50,
     minHeight: 200,
+    padding: '10%',
     transition: 'opacity 1.0s ease'
   } as React.CSSProperties,
   infoTextStyle: {
     fontSize: 20,
     opacity: '80%',
     textAlign: 'center',
-    transition: 'opacity 1.0s ease'
-  } as React.CSSProperties,
-  icon: {
-    size: 80
-  }
+    transition: 'opacity 1.0s ease',
+    alignSelf: 'center'
+  } as React.CSSProperties
 };
 
 export default HomeAboutSection;

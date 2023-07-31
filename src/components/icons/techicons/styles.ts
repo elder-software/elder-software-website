@@ -22,7 +22,7 @@ export const iconStyles: IconStyles = {
   iconStyle: {
     width: 80,
     height: 80,
-    padding: 16,
+    padding: '15%',
     border: '1px solid #DFDFDF',
     backgroundColor: 'white',
     borderRadius: '15%'
