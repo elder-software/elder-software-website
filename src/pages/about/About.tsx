@@ -1,16 +1,10 @@
 import React from 'react';
 import Profile from '../../assets/jamie-photo.jpg';
 import HomeAboutSection from './AboutPersonal';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const About: React.FC = () => {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', resize);
-    resize();
-  }, []);
-
-  const resize = () => setIsMobile(window.innerWidth <= 900);
+  const isMobile = useIsMobile();
 
   return (
     <div style={styles.mainContainerDiv}>

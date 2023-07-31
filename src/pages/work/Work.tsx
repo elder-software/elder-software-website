@@ -1,16 +1,10 @@
 import React from 'react';
 import WorkRow from './WorkRow';
 import { workInfo } from './WorkInfo';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const Work: React.FC = () => {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  const resize = (): void => setIsMobile(window.innerWidth <= 1000);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', resize);
-    resize();
-  }, []);
+  const isMobile = useIsMobile();
 
   return (
     <div>

@@ -7,18 +7,13 @@ import {
 } from '../../components/icons/abouticons';
 import { AndroidIcon } from '../../components/icons/techicons';
 import './aboutPersonal.css';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const HomeAboutSection: React.FC = () => {
   const [infoText, setInfoText] = React.useState(text[0]);
   const [focusedIcon, setFocusedIcon] = React.useState(0);
   const [iconIsHovered, setIconIsHovered] = React.useState(false);
-
-  const [isMobile, setIsMobile] = React.useState(false);
-  React.useEffect(() => {
-    window.addEventListener('resize', resize);
-    resize();
-  }, []);
-  const resize = () => setIsMobile(window.innerWidth <= 1000);
+  const isMobile = useIsMobile();
 
   const onMouseEnter = (text: string, iconIndex: number) => {
     setIconIsHovered(true);
