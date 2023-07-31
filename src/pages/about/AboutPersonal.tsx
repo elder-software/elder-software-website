@@ -6,6 +6,7 @@ import {
   SurfSkateIcon
 } from '../../components/icons/abouticons';
 import { AndroidIcon } from '../../components/icons/techicons';
+import './aboutPersonal.css';
 
 const HomeAboutSection: React.FC = () => {
   const [infoText, setInfoText] = React.useState(text[0]);
@@ -30,7 +31,7 @@ const HomeAboutSection: React.FC = () => {
       if (!iconIsHovered) {
         setFocusedIcon((focusedIcon + 1) % 5);
       }
-    }, 2500);
+    }, 4000);
     if (!iconIsHovered) {
       setInfoText(text[focusedIcon]);
     }
@@ -41,7 +42,6 @@ const HomeAboutSection: React.FC = () => {
     <div style={styles.mainDiv}>
       <div style={styles.infoDiv}>
         <div style={styles.allIconsContainer}>
-          {/* <AppleIcon size={isMobile ? 30 : styles.icon.size} /> */}
           <NewZealandIcon
             size={styles.icon.size}
             onMouseEnter={() => onMouseEnter(text[0], 0)}
@@ -76,7 +76,9 @@ const HomeAboutSection: React.FC = () => {
         </div>
 
         <div style={{ ...styles.rowTextStyle }}>
-          <body style={styles.infoTextStyle}>{infoText}</body>
+          <p key={infoText} className="fade-in-out">
+            {infoText}
+          </p>
         </div>
       </div>
     </div>
