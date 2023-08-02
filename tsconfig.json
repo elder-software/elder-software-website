@@ -25,6 +25,6 @@
     "isolatedModules": true,
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
-    "noEmit": true
+    "noEmit": false
   }
 }
