@@ -19,25 +19,41 @@ const Work: React.FC = () => {
 
   return (
     <div style={{ margin: 15 }}>
-      {workInfo.map((item) => {
-        return (
-          <WorkRow
-            key={item.name}
-            name={item.name}
-            icon={iconImages(item.icon)}
-            technologies={item.technologies}
-            title={item.title}
-            description={item.description}
-            screenshots={item.screenshots.map((image) =>
-              screenShotImages(image)
-            )}
-            testimonial={item.testimonial}
-            testimonialAuthor={item.testimonialAuthor}
-          />
-        );
-      })}
+      {arrayGroupBy(workInfo, 2).map((itemGroup) => (
+        <div
+          key={itemGroup.map((value) => value.name).join()}
+          style={{
+            display: 'flex',
+            flexDirection: 'row'
+          }}
+        >
+          {itemGroup.map((item) => (
+            <WorkRow
+              key={item.name}
+              name={item.name}
+              icon={iconImages(item.icon)}
+              technologies={item.technologies}
+              title={item.title}
+              description={item.description}
+              screenshots={item.screenshots.map((image) =>
+                screenShotImages(image)
+              )}
+              testimonial={item.testimonial}
+              testimonialAuthor={item.testimonialAuthor}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
+
+function arrayGroupBy<T>(array: T[], groupSize: number) {
+  const groups: T[][] = [];
+  for (let i = 0; i < array.length; i += groupSize) {
+    groups.push(array.slice(i, i + groupSize));
+  }
+  return groups;
+}
 
 export default Work;

@@ -31,6 +31,34 @@ export const workInfo: WorkInfoProps[] = [
     screenshots: ['./KFISS1.png', './KFISS2.png'],
     testimonial: '',
     testimonialAuthor: ''
+  },
+  {
+    name: 'ABC iView',
+    title: 'iView Streaming Application',
+    icon: './iView.jpeg',
+    technologies: [
+      <AndroidIcon key="test" size={80} />,
+      <TvIcon key="tv" />,
+      <MobileIcon key="mobile" />
+    ],
+    description: 'This is a description',
+    screenshots: ['./KFISS1.png', './KFISS2.png'],
+    testimonial: '',
+    testimonialAuthor: ''
+  },
+  {
+    name: 'ABC iView',
+    title: 'iView Streaming Application',
+    icon: './iView.jpeg',
+    technologies: [
+      <AndroidIcon key="test" size={80} />,
+      <TvIcon key="tv" />,
+      <MobileIcon key="mobile" />
+    ],
+    description: 'This is a description',
+    screenshots: ['./KFISS1.png', './KFISS2.png'],
+    testimonial: '',
+    testimonialAuthor: ''
   }
 ];
 
