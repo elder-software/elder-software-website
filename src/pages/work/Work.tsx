@@ -48,7 +48,7 @@ const Work: React.FC = () => {
   );
 };
 
-function arrayGroupBy<T>(array: T[], groupSize: number) {
+function arrayGroupBy<T>(array: T[], groupSize: number): T[][] {
   const groups: T[][] = [];
   for (let i = 0; i < array.length; i += groupSize) {
     groups.push(array.slice(i, i + groupSize));
