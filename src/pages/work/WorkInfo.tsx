@@ -11,7 +11,6 @@ export interface WorkInfoProps {
   icon: string;
   technologies: React.ReactNode[];
   description: string;
-  title: string;
   screenshots: string[];
   testimonial?: string;
   testimonialAuthor?: string;
@@ -20,7 +19,6 @@ export interface WorkInfoProps {
 export const workInfo: WorkInfoProps[] = [
   {
     name: 'ABC iView',
-    title: 'iView Streaming Application',
     icon: './iView.jpeg',
     technologies: [
       <AndroidIcon key="test" size={80} />,
@@ -34,7 +32,6 @@ export const workInfo: WorkInfoProps[] = [
   },
   {
     name: 'ABC iView',
-    title: 'iView Streaming Application',
     icon: './iView.jpeg',
     technologies: [
       <AndroidIcon key="test" size={80} />,
@@ -48,7 +45,6 @@ export const workInfo: WorkInfoProps[] = [
   },
   {
     name: 'ABC iView',
-    title: 'iView Streaming Application',
     icon: './iView.jpeg',
     technologies: [
       <AndroidIcon key="test" size={80} />,

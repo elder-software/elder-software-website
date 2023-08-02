@@ -1,19 +1,18 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { WorkInfoProps } from './WorkInfo';
-import useIsMobile from '../../hooks/useIsMobile';
+// import useIsMobile from '../../hooks/useIsMobile';
 
 const WorkRow: React.FC<WorkInfoProps> = ({
   name,
   icon,
   technologies,
   description,
-  title,
   screenshots,
   testimonial,
   testimonialAuthor
 }) => {
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
 
   return (
     <div style={styles.fullRowDiv}>
@@ -21,7 +20,10 @@ const WorkRow: React.FC<WorkInfoProps> = ({
         <div
           style={{
             ...styles.rowHeadingDiv,
-            alignSelf: isMobile ? 'stretch' : 'start'
+            display: 'flex',
+            flexDirection: 'row',
+            flex: 1,
+            justifyContent: 'center'
           }}
         >
           <img
@@ -43,13 +45,11 @@ const WorkRow: React.FC<WorkInfoProps> = ({
         </div>
       </div>
 
-      <h4 style={{ marginTop: 0, marginLeft: 30, fontSize: 16 }}>{title}</h4>
-
       <div style={styles.workDetailsDiv}>
         <div
           style={{
             display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row'
+            flexDirection: 'column'
           }}
         >
           <div style={styles.appFeaturesDiv}>{description}</div>
@@ -114,6 +114,7 @@ const styles = {
   rowHeadingDiv: {
     display: 'flex',
     flexDirection: 'row',
+    flex: 1,
     backgroundColor: 'white',
     margin: 30,
     padding: 20,
@@ -129,11 +130,13 @@ const styles = {
   } as React.CSSProperties,
   technologiesDiv: {
     display: 'flex',
-    alignSelf: 'start',
     flexDirection: 'row',
-    paddingInlineStart: 30,
-    paddingLeft: 30,
-    paddingBottom: 30
+    justifyItems: 'stretch',
+    justifyContent: 'space-around',
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 10,
+    marginBottom: 10
   } as React.CSSProperties,
   workDetailsDiv: {
     display: 'flex',

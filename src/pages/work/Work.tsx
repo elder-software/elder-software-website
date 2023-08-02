@@ -33,7 +33,6 @@ const Work: React.FC = () => {
               name={item.name}
               icon={iconImages(item.icon)}
               technologies={item.technologies}
-              title={item.title}
               description={item.description}
               screenshots={item.screenshots.map((image) =>
                 screenShotImages(image)
