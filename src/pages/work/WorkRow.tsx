@@ -1,22 +1,19 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { WorkInfoProps } from './WorkInfo';
+import useIsMobile from '../../hooks/useIsMobile';
 
-interface Props extends WorkInfoProps {
-  isMobile: boolean;
-}
-
-const WorkRow: React.FC<Props> = ({
+const WorkRow: React.FC<WorkInfoProps> = ({
   name,
-  logoImage,
+  icon,
   technologies,
-  features,
-  featureIcons,
+  description,
   title,
   testimonial,
-  testimonialAuthor,
-  isMobile
+  testimonialAuthor
 }) => {
+  const isMobile = useIsMobile();
+
   function importAll(
     r: __WebpackModuleApi.RequireContext
   ): Record<string, string> {
@@ -28,40 +25,9 @@ const WorkRow: React.FC<Props> = ({
     return images;
   }
 
-  const renderWorkInfo = () => {
-    const rows: React.ReactNode[] = [];
-
-    const featureImages = importAll(
-      require.context('../../assets/icons', true, /\.(png|jpe?g|svg)$/)
-    );
-
-    features.forEach((value, index) => {
-      rows.push(
-        <div style={styles.workInfoDiv}>
-          <img
-            style={{ width: 30, height: 30, alignSelf: 'center' }}
-            src={featureImages[`${featureIcons[index]}.png`]}
-            alt={logoImage}
-          />
-          <div
-            style={{
-              alignSelf: 'center',
-              marginInlineStart: 10,
-              marginLeft: 10
-            }}
-          >
-            {value}
-          </div>
-        </div>
-      );
-    });
-
-    return rows;
-  };
-
-  const companyLogoImages = importAll(
-    require.context('../../assets/companyLogos', true, /\.(png|jpe?g|svg)$/)
-  );
+  // const companyLogoImages = importAll(
+  //   require.context('../../assets/companyLogos', true, /\.(png|jpe?g|svg)$/)
+  // );
   const screenshotImages = importAll(
     require.context('../../assets/screenshots', true, /\.(png|jpe?g|svg)$/)
   );
@@ -77,8 +43,8 @@ const WorkRow: React.FC<Props> = ({
         >
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
-            src={companyLogoImages[`${logoImage}.png`]}
-            alt={logoImage}
+            src={icon}
+            alt={icon}
           />
           <h1 style={styles.companyNameText}>{name}</h1>
         </div>
@@ -103,18 +69,18 @@ const WorkRow: React.FC<Props> = ({
             flexDirection: isMobile ? 'column' : 'row'
           }}
         >
-          <div style={styles.appFeaturesDiv}>{renderWorkInfo()}</div>
+          <div style={styles.appFeaturesDiv}>{description}</div>
 
           <div style={styles.screenshotsDiv}>
             <img
               style={styles.screenshotStyle}
-              src={screenshotImages[`${logoImage}SS1.png`]}
-              alt={logoImage}
+              src={screenshotImages[`${icon}SS1.png`]}
+              alt={icon}
             />
             <img
               style={styles.screenshotStyle}
-              src={screenshotImages[`${logoImage}SS2.png`]}
-              alt={logoImage}
+              src={screenshotImages[`${icon}SS2.png`]}
+              alt={icon}
             />
           </div>
         </div>
@@ -233,4 +199,5 @@ const styles = {
     alignSelf: 'center'
   } as React.CSSProperties
 };
+
 export default WorkRow;

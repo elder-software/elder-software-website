@@ -1,22 +1,30 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
-import {
-  ReactIcon,
-  AndroidIcon,
-  AppleIcon
-} from '../../components/icons/techicons';
+import { AndroidIcon } from '../../components/icons/techicons';
 
 export interface WorkInfoProps {
   name: string;
-  logoImage: string;
+  icon: string;
   technologies: React.ReactNode[];
-  features: string[];
-  featureIcons: string[];
+  description: string;
   title: string;
   testimonial?: string;
   testimonialAuthor?: string;
 }
 
+export const workInfo: WorkInfoProps[] = [
+  {
+    name: 'ABC iView',
+    title: 'iView Streaming Application',
+    icon: 'iView.jpeg',
+    technologies: [<AndroidIcon key="test" size={80} />],
+    description: 'This is a description',
+    testimonial: '',
+    testimonialAuthor: ''
+  }
+];
+
+/* 
 export const workInfo: WorkInfoProps[] = [
   {
     name: 'ABC',
@@ -141,3 +149,4 @@ export const workInfo: WorkInfoProps[] = [
     featureIcons: ['FirebaseIcon', 'PushNotificationIcon', 'PdfIcon']
   }
 ];
+*/
