@@ -1,42 +1,18 @@
 import React from 'react';
 import WorkRow from './WorkRow';
-import {
-  AndroidIcon,
-  TvIcon,
-  MobileIcon
-} from '../../components/icons/techicons';
-
-interface WorkInfoProps {
-  name: string;
-  icon: string;
-  technologies: React.ReactNode[];
-  description: string;
-  title: string;
-  testimonial?: string;
-  testimonialAuthor?: string;
-}
-
-const workInfo: WorkInfoProps[] = [
-  {
-    name: 'ABC iView',
-    title: 'iView Streaming Application',
-    icon: './iView.jpeg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <TvIcon key="tv" />,
-      <MobileIcon key="mobile" />
-    ],
-    description: 'This is a description',
-    testimonial: '',
-    testimonialAuthor: ''
-  }
-];
+import { workInfo } from './WorkInfo';
 
 const Work: React.FC = () => {
   // require.context used here so that each WorkRow doesn't import all
   // icons each time it is rendered
   const iconImages = require.context(
     '../../assets/appIcons',
+    true,
+    /\.(png|jpe?g|svg)$/
+  );
+
+  const screenShotImages = require.context(
+    '../../assets/screenshots',
     true,
     /\.(png|jpe?g|svg)$/
   );
@@ -52,6 +28,9 @@ const Work: React.FC = () => {
             technologies={item.technologies}
             title={item.title}
             description={item.description}
+            screenshots={item.screenshots.map((image) =>
+              screenShotImages(image)
+            )}
             testimonial={item.testimonial}
             testimonialAuthor={item.testimonialAuthor}
           />

@@ -9,28 +9,11 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   technologies,
   description,
   title,
+  screenshots,
   testimonial,
   testimonialAuthor
 }) => {
   const isMobile = useIsMobile();
-
-  function importAll(
-    r: __WebpackModuleApi.RequireContext
-  ): Record<string, string> {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const images: Record<string, string> = {};
-    r.keys().forEach((item) => {
-      images[item.replace(/^\.\//, '')] = r(item);
-    });
-    return images;
-  }
-
-  // const companyLogoImages = importAll(
-  //   require.context('../../assets/companyLogos', true, /\.(png|jpe?g|svg)$/)
-  // );
-  const screenshotImages = importAll(
-    require.context('../../assets/screenshots', true, /\.(png|jpe?g|svg)$/)
-  );
 
   return (
     <div style={styles.fullRowDiv}>
@@ -72,16 +55,14 @@ const WorkRow: React.FC<WorkInfoProps> = ({
           <div style={styles.appFeaturesDiv}>{description}</div>
 
           <div style={styles.screenshotsDiv}>
-            <img
-              style={styles.screenshotStyle}
-              src={screenshotImages[`${icon}SS1.png`]}
-              alt={icon}
-            />
-            <img
-              style={styles.screenshotStyle}
-              src={screenshotImages[`${icon}SS2.png`]}
-              alt={icon}
-            />
+            {screenshots.map((value) => (
+              <img
+                key={value}
+                style={styles.screenshotStyle}
+                src={value}
+                alt={icon}
+              />
+            ))}
           </div>
         </div>
 

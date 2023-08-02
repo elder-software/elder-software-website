@@ -1,6 +1,10 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
-import { AndroidIcon } from '../../components/icons/techicons';
+import {
+  AndroidIcon,
+  TvIcon,
+  MobileIcon
+} from '../../components/icons/techicons';
 
 export interface WorkInfoProps {
   name: string;
@@ -8,6 +12,7 @@ export interface WorkInfoProps {
   technologies: React.ReactNode[];
   description: string;
   title: string;
+  screenshots: string[];
   testimonial?: string;
   testimonialAuthor?: string;
 }
@@ -16,9 +21,14 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'ABC iView',
     title: 'iView Streaming Application',
-    icon: 'iView.jpeg',
-    technologies: [<AndroidIcon key="test" size={80} />],
+    icon: './iView.jpeg',
+    technologies: [
+      <AndroidIcon key="test" size={80} />,
+      <TvIcon key="tv" />,
+      <MobileIcon key="mobile" />
+    ],
     description: 'This is a description',
+    screenshots: ['./KFISS1.png', './KFISS2.png'],
     testimonial: '',
     testimonialAuthor: ''
   }
