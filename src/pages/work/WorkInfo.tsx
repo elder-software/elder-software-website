@@ -25,7 +25,8 @@ export const workInfo: WorkInfoProps[] = [
       <TvIcon key="tv" />,
       <MobileIcon key="mobile" />
     ],
-    description: 'This is a description',
+    description:
+      'The ABC is a free video streaming service for Australians. Watch Live Streams, TV shows and movies.\n\nFrom a software standpoint it is an interesting app to work on requiring features to be developed on both TV and Mobile platforms. We used many of the latest tools available to developers, including Jetpack Compose, Arrow, Coroutines.',
     screenshots: ['./KFISS1.png', './KFISS2.png'],
     testimonial: '',
     testimonialAuthor: ''

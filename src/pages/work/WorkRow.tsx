@@ -13,19 +13,12 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   testimonialAuthor
 }) => {
   // const isMobile = useIsMobile();
+  const [infoExpanded, setInfoExpanded] = React.useState(false);
 
   return (
     <div style={styles.fullRowDiv}>
       <div style={styles.mainGreyDiv}>
-        <div
-          style={{
-            ...styles.rowHeadingDiv,
-            display: 'flex',
-            flexDirection: 'row',
-            flex: 1,
-            justifyContent: 'center'
-          }}
-        >
+        <div style={styles.rowHeadingDiv}>
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
             src={icon}
@@ -33,27 +26,37 @@ const WorkRow: React.FC<WorkInfoProps> = ({
           />
           <h1 style={styles.companyNameText}>{name}</h1>
         </div>
-
-        <div style={styles.technologiesDiv}>
-          {technologies.map((value) => {
-            return (
-              <div key={`${name}:technology`} style={{ marginRight: 10 }}>
-                {value}
-              </div>
-            );
-          })}
-        </div>
       </div>
 
       <div style={styles.workDetailsDiv}>
+        <button
+          type="button"
+          onMouseDown={() => setInfoExpanded(!infoExpanded)}
+        >
+          <p style={{ alignSelf: 'center', fontSize: 20, fontWeight: 'bold' }}>
+            Info
+          </p>
+        </button>
+        {infoExpanded && (
+          <div style={{ ...styles.descriptionDiv, flexDirection: 'column' }}>
+            <div style={styles.technologiesDiv}>
+              {technologies.map((value) => {
+                return (
+                  <div key={`${name}:technology`} style={{ margin: 10 }}>
+                    {value}
+                  </div>
+                );
+              })}
+            </div>
+            <div style={styles.appFeaturesDiv}>{description}</div>
+          </div>
+        )}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column'
           }}
         >
-          <div style={styles.appFeaturesDiv}>{description}</div>
-
           <div style={styles.screenshotsDiv}>
             {screenshots.map((value) => (
               <img
@@ -115,6 +118,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     flex: 1,
+    justifyContent: 'center',
     backgroundColor: 'white',
     margin: 30,
     padding: 20,
@@ -132,12 +136,19 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyItems: 'stretch',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     marginLeft: 30,
     marginRight: 30,
     marginTop: 10,
     marginBottom: 10
   } as React.CSSProperties,
+  descriptionDiv: {
+    display: 'flex',
+    marginLeft: 30,
+    marginRight: 30,
+    marginTop: 10,
+    marginBottom: 10
+  },
   workDetailsDiv: {
     display: 'flex',
     flex: 1,
