@@ -18,41 +18,27 @@ const Work: React.FC = () => {
   );
 
   return (
-    <div style={{ margin: 15 }}>
-      {arrayGroupBy(workInfo, 2).map((itemGroup) => (
-        <div
-          key={itemGroup.map((value) => value.name).join()}
-          style={{
-            display: 'flex',
-            flexDirection: 'row'
-          }}
-        >
-          {itemGroup.map((item) => (
-            <WorkRow
-              key={item.name}
-              name={item.name}
-              icon={iconImages(item.icon)}
-              technologies={item.technologies}
-              description={item.description}
-              screenshots={item.screenshots.map((image) =>
-                screenShotImages(image)
-              )}
-              testimonial={item.testimonial}
-              testimonialAuthor={item.testimonialAuthor}
-            />
-          ))}
-        </div>
+    <div
+      style={{
+        margin: 15,
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr'
+      }}
+    >
+      {workInfo.map((item) => (
+        <WorkRow
+          key={item.name}
+          name={item.name}
+          icon={iconImages(item.icon)}
+          technologies={item.technologies}
+          description={item.description}
+          screenshots={item.screenshots.map((image) => screenShotImages(image))}
+          testimonial={item.testimonial}
+          testimonialAuthor={item.testimonialAuthor}
+        />
       ))}
     </div>
   );
 };
-
-function arrayGroupBy<T>(array: T[], groupSize: number): T[][] {
-  const groups: T[][] = [];
-  for (let i = 0; i < array.length; i += groupSize) {
-    groups.push(array.slice(i, i + groupSize));
-  }
-  return groups;
-}
 
 export default Work;

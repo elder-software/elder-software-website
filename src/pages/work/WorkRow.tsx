@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { IoMdArrowDropdown } from 'react-icons/io';
 import { WorkInfoProps } from './WorkInfo';
 // import useIsMobile from '../../hooks/useIsMobile';
 
@@ -32,10 +33,21 @@ const WorkRow: React.FC<WorkInfoProps> = ({
         <button
           type="button"
           onMouseDown={() => setInfoExpanded(!infoExpanded)}
+          style={{
+            cursor: 'pointer',
+            borderRadius: 15,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center'
+          }}
         >
           <p style={{ alignSelf: 'center', fontSize: 20, fontWeight: 'bold' }}>
             Info
           </p>
+          <IoMdArrowDropdown
+            size={30}
+            style={{ rotate: infoExpanded ? '180deg' : '0deg' }}
+          />
         </button>
         {infoExpanded && (
           <div style={{ ...styles.descriptionDiv, flexDirection: 'column' }}>
@@ -99,7 +111,6 @@ const styles = {
   mainGreyDiv: {
     display: 'flex',
     flexDirection: 'column',
-    flex: 1,
     justifyContent: 'start',
     background: '#e8e8e8',
     borderColor: 'black',
