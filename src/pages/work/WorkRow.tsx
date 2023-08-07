@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import { IoMdArrowDropdown } from 'react-icons/io';
 import { WorkInfoProps } from './WorkInfo';
+import './workRow.css';
 // import useIsMobile from '../../hooks/useIsMobile';
 
 const WorkRow: React.FC<WorkInfoProps> = ({
@@ -17,8 +17,13 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   const [infoExpanded, setInfoExpanded] = React.useState(false);
 
   return (
-    <div style={styles.fullRowDiv}>
-      <div style={styles.mainGreyDiv}>
+    <div
+      role="button"
+      className="fullRowDiv"
+      onMouseDown={() => setInfoExpanded(!infoExpanded)}
+      tabIndex={0}
+    >
+      <div className="mainGreyDiv">
         <div style={styles.rowHeadingDiv}>
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
@@ -30,39 +35,18 @@ const WorkRow: React.FC<WorkInfoProps> = ({
       </div>
 
       <div style={styles.workDetailsDiv}>
-        <button
-          type="button"
-          onMouseDown={() => setInfoExpanded(!infoExpanded)}
-          style={{
-            cursor: 'pointer',
-            borderRadius: 15,
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center'
-          }}
-        >
-          <p style={{ alignSelf: 'center', fontSize: 20, fontWeight: 'bold' }}>
-            Info
-          </p>
-          <IoMdArrowDropdown
-            size={30}
-            style={{ rotate: infoExpanded ? '180deg' : '0deg' }}
-          />
-        </button>
-        {infoExpanded && (
-          <div style={{ ...styles.descriptionDiv, flexDirection: 'column' }}>
-            <div style={styles.technologiesDiv}>
-              {technologies.map((value) => {
-                return (
-                  <div key={`${name}:technology`} style={{ margin: 10 }}>
-                    {value}
-                  </div>
-                );
-              })}
-            </div>
-            <div style={styles.appFeaturesDiv}>{description}</div>
+        <div className={`workDetails ${infoExpanded ? 'expanded' : ''}`}>
+          <div style={styles.technologiesDiv}>
+            {technologies.map((value) => {
+              return (
+                <div key={`${name}:technology`} style={{ margin: 10 }}>
+                  {value}
+                </div>
+              );
+            })}
           </div>
-        )}
+          <div style={styles.appFeaturesDiv}>{description}</div>
+        </div>
         <div
           style={{
             display: 'flex',
@@ -96,18 +80,6 @@ const WorkRow: React.FC<WorkInfoProps> = ({
 };
 
 const styles = {
-  fullRowDiv: {
-    borderColor: 'black',
-    background: '#e8e8e8',
-    marginTop: 10,
-    marginLeft: 5,
-    marginRight: 5,
-    borderRadius: 15,
-    padding: 5,
-    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
-    MozBoxShadow: '2px 2px 2px #DFDFDF',
-    boxShadow: '2px 2px 2px #DFDFDF'
-  } as React.CSSProperties,
   mainGreyDiv: {
     display: 'flex',
     flexDirection: 'column',

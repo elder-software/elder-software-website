@@ -1,0 +1,47 @@
+.fullRowDiv {
+  border-color: black;
+  background: #e8e8e8;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  -webkit-box-shadow: 2px 2px 2px #DFDFDF;
+  -moz-box-shadow: 2px 2px 2px #DFDFDF;
+  box-shadow: 2px 2px 2px #DFDFDF;
+  opacity: 1;
+}
+
+.mainGreyDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #e8e8e8;
+  border-color: black;
+  border-width: 3px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  font-weight: lighter;
+  opacity: 1;
+}
+
+.mainGreyDiv:hover {
+  opacity: 0.5;
+}
+
+.workDetails {
+  display: flex;
+  flex: 1;
+  background: white;
+  flex-direction: column;
+  border-radius: 15px;
+  border: 1px solid #f2f2f2;
+  overflow: hidden; /* Add this line to hide overflowing content */
+  max-height: 0; /* Add this line to control initial height */
+  transition: max-height 1s ease;
+}
+
+.workDetails.expanded {
+  max-height: 1000px; /* Set a value larger than your content */
+}
