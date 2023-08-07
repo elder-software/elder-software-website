@@ -26,34 +26,33 @@ export const workInfo: WorkInfoProps[] = [
       <MobileIcon key="mobile" />
     ],
     description:
-      'The ABC is a free video streaming service for Australians. Watch Live Streams, TV shows and movies.\n\nFrom a software standpoint it is an interesting app to work on requiring features to be developed on both TV and Mobile platforms. We used many of the latest tools available to developers, including Jetpack Compose, Arrow, Coroutines.',
-    screenshots: ['./KFISS1.png', './KFISS2.png'],
+      'The ABC is a free video streaming service for Australians. Watch Live Streams, TV shows and movies.' +
+      '\n\nFrom a software standpoint it is an interesting app to work on requiring features to be developed ' +
+      'on both TV and Mobile platforms. We used many of the latest tools available to developers, ' +
+      'including Jetpack Compose, Arrow, Coroutines.',
+    screenshots: [
+      './iViewScreenShot1.jpg',
+      './iViewScreenShot2.jpg',
+      './iViewScreenShot3.jpg',
+      './iViewScreenShot4.jpg'
+    ],
     testimonial: '',
     testimonialAuthor: ''
   },
   {
-    name: 'ABC iView',
-    icon: './iView.jpeg',
+    name: 'Virgin Australia',
+    icon: './virginIcon.jpeg',
     technologies: [
       <AndroidIcon key="test" size={80} />,
-      <TvIcon key="tv" />,
       <MobileIcon key="mobile" />
     ],
-    description: 'This is a description',
-    screenshots: ['./KFISS1.png', './KFISS2.png'],
-    testimonial: '',
-    testimonialAuthor: ''
-  },
-  {
-    name: 'ABC iView',
-    icon: './iView.jpeg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <TvIcon key="tv" />,
-      <MobileIcon key="mobile" />
+    description:
+      'Virgin Australias official mobile app for assisting travellers.',
+    screenshots: [
+      './virginScreenshot1.jpg',
+      './virginScreenshot2.jpg',
+      './virginScreenshot3.jpg'
     ],
-    description: 'This is a description',
-    screenshots: ['./KFISS1.png', './KFISS2.png'],
     testimonial: '',
     testimonialAuthor: ''
   }
