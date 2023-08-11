@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { Carousel } from '@trendyol-js/react-carousel';
 import { WorkInfoProps } from './WorkInfo';
 import './workRow.css';
 // import useIsMobile from '../../hooks/useIsMobile';
@@ -54,14 +55,16 @@ const WorkRow: React.FC<WorkInfoProps> = ({
           }}
         >
           <div style={styles.screenshotsDiv}>
-            {screenshots.map((value) => (
-              <img
-                key={value}
-                style={styles.screenshotStyle}
-                src={value}
-                alt={icon}
-              />
-            ))}
+            <Carousel show={0} slide={0}>
+              {screenshots.map((value) => (
+                <img
+                  key={value}
+                  style={styles.screenshotStyle}
+                  src={value}
+                  alt={icon}
+                />
+              ))}
+            </Carousel>
           </div>
         </div>
 
