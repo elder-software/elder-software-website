@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
-import { Carousel } from '@trendyol-js/react-carousel';
 import { WorkInfoProps } from './WorkInfo';
 import './workRow.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 // import useIsMobile from '../../hooks/useIsMobile';
 
 const WorkRow: React.FC<WorkInfoProps> = ({
@@ -15,13 +16,13 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   testimonialAuthor
 }) => {
   // const isMobile = useIsMobile();
-  const [infoExpanded, setInfoExpanded] = React.useState(false);
+  const [infoExpanded, setInfoExpanded] = React.useState(true);
 
   return (
     <div
       role="button"
       className="fullRowDiv"
-      onMouseDown={() => setInfoExpanded(!infoExpanded)}
+      onMouseDown={() => setInfoExpanded(true)}
       tabIndex={0}
     >
       <div className="mainGreyDiv">
@@ -38,9 +39,9 @@ const WorkRow: React.FC<WorkInfoProps> = ({
       <div style={styles.workDetailsDiv}>
         <div className={`workDetails ${infoExpanded ? 'expanded' : ''}`}>
           <div style={styles.technologiesDiv}>
-            {technologies.map((value) => {
+            {technologies.map((value, index) => {
               return (
-                <div key={`${name}:technology`} style={{ margin: 10 }}>
+                <div key={`${name}:technology-${index}`} style={{ margin: 10 }}>
                   {value}
                 </div>
               );
@@ -55,14 +56,16 @@ const WorkRow: React.FC<WorkInfoProps> = ({
           }}
         >
           <div style={styles.screenshotsDiv}>
-            <Carousel show={0} slide={0}>
+            <Carousel showThumbs={false} autoPlay={true}>
               {screenshots.map((value) => (
-                <img
-                  key={value}
-                  style={styles.screenshotStyle}
-                  src={value}
-                  alt={icon}
-                />
+                <div>
+                  <img
+                    key={value}
+                    style={styles.screenshotStyle}
+                    src={value}
+                    alt={icon}
+                  />
+                </div>
               ))}
             </Carousel>
           </div>
@@ -154,11 +157,8 @@ const styles = {
     paddingTop: 30
   } as React.CSSProperties,
   screenshotsDiv: {
-    display: 'flex',
-    flex: 1,
     background: 'white',
     borderRadius: 15,
-    flexDirection: 'row',
     alignContent: 'center',
     justifyContent: 'space-around',
     alignItems: 'space-around',
@@ -166,9 +166,7 @@ const styles = {
     paddingBottom: 30
   } as React.CSSProperties,
   screenshotStyle: {
-    display: 'flex',
-    width: '40%',
-    height: 'auto',
+    width: 100,
     alignSelf: 'center',
     border: '1px solid lightgrey',
     borderRadius: 5
