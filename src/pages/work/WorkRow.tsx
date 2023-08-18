@@ -2,7 +2,7 @@ import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { WorkInfoProps } from './WorkInfo';
 import './workRow.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 // import useIsMobile from '../../hooks/useIsMobile';
 
@@ -16,17 +16,17 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   testimonialAuthor
 }) => {
   // const isMobile = useIsMobile();
-  const [infoExpanded, setInfoExpanded] = React.useState(true);
+  const [infoExpanded, setInfoExpanded] = React.useState(false);
 
   return (
-    <div
-      role="button"
-      className="fullRowDiv"
-      onMouseDown={() => setInfoExpanded(true)}
-      tabIndex={0}
-    >
+    <div className="fullRowDiv">
       <div className="mainGreyDiv">
-        <div style={styles.rowHeadingDiv}>
+        <div
+          role="button"
+          style={styles.rowHeadingDiv}
+          onMouseDown={() => setInfoExpanded(!infoExpanded)}
+          tabIndex={0}
+        >
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
             src={icon}
@@ -56,7 +56,14 @@ const WorkRow: React.FC<WorkInfoProps> = ({
           }}
         >
           <div style={styles.screenshotsDiv}>
-            <Carousel showThumbs={false} autoPlay={true}>
+            <Carousel
+              showThumbs={false}
+              autoPlay={true}
+              infiniteLoop={true}
+              showStatus={false}
+              showArrows={true}
+              width={480}
+            >
               {screenshots.map((value) => (
                 <div>
                   <img
@@ -144,7 +151,7 @@ const styles = {
     background: 'white',
     flexDirection: 'column',
     borderRadius: 15,
-    border: '1px solid #f2f2f2'
+    border: 0
   } as React.CSSProperties,
   appFeaturesDiv: {
     display: 'flex',
@@ -157,18 +164,18 @@ const styles = {
     paddingTop: 30
   } as React.CSSProperties,
   screenshotsDiv: {
+    display: 'flex',
+    justifyContent: 'center',
+    justifyItems: 'center',
     background: 'white',
     borderRadius: 15,
     alignContent: 'center',
-    justifyContent: 'space-around',
-    alignItems: 'space-around',
     paddingTop: 30,
     paddingBottom: 30
   } as React.CSSProperties,
   screenshotStyle: {
-    width: 100,
+    width: 300,
     alignSelf: 'center',
-    border: '1px solid lightgrey',
     borderRadius: 5
   } as React.CSSProperties,
   testimonialText: {
