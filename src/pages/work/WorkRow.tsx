@@ -37,22 +37,28 @@ const WorkRow: React.FC<WorkInfoProps> = ({
       </div>
 
       <div style={styles.workDetailsDiv}>
+        <div style={styles.technologiesDiv}>
+          {technologies.map((value, index) => {
+            return (
+              <div key={`${name}:technology-${index}`} style={{ margin: 10 }}>
+                {value}
+              </div>
+            );
+          })}
+        </div>
         <div className={`workDetails ${infoExpanded ? 'expanded' : ''}`}>
-          <div style={styles.technologiesDiv}>
-            {technologies.map((value, index) => {
-              return (
-                <div key={`${name}:technology-${index}`} style={{ margin: 10 }}>
-                  {value}
-                </div>
-              );
-            })}
-          </div>
+          <ul>
+            {['one', 'two', 'three'].map((item, index) => (
+              <li key={`${item}${index}`}>{item}</li>
+            ))}
+          </ul>
           <div style={styles.appFeaturesDiv}>{description}</div>
         </div>
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            padding: 30,
           }}
         >
           <div style={styles.screenshotsDiv}>
@@ -84,7 +90,7 @@ const WorkRow: React.FC<WorkInfoProps> = ({
               <FaQuoteLeft style={{ height: 20, width: 20, marginRight: 20 }} />
               {testimonial}
             </div>
-            <div style={styles.testimonialText}>{testimonialAuthor}</div>
+            <body style={styles.testimonialText}>{testimonialAuthor}</body>
           </div>
         ) : null}
       </div>
@@ -116,7 +122,6 @@ const styles = {
     flex: 1,
     justifyContent: 'center',
     backgroundColor: 'white',
-    margin: 30,
     padding: 20,
     marginBottom: 10,
     borderRadius: 15
@@ -159,9 +164,11 @@ const styles = {
     background: 'white',
     borderRadius: 15,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingLeft: 30,
-    paddingTop: 30
+    paddingTop: 16,
+    opacity: '80%',
+    width: '80%'
   } as React.CSSProperties,
   screenshotsDiv: {
     display: 'flex',
