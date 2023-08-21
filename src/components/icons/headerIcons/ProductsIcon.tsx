@@ -5,7 +5,7 @@ import { HeaderIconProps } from './styles';
 import './index.css';
 
 const ProductsIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
-  <Link to="/about">
+  <Link to="/products">
     <div className="iconBackground">
       <TbPackages
         className="icon"

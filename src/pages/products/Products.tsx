@@ -1,15 +1,8 @@
 import React from 'react';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const Products: React.FC = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', resize);
-    resize();
-  }, []);
-
-  const resize = () => setIsMobile(window.innerWidth <= 1000);
+  const isMobile = useIsMobile();
 
   return (
     <div style={styles.mainDiv}>
@@ -29,7 +22,7 @@ const Products: React.FC = () => {
                   alignContent: 'center'
                 }}
               >
-                <h1 style={{ margin: 0, fontSize: 20 }}>About</h1>
+                <h1 style={{ margin: 0, fontSize: 20 }}>Products</h1>
               </div>
             </div>
           </div>
