@@ -4,27 +4,31 @@ import useIsMobile from '../../hooks/useIsMobile';
 const Products: React.FC = () => {
   const isMobile = useIsMobile();
 
+  const iconImages = require.context(
+    '../../assets/appIcons',
+    true,
+    /\.(png|jpe?g|svg)$/
+  );
+
   return (
     <div style={styles.mainDiv}>
       <div style={styles.greyInnerDiv}>
-        <div style={styles.greyInnerDiv2}>
-          <div style={styles.titleDiv}>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'row',
-                alignItems: 'center'
-              }}
-            >
-              <div
-                style={{
-                  padding: 30,
-                  alignContent: 'center'
-                }}
-              >
-                <h1 style={{ margin: 0, fontSize: 20 }}>Products</h1>
-              </div>
-            </div>
+        <div style={styles.titleDiv}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'row',
+              alignItems: 'center',
+              padding: 30,
+              alignContent: 'center'
+            }}
+          >
+            <img
+              style={{ width: 50, height: '100%', alignSelf: 'center' }}
+              src={iconImages('./WFHTax.png')}
+              alt={'WFHTaxImage'}
+            />
+            <h1 style={{ margin: 0, fontSize: 20 }}>Work From Home Tax</h1>
           </div>
         </div>
       </div>
@@ -39,7 +43,8 @@ const styles = {
     justifyContent: 'center',
     flexDirection: 'column',
     alignContent: 'center',
-    marginTop: 10
+    marginTop: 10,
+    margin: 16
   } as React.CSSProperties,
   greyInnerDiv: {
     display: 'flex',
@@ -54,18 +59,6 @@ const styles = {
     boxShadow: '2px 2px 2px #DFDFDF',
     background: '#e8e8e8',
     padding: 5
-  } as React.CSSProperties,
-  greyInnerDiv2: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    border: '0px solid lightgrey',
-    marginBottom: 0,
-    paddingLeft: '20%',
-    paddingRight: '20%',
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15
   } as React.CSSProperties,
   titleDiv: {
     display: 'flex',
