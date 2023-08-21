@@ -3,7 +3,9 @@ import React from 'react';
 import {
   AndroidIcon,
   TvIcon,
-  MobileIcon
+  MobileIcon,
+  ReactIcon,
+  AppleIcon
 } from '../../components/icons/techicons';
 
 export interface WorkInfoProps {
@@ -26,7 +28,11 @@ export const workInfo: WorkInfoProps[] = [
       <TvIcon key="tv" />,
       <MobileIcon key="mobile" />
     ],
-    keyDetails: [''],
+    keyDetails: [
+      'Government owned project',
+      '5M+ downloads',
+      'Android, Kotlin'
+    ],
     description:
       'The ABC is a free video streaming service for Australians. Watch Live Streams, TV shows and movies.' +
       '\n\nFrom a software standpoint it is an interesting app to work on requiring features to be developed ' +
@@ -47,11 +53,11 @@ export const workInfo: WorkInfoProps[] = [
       <AndroidIcon key="test" size={80} />,
       <MobileIcon key="mobile" />
     ],
-    keyDetails: [''],
+    keyDetails: ['500,000+ downloads', 'Android, Kotlin'],
     description:
-    'Virgin Australias official mobile app for assisting travellers, allowing them to book and ' + 
-    'change flights, view boarding passes. The codebase used the latest recommended libraries' + 
-    ' Google for Android development regarding architecture and 3rd party libraries',
+      'Virgin Australias official mobile app for assisting travellers, allowing them to book and ' +
+      'change flights, view boarding passes. The codebase used the latest recommended libraries' +
+      ' Google for Android development regarding architecture and 3rd party libraries',
     screenshots: [
       './virginScreenshot1.jpg',
       './virginScreenshot2.jpg',
@@ -69,120 +75,123 @@ export const workInfo: WorkInfoProps[] = [
     ],
     keyDetails: [
       '100,000K+ downloads',
+      'Government owned project',
+      'Android, Kotlin'
     ],
     description:
-    'myLearners is a mobile app for assisting learner drivers in Australia. We worked with the government ' +
-    'of the state of Victoria to develop an application that can be used to track the users hours driven, road conditions ' + 
-    'and provide useful learning materials to help learner drivers move on to their full license.',
+      'myLearners is a mobile app for assisting learner drivers in Australia. We worked with the government ' +
+      'of the state of Victoria to develop an application that can be used to track the users hours driven, road conditions ' +
+      'and provide useful learning materials to help learner drivers move on to their full license.',
     screenshots: [
       './mylearnersScreenshot1.jpg',
       './mylearnersScreenshot2.jpg',
       './mylearnersScreenshot3.jpg',
-      './mylearnersScreenshot4.jpg',
+      './mylearnersScreenshot4.jpg'
+    ],
+  },
+  {
+    name: 'My 7-Eleven',
+    icon: './my7eleven.jpg',
+    technologies: [
+      <AndroidIcon key="test" size={80} />,
+      <MobileIcon key="mobile" />
+    ],
+    keyDetails: [
+      '1M+ downloads',
+      'Android, Kotlin'
+    ],
+    description:
+      '7 Eleven loyalty awards, the ability to lock in a low fuel price, checkout items and petrol ' +
+      'using only the app. The development was an interesting challenge to complete these unique features.',
+    screenshots: [
+      './my7elevenScreenshot1.jpg',
+      './my7elevenScreenshot2.jpg',
+      './my7elevenScreenshot3.jpg',
+      './my7elevenScreenshot4.jpg'
     ],
     testimonial: '',
     testimonialAuthor: ''
-  }
-];
-
-/* 
-export const workInfo: WorkInfoProps[] = [
+  },
   {
-    name: 'ABC',
-    title: 'iView Streaming Application',
-    logoImage: 'KFI',
+    name: 'My 7-Eleven',
+    icon: './my7eleven.jpg',
     technologies: [
-      <ReactIcon size={80} />,
-      <AndroidIcon size={80} />,
-      <AppleIcon size={80} />
+      <AndroidIcon key="test" size={80} />,
+      <MobileIcon key="mobile" />
     ],
-    features: [
-      'Firebase Database / Login',
-      'Dropbox file sync',
-      'Automatically formatted PDF generation'
+    keyDetails: [
+      '1M+ downloads',
+      'Android, Kotlin'
     ],
-    featureIcons: ['FirebaseIcon', 'DropboxIcon', 'PdfIcon'],
+    description:
+      '7 Eleven loyalty awards, the ability to lock in a low fuel price, checkout items and petrol ' +
+      'using only the app. The development was an interesting challenge to complete these unique features.',
+    screenshots: [
+      './my7elevenScreenshot1.jpg',
+      './my7elevenScreenshot2.jpg',
+      './my7elevenScreenshot3.jpg',
+      './my7elevenScreenshot4.jpg'
+    ],
     testimonial: '',
     testimonialAuthor: ''
   },
   {
     name: 'King Facade International',
-    title: 'Quality Assurance for Site Inspections',
-    logoImage: 'KFI',
+    icon: './KFI.png',
     technologies: [
       <ReactIcon size={80} />,
       <AndroidIcon size={80} />,
       <AppleIcon size={80} />
     ],
-    features: [
-      'Firebase Database / Login',
-      'Dropbox file sync',
-      'Automatically formatted PDF generation'
+    keyDetails: [
+      'in-house app (<20 users)',
+      'Firebase',
+      'Dropbox',
+      'PDF generation'
     ],
-    featureIcons: ['FirebaseIcon', 'DropboxIcon', 'PdfIcon'],
-    testimonial:
-      'We created an app with James to help automate some of our' +
+    description: 'An in house app used to streamline internal process. This app helps with Quality Assurance for Site Inspections',
+    screenshots: ['./KFISS1.png', './KFISS2.png'],
+    testimonial: '',
+      /*'We created an app with James to help automate some of our' +
       ' company procedures. James stuck to the brief and budget and communicated ' +
       'well throughout the process. We now have a well designed, intuitive app that ' +
-      "has helped with our efficiency and consistency. We highly recommend James' services",
-    testimonialAuthor: 'Mike Baggstrom - Site Manager'
-  },
-  {
-    name: 'King Facade International',
-    title: 'Quality Assurance for Site Inspections',
-    logoImage: 'KFI',
-    technologies: [
-      <ReactIcon size={80} />,
-      <AndroidIcon size={80} />,
-      <AppleIcon size={80} />
-    ],
-    features: [
-      'Firebase Database / Login',
-      'Dropbox file sync',
-      'Automatically formatted PDF generation'
-    ],
-    featureIcons: ['FirebaseIcon', 'DropboxIcon', 'PdfIcon'],
-    testimonial:
-      'We created an app with James to help automate some of our' +
-      ' company procedures. James stuck to the brief and budget and communicated ' +
-      'well throughout the process. We now have a well designed, intuitive app that ' +
-      "has helped with our efficiency and consistency. We highly recommend James' services",
-    testimonialAuthor: 'Mike Baggstrom - Site Manager'
+      "has helped with our efficiency and consistency. We highly recommend James' services"*/
+    testimonialAuthor: ''
   },
   {
     name: 'Lautrec Façade Design',
-    logoImage: 'Lautrec',
+    icon: './Lautrec.png',
     technologies: [<AndroidIcon size={80} />],
-    title: 'Quality Assurance for Site Inspections',
-    features: [
-      'Automatically formatted PDF generation.',
-      'Dropbox file sync',
-      'Google sheets database',
-      'Firebase login'
+    keyDetails: [
+      'in-house app (<20 users)',
+      'Firebase',
+      'Dropbox',
+      'PDF generation'
     ],
-    featureIcons: ['PdfIcon', 'DropboxIcon', 'SheetsIcon', 'FirebaseIcon'],
-    testimonial:
+    description: 'An in house app used to streamline internal process. This app helps with Quality Assurance for Site Inspections',
+    screenshots: ['./LautrecSS1.png', './LautrecSS2.png'],
+    testimonial: '', /*
       'We gave James a brief & a suggested report format for a ' +
       'software tool that would better meet our specific needs. ' +
       'James met the brief & the budget for the android app he designed & implemented ' +
       'for us. James engineering background and practical experience ' +
       'in the construction sector meant he had a good understanding of our requirements. ' +
       'We have a had a great payback for the time & money invested in developing this tool ' +
-      "and have no hesitation in recommending James' services.",
+      "and have no hesitation in recommending James' services.",*/
     testimonialAuthor: 'Ron Hanley - Director'
   },
   {
     name: 'Structural Coating Services',
-    logoImage: 'SCS',
+    icon: './SCS.png',
     technologies: [<AndroidIcon size={80} />],
-    title: 'Quality Assurance for Site Inspections',
-    features: [
+    keyDetails: [
       'Automatically formatted PDF generation',
       'Dropbox file sync',
       'Firebase Database / Login'
     ],
-    featureIcons: ['PdfIcon', 'DropboxIcon', 'FirebaseIcon'],
-    testimonial:
+    description: 'An in house app used to streamline internal process. This app helps with Quality Assurance for Site Inspections',
+    screenshots: ['./SCSSS1.png', './SCSSS2.png'],
+    testimonial: '', /*
       'We created an app with James to assist with our company’s ' +
       'daily operations. The app is very easy to use and has helped us to improved ' +
       'time efficiency for the business. James is easy to work with, ' +
@@ -190,24 +199,7 @@ export const workInfo: WorkInfoProps[] = [
       'our ideas for adjustments on schedule. ' +
       'The knowledge and skills that James has with developing an app that suits ' +
       'our exact needs is impressive. We have had feedback from our customers that ' +
-      'the app is very easy to follow. We would recommend anyone to work with James.',
+      'the app is very easy to follow. We would recommend anyone to work with James.', */
     testimonialAuthor: 'Sara - SCS Administration'
   },
-  {
-    name: 'Woodlands Stud',
-    logoImage: 'WoodlandsStud',
-    technologies: [
-      <ReactIcon size={80} />,
-      <AndroidIcon size={80} />,
-      <AppleIcon size={80} />
-    ],
-    title: 'Sales Assistance Tool',
-    features: [
-      'Firebase Database / Login',
-      'Push Notifications (Using Firebase)',
-      'Automatically formatted PDF generation'
-    ],
-    featureIcons: ['FirebaseIcon', 'PushNotificationIcon', 'PdfIcon']
-  }
 ];
-*/

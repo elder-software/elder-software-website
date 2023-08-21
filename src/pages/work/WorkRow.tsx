@@ -10,6 +10,7 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   name,
   icon,
   technologies,
+  keyDetails,
   description,
   screenshots,
   testimonial,
@@ -48,7 +49,7 @@ const WorkRow: React.FC<WorkInfoProps> = ({
         </div>
         <div className={`workDetails ${infoExpanded ? 'expanded' : ''}`}>
           <ul>
-            {['one', 'two', 'three'].map((item, index) => (
+            {keyDetails.map((item, index) => (
               <li key={`${item}${index}`}>{item}</li>
             ))}
           </ul>
