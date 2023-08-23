@@ -17,24 +17,60 @@ const Products: React.FC = () => {
           <div
             style={{
               display: 'flex',
-              justifyContent: 'row',
-              alignItems: 'center',
-              padding: 30,
-              alignContent: 'center'
+              flexDirection: 'row',
+              flex: 1,
+              justifyContent: 'center',
+              backgroundColor: 'white',
+              padding: 20,
+              borderRadius: 15
             }}
           >
             <img
-              style={{ width: 50, height: '100%', alignSelf: 'center' }}
+              style={{
+                width: 50,
+                height: '100%',
+                alignSelf: 'center'
+              }}
               src={iconImages('./WFHTax.png')}
               alt={'WFHTaxImage'}
             />
-            <h1 style={{ margin: 0, fontSize: 20 }}>Work From Home Tax</h1>
+            <h1
+              style={{
+                alignSelf: 'center',
+                marginLeft: 20,
+                marginTop: 0,
+                marginBottom: 0,
+                fontSize: 20
+              }}
+            >
+              Work From Home Tax
+            </h1>
           </div>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            flex: 1,
+            background: 'white',
+            flexDirection: 'column',
+            borderRadius: 16,
+            border: 1,
+            margin: 32,
+            padding: 20
+          }}
+        >
+          <body style={{ textAlign: 'center' }}>{wfhTaxText}</body>
+          <pre>{require('!raw-loader!./privacyPolicy.txt').default}</pre>
         </div>
       </div>
     </div>
   );
 };
+
+const wfhTaxText =
+  'Aimed at people that are permanent employees that work at home. ' +
+  'This app helps you to calculate your work from home tax deduction.';
 
 const styles = {
   mainDiv: {
@@ -67,7 +103,8 @@ const styles = {
     flexDirection: 'column',
     borderRadius: 15,
     background: 'white',
-    margin: 30
+    margin: 30,
+    marginBottom: 0
   } as React.CSSProperties
 };
 

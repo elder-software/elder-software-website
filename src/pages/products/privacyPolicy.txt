@@ -1,0 +1,44 @@
+Privacy Policy for [Your App Name]
+
+Effective Date: [Date]
+
+[Your Company Name] ("us", "we", or "our") operates the [Your App Name] mobile application (the "Service").
+
+This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. We will not use or share your information with anyone except as described in this Privacy Policy.
+
+Information Collection and Use
+
+We do not collect any personally identifiable information ("Personal Data") through the use of our Service. We are committed to protecting your privacy and ensuring that your usage of our app remains anonymous.
+
+Log Data
+
+We do not collect Log Data, which is data about your device's Internet Protocol ("IP") address, device name, operating system version, and other statistics.
+
+Cookies
+
+We do not use cookies or similar tracking technologies to track the activity on our Service.
+
+Service Providers
+
+We do not employ third-party companies and individuals to facilitate our Service or provide services on our behalf.
+
+Security
+
+We value your trust in providing your Personal Data, even if we don't collect any. Therefore, we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.
+
+Links to Other Sites
+
+Our Service does not contain links to other sites.
+
+Children's Privacy
+
+Our Service is not intended for use by children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you learn that your child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children under 13 without verification of parental consent, we will take steps to remove that information from our servers.
+
+Changes to This Privacy Policy
+
+We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.
+
+Contact Us
+
+If you have any questions about this Privacy Policy, please contact us at [Your Contact Email Address].
+
