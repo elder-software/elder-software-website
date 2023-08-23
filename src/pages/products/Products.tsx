@@ -61,7 +61,16 @@ const Products: React.FC = () => {
           }}
         >
           <body style={{ textAlign: 'center' }}>{wfhTaxText}</body>
-          <pre>{require('!raw-loader!./privacyPolicy.txt').default}</pre>
+          <div
+            style={{
+              whiteSpace: 'pre-wrap',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              margin: '20px 0'
+            }}
+          >
+            {require('!raw-loader!./privacyPolicy.txt').default}
+          </div>
         </div>
       </div>
     </div>
