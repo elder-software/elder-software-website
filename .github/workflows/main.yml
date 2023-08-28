@@ -27,3 +27,6 @@ jobs:
         dry-run: true
         exclude: |
           **/src/**/*
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
