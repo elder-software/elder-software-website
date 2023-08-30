@@ -2,8 +2,15 @@ import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { WorkInfoProps } from './WorkInfo';
 import './workRow.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import './carousel.css';
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext
+} from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 // import useIsMobile from '../../hooks/useIsMobile';
 
 const WorkRow: React.FC<WorkInfoProps> = ({
@@ -55,34 +62,28 @@ const WorkRow: React.FC<WorkInfoProps> = ({
           </ul>
           <div style={styles.appFeaturesDiv}>{description}</div>
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 30,
-          }}
-        >
-          <div style={styles.screenshotsDiv}>
-            <Carousel
-              showThumbs={false}
-              autoPlay={true}
-              infiniteLoop={true}
-              showStatus={false}
-              showArrows={true}
-              width={480}
-            >
-              {screenshots.map((value) => (
-                <div>
+
+        <div style={styles.screenshotsDiv}>
+          <CarouselProvider
+            naturalSlideWidth={50}
+            naturalSlideHeight={100}
+            totalSlides={screenshots.length}
+          >
+            <Slider>
+              {screenshots.map((value, index) => (
+                <Slide index={index}>
                   <img
                     key={value}
                     style={styles.screenshotStyle}
                     src={value}
                     alt={icon}
                   />
-                </div>
+                  <ButtonBack>{'<'}</ButtonBack>
+                  <ButtonNext>{'>'}</ButtonNext>
+                </Slide>
               ))}
-            </Carousel>
-          </div>
+            </Slider>
+          </CarouselProvider>
         </div>
 
         {testimonial ? (
@@ -172,18 +173,17 @@ const styles = {
     width: '80%'
   } as React.CSSProperties,
   screenshotsDiv: {
-    display: 'flex',
-    justifyContent: 'center',
-    justifyItems: 'center',
-    background: 'white',
     borderRadius: 15,
     alignContent: 'center',
     paddingTop: 30,
-    paddingBottom: 30
+    paddingBottom: 30,
+    height: 500
   } as React.CSSProperties,
   screenshotStyle: {
-    width: 300,
+    height: 400,
+    width: 'auto',
     alignSelf: 'center',
+    justifySelf: 'center',
     borderRadius: 5
   } as React.CSSProperties,
   testimonialText: {
