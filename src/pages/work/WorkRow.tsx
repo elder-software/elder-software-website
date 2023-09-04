@@ -2,16 +2,7 @@ import React from 'react';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { WorkInfoProps } from './WorkInfo';
 import './workRow.css';
-import './carousel.css';
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext
-} from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-// import useIsMobile from '../../hooks/useIsMobile';
+import Carousel from './carousel/Carousel';
 
 const WorkRow: React.FC<WorkInfoProps> = ({
   name,
@@ -64,26 +55,16 @@ const WorkRow: React.FC<WorkInfoProps> = ({
         </div>
 
         <div style={styles.screenshotsDiv}>
-          <CarouselProvider
-            naturalSlideWidth={50}
-            naturalSlideHeight={100}
-            totalSlides={screenshots.length}
-          >
-            <Slider>
-              {screenshots.map((value, index) => (
-                <Slide index={index}>
-                  <img
-                    key={value}
-                    style={styles.screenshotStyle}
-                    src={value}
-                    alt={icon}
-                  />
-                  <ButtonBack>{'<'}</ButtonBack>
-                  <ButtonNext>{'>'}</ButtonNext>
-                </Slide>
-              ))}
-            </Slider>
-          </CarouselProvider>
+          <Carousel>
+            {screenshots.map((image, index) => (
+              <img
+                key={`${name}:screenshot-${index}`}
+                style={styles.screenshotStyle}
+                src={image}
+                alt={image}
+              />
+            ))}
+          </Carousel>
         </div>
 
         {testimonial ? (
@@ -173,8 +154,9 @@ const styles = {
     width: '80%'
   } as React.CSSProperties,
   screenshotsDiv: {
+    display: 'flex',
+    justifyContent: 'center',
     borderRadius: 15,
-    alignContent: 'center',
     paddingTop: 30,
     paddingBottom: 30,
     height: 500
@@ -182,8 +164,6 @@ const styles = {
   screenshotStyle: {
     height: 400,
     width: 'auto',
-    alignSelf: 'center',
-    justifySelf: 'center',
     borderRadius: 5
   } as React.CSSProperties,
   testimonialText: {
