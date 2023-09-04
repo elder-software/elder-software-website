@@ -1,17 +1,12 @@
-.wrapper {
-  width: 100vw;
-  height: 100vh;
+.main-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  flex-direction: column;
-  background: #DAF7A6;
-  overflow: hidden;
 }
 
 .frame {
-  border: 10px solid #FF8E00;
   width: 250px;
+  height: fit-content;
   overflow: hidden;
 }
 
@@ -21,10 +16,8 @@
 
 .box {
   box-sizing: border-box;
-  border: 5px solid #FFF;
-  background: #00E7FF;
   width: 250px;
-  height: 250px;
+  height: auto;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
@@ -36,11 +29,15 @@
 }
 
 .button {
-  background: #666;
-  color: #fff;
-  width: 50px;
+  display: flex; /* Add display: flex; */
+  align-items: center; /* Vertically align the text */
+  background: #999999;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
   text-align: center;
-  padding: 10px 20px;
+  padding: 10px;
   margin: 10px;
   user-select: none;
   cursor: pointer;

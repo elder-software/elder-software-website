@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSwipeable } from 'react-swipeable';
 import './carousel.css';
 
 interface CarouselProps {
@@ -10,15 +9,8 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
   const [current, setCurrent] = React.useState(0);
   const ref = React.useRef<HTMLDivElement>(null);
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => next(),
-    onSwipedRight: () => prev(),
-    preventScrollOnSwipe: true,
-    trackMouse: true,
-  });
-
   const next = () => {
-    if (current >= children.length) return;
+    if (current >= children.length - 1) return;
     else setCurrent(current + 1);
   };
 
@@ -34,10 +26,12 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
   }, [current]);
 
   return (
-    <div>
-      <p>{current}</p>
+    <div className="main-container">
+      <div className="button" onClick={prev}>
+        {'<'}
+      </div>
       <div className="frame">
-        <div className="box-container" {...handlers} ref={ref}>
+        <div className="box-container" ref={ref}>
           {children.map((child, index) => (
             <div className="box" key={index}>
               {child}
@@ -45,13 +39,8 @@ const Carousel: React.FC<CarouselProps> = ({ children }) => {
           ))}
         </div>
       </div>
-      <div className="button-container">
-        <div className="button" onClick={prev}>
-          Left
-        </div>
-        <div className="button" onClick={next}>
-          Right
-        </div>
+      <div className="button" onClick={next}>
+        {'>'}
       </div>
     </div>
   );
