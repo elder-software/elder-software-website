@@ -1,8 +1,10 @@
 import React from 'react';
 import WorkRow from './WorkRow';
 import { workInfo } from './WorkInfo';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const Work: React.FC = () => {
+  const isMobile = useIsMobile();
   const iconImages = require.context(
     '../../assets/appIcons',
     true,
@@ -20,7 +22,7 @@ const Work: React.FC = () => {
       style={{
         margin: 15,
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
         gap: '15px'
       }}
     >

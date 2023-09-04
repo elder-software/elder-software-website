@@ -2,14 +2,18 @@ import React from 'react';
 import { FaTv } from 'react-icons/fa';
 import { iconStyles } from './styles';
 
-const TvIcon: React.FC = () => {
+interface TvIconProps {
+  size?: number;
+}
+
+const TvIcon: React.FC<TvIconProps> = ({ size }) => {
   return (
     <div style={iconStyles.iconContainerStyle}>
       <FaTv
         style={{
           ...iconStyles.iconStyle,
-          height: 80,
-          width: 80
+          height: size ? size : 80,
+          width: size ? size : 80
         }}
       />
       <h5 style={{ margin: 0, fontSize: 15 }}>TV</h5>

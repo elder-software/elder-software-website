@@ -3,6 +3,7 @@ import { FaQuoteLeft } from 'react-icons/fa';
 import { WorkInfoProps } from './WorkInfo';
 import './workRow.css';
 import Carousel from './carousel/Carousel';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const WorkRow: React.FC<WorkInfoProps> = ({
   name,
@@ -14,7 +15,7 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   testimonial,
   testimonialAuthor
 }) => {
-  // const isMobile = useIsMobile();
+  const isMobile = useIsMobile();
   const [infoExpanded, setInfoExpanded] = React.useState(false);
 
   return (
@@ -37,7 +38,7 @@ const WorkRow: React.FC<WorkInfoProps> = ({
 
       <div style={styles.workDetailsDiv}>
         <div style={styles.technologiesDiv}>
-          {technologies.map((value, index) => {
+          {technologies(isMobile ? 40 : 80).map((value, index) => {
             return (
               <div key={`${name}:technology-${index}`} style={{ margin: 10 }}>
                 {value}

@@ -5,13 +5,13 @@ import {
   TvIcon,
   MobileIcon,
   ReactIcon,
-  AppleIcon
+  AppleIcon,
 } from '../../components/icons/techicons';
 
 export interface WorkInfoProps {
   name: string;
   icon: string;
-  technologies: React.ReactNode[];
+  technologies: (size: number) => React.ReactNode[];
   keyDetails: string[];
   description: string;
   screenshots: string[];
@@ -23,10 +23,10 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'ABC iView',
     icon: './iView.jpeg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <TvIcon key="tv" />,
-      <MobileIcon key="mobile" />
+    technologies: (size) => [
+      <AndroidIcon key="test" size={size} />,
+      <TvIcon key="tv" size={size} />,
+      <MobileIcon key="mobile" size={size} />
     ],
     keyDetails: [
       'Government owned project',
@@ -49,9 +49,9 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'Virgin Australia',
     icon: './virginIcon.jpeg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <MobileIcon key="mobile" />
+    technologies: (size) => [
+      <AndroidIcon key="test" size={size} />,
+      <MobileIcon key="mobile" size={size} />
     ],
     keyDetails: ['500,000+ downloads', 'Android, Kotlin'],
     description:
@@ -69,9 +69,9 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'myLearners',
     icon: './mylearners.jpeg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <MobileIcon key="mobile" />
+    technologies: (size) => [
+      <AndroidIcon key="test" size={size} />,
+      <MobileIcon key="mobile" size={size} />
     ],
     keyDetails: [
       '100,000K+ downloads',
@@ -92,9 +92,9 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'My 7-Eleven',
     icon: './my7eleven.jpg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <MobileIcon key="mobile" />
+    technologies: (size) => [
+      <AndroidIcon key="test" size={size} />,
+      <MobileIcon key="mobile" size={size} />
     ],
     keyDetails: [
       '1M+ downloads',
@@ -115,9 +115,9 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'My 7-Eleven',
     icon: './my7eleven.jpg',
-    technologies: [
-      <AndroidIcon key="test" size={80} />,
-      <MobileIcon key="mobile" />
+    technologies: (size) => [
+      <AndroidIcon key="test" size={size} />,
+      <MobileIcon key="mobile" size={size} />
     ],
     keyDetails: [
       '1M+ downloads',
@@ -138,10 +138,10 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'King Facade International',
     icon: './KFI.png',
-    technologies: [
-      <ReactIcon size={80} />,
-      <AndroidIcon size={80} />,
-      <AppleIcon size={80} />
+    technologies: (size) => [
+      <ReactIcon size={size} />,
+      <AndroidIcon size={size} />,
+      <AppleIcon size={size} />
     ],
     keyDetails: [
       'in-house app (<20 users)',
@@ -161,7 +161,7 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'Lautrec Façade Design',
     icon: './Lautrec.png',
-    technologies: [<AndroidIcon size={80} />],
+    technologies: (size) => [<AndroidIcon size={size} />],
     keyDetails: [
       'in-house app (<20 users)',
       'Firebase',
@@ -183,7 +183,7 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: 'Structural Coating Services',
     icon: './SCS.png',
-    technologies: [<AndroidIcon size={80} />],
+    technologies: (size) => [<AndroidIcon size={size} />],
     keyDetails: [
       'Automatically formatted PDF generation',
       'Dropbox file sync',

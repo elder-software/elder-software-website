@@ -5,7 +5,7 @@
 }
 
 .frame {
-  width: 250px;
+  width: 200px;
   height: fit-content;
   overflow: hidden;
 }
@@ -16,7 +16,7 @@
 
 .box {
   box-sizing: border-box;
-  width: 250px;
+  width: 200px;
   height: auto;
   flex-shrink: 0;
   display: flex;
@@ -29,8 +29,8 @@
 }
 
 .button {
-  display: flex; /* Add display: flex; */
-  align-items: center; /* Vertically align the text */
+  display: flex;
+  align-items: center;
   background: #999999;
   color: #ffffff;
   width: 30px;
@@ -38,7 +38,7 @@
   border-radius: 15px;
   text-align: center;
   padding: 10px;
-  margin: 10px;
+  margin: 0px;
   user-select: none;
   cursor: pointer;
 }
