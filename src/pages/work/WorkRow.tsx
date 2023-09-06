@@ -160,11 +160,10 @@ const styles = {
     borderRadius: 15,
     paddingTop: 30,
     paddingBottom: 30,
-    height: 500
   } as React.CSSProperties,
   screenshotStyle: {
-    height: 400,
-    width: 'auto',
+    height: 'auto',
+    width: '100%',
     borderRadius: 5
   } as React.CSSProperties,
   testimonialText: {
