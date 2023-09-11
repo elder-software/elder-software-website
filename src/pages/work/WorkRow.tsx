@@ -21,12 +21,7 @@ const WorkRow: React.FC<WorkInfoProps> = ({
   return (
     <div className="fullRowDiv">
       <div className="mainGreyDiv">
-        <div
-          role="button"
-          style={styles.rowHeadingDiv}
-          onMouseDown={() => setInfoExpanded(!infoExpanded)}
-          tabIndex={0}
-        >
+        <div style={styles.rowHeadingDiv}>
           <img
             style={{ width: 50, height: '100%', alignSelf: 'center' }}
             src={icon}
@@ -46,6 +41,12 @@ const WorkRow: React.FC<WorkInfoProps> = ({
             );
           })}
         </div>
+        <button
+          className={`button ${infoExpanded ? 'rotate' : ''}`}
+          onClick={() => setInfoExpanded(!infoExpanded)}
+        >
+          &#9660;
+        </button>
         <div className={`workDetails ${infoExpanded ? 'expanded' : ''}`}>
           <ul>
             {keyDetails.map((item, index) => (
@@ -159,7 +160,7 @@ const styles = {
     justifyContent: 'center',
     borderRadius: 15,
     paddingTop: 30,
-    paddingBottom: 30,
+    paddingBottom: 30
   } as React.CSSProperties,
   screenshotStyle: {
     height: 'auto',

@@ -4,7 +4,7 @@ import './products.css';
 
 const Products: React.FC = () => {
   const isMobile = useIsMobile();
-  const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
 
   const iconImages = require.context(
     '../../assets/appIcons',
@@ -27,13 +27,16 @@ const Products: React.FC = () => {
         </div>
 
         <div className="contentDiv">
-          <span className="contentText">{wfhTaxText}</span>
-          <button onClick={() => setIsCollapsed(!isCollapsed)}>Toggle</button>
-          {isCollapsed && (
-            <span className="contentText">
-              {require('!raw-loader!./privacyPolicy.txt').default}
-            </span>
-          )}
+          <span className="summaryText">{wfhTaxText}</span>
+          <button
+            className={`button ${isExpanded ? 'rotate' : ''}`}
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            &#9660;
+          </button>
+          <span className={`contentText ${isExpanded ? 'expanded' : ''}`}>
+            {require('!raw-loader!./privacyPolicy.txt').default}
+          </span>
         </div>
       </div>
     </div>

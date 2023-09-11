@@ -16,8 +16,6 @@
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 15px;
-  -webkit-box-shadow: 2px 2px 2px #DFDFDF;
-  -moz-box-shadow: 2px 2px 2px #DFDFDF;
   box-shadow: 2px 2px 2px #DFDFDF;
   background: #e8e8e8;
   padding: 5px;
@@ -68,9 +66,44 @@
   padding: 20px;
 }
 
+.summaryText {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 20px 0;
+}
+
 .contentText {
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
   margin: 20px 0;
+  overflow: hidden; /* Add this line to hide overflowing content */
+  max-height: 0; /* Add this line to control initial height */
+  transition: max-height 1s ease;
+}
+
+.button {
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Make it a circle */
+  background-color: #4e4e4e; /* Button background color */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.button.rotate {
+  transform: rotate(180deg); /* Rotate the arrow when clicked */
+}
+
+.contentText.expanded {
+  max-height: 3000px; /* Set a value larger than your content */
 }
