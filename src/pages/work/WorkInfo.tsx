@@ -113,29 +113,6 @@ export const workInfo: WorkInfoProps[] = [
     testimonialAuthor: ''
   },
   {
-    name: 'My 7-Eleven',
-    icon: './my7eleven.jpg',
-    technologies: (size) => [
-      <AndroidIcon key="test" size={size} />,
-      <MobileIcon key="mobile" size={size} />
-    ],
-    keyDetails: [
-      '1M+ downloads',
-      'Android, Kotlin'
-    ],
-    description:
-      '7 Eleven loyalty awards, the ability to lock in a low fuel price, checkout items and petrol ' +
-      'using only the app. The development was an interesting challenge to complete these unique features.',
-    screenshots: [
-      './my7elevenScreenshot1.jpg',
-      './my7elevenScreenshot2.jpg',
-      './my7elevenScreenshot3.jpg',
-      './my7elevenScreenshot4.jpg'
-    ],
-    testimonial: '',
-    testimonialAuthor: ''
-  },
-  {
     name: 'King Facade International',
     icon: './KFI.png',
     technologies: (size) => [
