@@ -24,7 +24,6 @@ jobs:
         server: ${{ secrets.HACKER }}
         username: ${{ secrets.GO }}
         password: ${{ secrets.AWAY }}
-        dry-run: true
         exclude: |
           **/src/**/*
           **/.git*
