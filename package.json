@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "webpack serve --env mode=development",
-    "build": "webpack --env mode=production compress",
+    "build": "webpack --env mode=production compress && cp -r public/* dist/",
     "build:dev": "webpack --env mode=development",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
