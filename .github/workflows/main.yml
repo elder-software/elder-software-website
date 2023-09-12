@@ -24,6 +24,9 @@ jobs:
         server: ${{ secrets.HACKER }}
         username: ${{ secrets.GO }}
         password: ${{ secrets.AWAY }}
+        dry-run: true
+        include: |
+          **/elder-software.com/public_html**
         exclude: |
           **/src/**/*
           **/.git*
