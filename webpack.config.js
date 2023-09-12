@@ -40,6 +40,6 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'elder-software.com/public_html')
+    path: path.resolve(__dirname, 'dist')
   }
 };
