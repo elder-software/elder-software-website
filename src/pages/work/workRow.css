@@ -19,10 +19,6 @@
   opacity: 1;
 }
 
-.mainGreyDiv:hover {
-  opacity: 0.5;
-}
-
 .workDetails {
   display: flex;
   flex: 1;
