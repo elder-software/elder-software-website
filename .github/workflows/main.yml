@@ -25,7 +25,7 @@ jobs:
         username: ${{ secrets.GO }}
         password: ${{ secrets.AWAY }}
         dry-run: true
-        server-dir: /elder-software.com/public_html
+        server-dir: /elder-software.com/public_html/
         local-dir: |
           ./dist/
         exclude: |
