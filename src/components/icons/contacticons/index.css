@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+.iconContainer {
+  justify-content: stretch;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 3px;
+  background-color: black;
+  transition: color, background-color 1s;
+  -webkit-transition: color, background-color 1s;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  transition: color, background-color 1s;
+  -webkit-transition: color, background-color 1s;
+}
+
+.liIcon {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  transition: color, background-color 1s;
+  -webkit-transition: color, background-color 1s;
+}
+
+.iconContainer:hover {
+  color: black;
+  background-color: white;
+}
+
+.iconContainer:hover .icon {
+  background-color: transparent;
+  color: black;
+}
+
+.iconContainer:hover .liIcon {
+  background-color: black;
+  color: white;
+}

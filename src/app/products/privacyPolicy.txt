@@ -1,0 +1,56 @@
+WFH Taxback - Mobile Application Privacy Policy
+
+Effective Date: 26th August 2023
+
+Last Updated: 26th August 2023
+
+Introduction
+
+Welcome to WFH Taxback, a mobile application ("App") developed by Elder Software ("we," "our," or "us"). This Privacy Policy is designed to help you understand how we collect, use, disclose, and safeguard your personal information in connection with your use of the WFH Taxback App.
+
+By using the WFH Taxback App, you consent to the practices described in this Privacy Policy. If you do not agree with the practices described herein, please do not use the App.
+
+Information We Collect
+
+We do not collect any personal information, except for the financial information that you input into the App for the purpose of calculating taxes in Australia. This may include information such as income, deductions, expenses, and other relevant financial details. We do not collect or store any other personal information, such as your name, address, email, or contact information.
+
+Use of Your Information
+
+The financial information you provide within the WFH Taxback App is solely used for the purpose of calculating taxes in accordance with Australian tax regulations. We do not use this information for any other purpose. Your financial information is stored securely within the App and is not shared with any third parties.
+
+Disclosure of Your Information
+
+We do not disclose, sell, trade, or otherwise transfer your financial information to any third parties. Your financial information is used solely within the App to provide you with accurate tax calculations.
+
+Data Security
+
+We understand the importance of data security and have implemented reasonable technical, administrative, and physical measures to protect the confidentiality, integrity, and availability of the financial information you provide. However, no data transmission or storage system can be guaranteed to be 100% secure. If you have any concerns about the security of your information, please contact us using the information provided in the "Contact Us" section below.
+
+Changes to Privacy Policy
+
+We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes to this Privacy Policy by posting the revised policy on our website or through the App.
+
+Contact Us
+
+If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
+
+Elder Software
+apps@elder-software.com
+
+App Store Platforms
+
+Please note that your use of the WFH Taxback App is also subject to the terms and conditions and privacy policies of the app store platforms from which you downloaded the App, namely the Google Play Store and Apple App Store.
+
+Acceptance of Privacy Policy
+
+By using the WFH Taxback App, you signify your acceptance of this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not use the App.
+
+Effective Date
+
+This Privacy Policy is effective as of the date indicated at the beginning of the policy.
+
+Last Updated
+
+This Privacy Policy was last updated on the date indicated at the beginning of the policy.
+
+---

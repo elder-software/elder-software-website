@@ -1,0 +1,14 @@
+.fade-in-out {
+  font-size: 20px;
+  text-align: center;
+  animation: fadeInOut 4s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
