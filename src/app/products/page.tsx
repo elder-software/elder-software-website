@@ -2,11 +2,9 @@
 
 import React from 'react';
 import './products.css';
-import useIsMobile from '@/hooks/useIsMobile';
 import Image from 'next/image';
 
 const Products: React.FC = () => {
-  const isMobile = useIsMobile();
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
