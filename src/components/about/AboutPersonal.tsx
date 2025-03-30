@@ -1,37 +1,49 @@
-import React from 'react';
-import './aboutPersonal.css';
+import React, { useEffect, useState } from 'react';
 import useIsMobile from '@/hooks/useIsMobile';
 import { CertificateIcon, MusicIcon, NewZealandIcon, SurfSkateIcon } from '@/components/icons/abouticons';
 import { AndroidIcon } from '@/components/icons/techicons';
 
 const HomeAboutSection: React.FC = () => {
-  const [infoText, setInfoText] = React.useState(text[0]);
-  const [focusedIcon, setFocusedIcon] = React.useState(0);
-  const [iconIsHovered, setIconIsHovered] = React.useState(false);
+  const [infoText, setInfoText] = useState(text[0]);
+  const [focusedIcon, setFocusedIcon] = useState(0);
+  const [iconIsHovered, setIconIsHovered] = useState(false);
+  // Add opacity state for fade effect
+  const [opacity, setOpacity] = useState(1);
   const isMobile = useIsMobile();
 
   const onMouseEnter = (text: string, iconIndex: number) => {
     setIconIsHovered(true);
-    setInfoText(text);
-    setFocusedIcon(iconIndex);
+    // Fade out, change text, fade in
+    setOpacity(0);
+    setTimeout(() => {
+      setInfoText(text);
+      setFocusedIcon(iconIndex);
+      setOpacity(1);
+    }, 300); // Short delay to allow fade out to complete
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       if (!iconIsHovered) {
-        setFocusedIcon((focusedIcon + 1) % 5);
+        // Use the same fade transition for automatic changes
+        setOpacity(0);
+        setTimeout(() => {
+          const nextIcon = (focusedIcon + 1) % text.length;
+          setFocusedIcon(nextIcon);
+          setInfoText(text[nextIcon]);
+          setOpacity(1);
+        }, 300);
       }
     }, 4000);
-    if (!iconIsHovered) {
-      setInfoText(text[focusedIcon]);
-    }
+
     return () => clearInterval(interval);
   }, [focusedIcon, iconIsHovered]);
 
   return (
-    <div style={styles.mainDiv}>
-      <div style={styles.infoDiv}>
-        <div style={styles.allIconsContainer}>
+    <div className="bg-white py-8 w-full" style={{ position: 'relative' }}>
+      <div className="max-w-3xl mx-auto px-8 w-full">
+        {/* Icon container */}
+        <div className="grid grid-cols-5 gap-4 items-center justify-items-center mb-8">
           <NewZealandIcon
             size={isMobile ? 40 : 70}
             onMouseEnter={() => onMouseEnter(text[0], 0)}
@@ -65,17 +77,20 @@ const HomeAboutSection: React.FC = () => {
           />
         </div>
 
-        <div style={{ ...styles.rowTextStyle }}>
-          <p
-            key={infoText}
-            className="fade-in-out"
-            style={{
-              fontSize: isMobile ? 10 : 20,
-              alignSelf: 'center'
+        {/* Text container - fixed height and layout */}
+        <div className="w-full" style={{ height: '200px', position: 'relative' }}>
+          <div 
+            className="absolute inset-0 flex items-center justify-center"
+            style={{ 
+              opacity, 
+              transition: 'opacity 300ms ease-in-out',
+              width: '100%' 
             }}
           >
-            {infoText}
-          </p>
+            <p className="text-[10px] md:text-[20px] text-center max-w-2xl mx-auto">
+              {infoText}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -93,54 +108,5 @@ const text = [
   'Growing up close to the beach has resulted in surfing and skateboarding ' +
     'being my favourite sports.'
 ];
-
-const styles = {
-  mainDiv: {
-    display: 'flex',
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignContent: 'center',
-    marginTop: 10
-  } as React.CSSProperties,
-  infoDiv: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    border: '0px solid #f2f2f2',
-    borderRadius: 15,
-    width: '100%',
-    paddingLeft: '5%',
-    paddingRight: '5%',
-    background: 'white'
-  } as React.CSSProperties,
-  allIconsContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    padding: '5%',
-    paddingBottom: 0,
-    paddingTop: '15%'
-  } as React.CSSProperties,
-  rowTextStyle: {
-    display: 'flex',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignContent: 'center',
-    fontWeight: 'lighter',
-    opacity: '80%',
-    minHeight: 200,
-    padding: '10%',
-    transition: 'opacity 1.0s ease'
-  } as React.CSSProperties,
-  infoTextStyle: {
-    fontSize: 20,
-    opacity: '80%',
-    textAlign: 'center',
-    transition: 'opacity 1.0s ease',
-    alignSelf: 'center'
-  } as React.CSSProperties
-};
 
 export default HomeAboutSection;
