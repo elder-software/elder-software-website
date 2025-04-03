@@ -48,6 +48,14 @@ const Carousel: React.FC<CarouselProps> = ({
   }, [current, isDragging, dragOffset]);
 
   const handlePointerDown = (e: PointerEvent<HTMLDivElement>) => {
+    // Check if the event originated from a button or an indicator dot
+    const targetElement = e.target as Element;
+    if (targetElement.closest('button')) {
+      // If the pointer down is on a button, don't initiate drag
+      // Allow the button's onClick to handle the event
+      return;
+    }
+
     setIsDragging(true);
     setStartX(e.clientX);
     setDragOffset(0); // Reset offset
