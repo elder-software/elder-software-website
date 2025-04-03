@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeaderIcon } from "./icons/HeaderIcon";
 import { MdContactMail } from "react-icons/md";
-import { FaShoppingCart, FaHome, FaBriefcase } from "react-icons/fa";
+import { FaHome, FaBriefcase } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
