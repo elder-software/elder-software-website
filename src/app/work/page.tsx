@@ -12,13 +12,13 @@ const workItemVariants = {
     open: {
         opacity: 1,
         height: 'auto',
-        marginTop: 15, // Keep the margin when open
+        marginBottom: 15, // Animate marginBottom for vertical spacing
         transition: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }
     },
     collapsed: {
         opacity: 0,
         height: 0,
-        marginTop: 0, // Remove margin when collapsed
+        marginBottom: 0, // Animate marginBottom to 0
         transition: { duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }
     }
 };
@@ -50,12 +50,11 @@ const Work: React.FC = () => {
   return (
     <div
       style={{
-        margin: 15,
+        margin: 16,
         display: "grid",
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        gap: "15px",
+        columnGap: "12px",
         alignItems: "start",
-        // Ensure grid can accommodate the expanded item row
         gridAutoRows: 'min-content',
       }}
     >
@@ -71,23 +70,24 @@ const Work: React.FC = () => {
                   onClick={() => handleTileClick(item.name)}
                   isSelected={isSelected}
                   isDimmed={isDimmed}
+                  style={{ marginBottom: 12 }}
               />
           );
       })}
 
-      {/* Render the single animated expanded item in the correct grid position */}
       <AnimatePresence initial={false} mode="wait">
         {selectedItem && (
           <motion.div
-            key={selectedItem.name} // Use item name for key tracking
+            key={selectedItem.name}
+            layout
             variants={workItemVariants}
             initial="collapsed"
             animate="open"
             exit="collapsed"
             style={{
-                gridColumn: `span ${columns}`, // Span columns
-                gridRowStart: gridRowStart, // Place in the correct row
-                overflow: 'hidden'
+                gridColumn: `span ${columns}`,
+                gridRowStart: gridRowStart,
+                overflow: 'hidden',
             }}
           >
             <ExpandedWorkItem

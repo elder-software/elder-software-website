@@ -7,9 +7,10 @@ interface WorkTileProps {
   onClick: () => void;
   isSelected: boolean; // To apply selected styles
   isDimmed: boolean;   // To apply dimmed styles when another tile is selected
+  style?: React.CSSProperties; // Add optional style prop
 }
 
-const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, isDimmed }) => {
+const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, isDimmed, style }) => {
   // Define base, selected, and dimmed styles
   const baseStyle: React.CSSProperties = {
     border: '1px solid #eee',
@@ -43,11 +44,12 @@ const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, is
     // backgroundImage: 'linear-gradient(rgba(180, 180, 180, 0.1), rgba(180, 180, 180, 0.1))',
   };
 
-  // Combine styles based on props
+  // Combine styles based on props and incoming style prop
   const combinedStyle = {
     ...baseStyle,
     ...(isSelected ? selectedStyle : {}),
     ...(isDimmed ? dimmedStyle : {}),
+    ...style, // Spread the incoming style prop
   };
 
   // Styles for the overlay div
@@ -59,7 +61,7 @@ const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, is
       bottom: 0,
       backgroundColor: 'rgba(180, 180, 180, 0.1)', // The grey overlay color
       opacity: isDimmed ? 1 : 0, // Control opacity based on isDimmed
-      transition: 'opacity 0.2s ease-in-out', // Animate the overlay opacity
+      transition: 'opacity 0.1s ease-in-out', // Animate the overlay opacity
       pointerEvents: 'none', // Make sure it doesn't block clicks
       borderRadius: 'inherit', // Match parent's border radius
   };

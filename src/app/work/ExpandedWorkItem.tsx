@@ -23,7 +23,6 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({ item, onClose }) =>
     <div
       style={{
         padding: '30px',
-        margin: '15px 0',
         backgroundColor: '#ffffff',
         borderRadius: '8px',
         boxShadow: '0 5px 15px rgba(0,0,0,0.1)',
