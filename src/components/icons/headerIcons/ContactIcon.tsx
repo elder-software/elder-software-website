@@ -1,10 +1,10 @@
-import React from 'react';
-import { MdEmail } from 'react-icons/md';
-import { HeaderIconProps } from './styles';
+import React from "react";
+import { MdEmail } from "react-icons/md";
+import { HeaderIconProps } from "./styles";
 import { HeaderIconContainer } from "./HeaderIconContainer";
 
 const ContactIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
-  <HeaderIconContainer href="/contact" text="Contact" textSize={textSize}>
+  <HeaderIconContainer text="Contact" textSize={textSize}>
     <MdEmail
       className={`
         icon self-center text-white

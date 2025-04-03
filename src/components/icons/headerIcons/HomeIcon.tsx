@@ -4,7 +4,7 @@ import { HeaderIconProps } from "./styles";
 import { HeaderIconContainer } from "./HeaderIconContainer";
 
 const HomeIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
-  <HeaderIconContainer href="/" text="Home" textSize={textSize}>
+  <HeaderIconContainer text="Home" textSize={textSize}>
     <FaHome
       className={`
         icon self-center text-white

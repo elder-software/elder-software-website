@@ -4,7 +4,7 @@ import { HeaderIconProps } from "./styles";
 import { HeaderIconContainer } from "./HeaderIconContainer";
 
 const WorkIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
-  <HeaderIconContainer href="/work" text="Work" textSize={textSize}>
+  <HeaderIconContainer text="Work" textSize={textSize}>
     <MdWork
       className={`
         icon self-center text-white

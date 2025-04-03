@@ -4,7 +4,7 @@ import { HeaderIconProps } from "./styles";
 import { HeaderIconContainer } from "./HeaderIconContainer";
 
 const ProductsIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
-  <HeaderIconContainer href="/products" text="Products" textSize={textSize}>
+  <HeaderIconContainer text="Products" textSize={textSize}>
     <TbPackages
       className={`
         icon self-center text-white

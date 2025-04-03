@@ -8,6 +8,7 @@ import {
   WorkIcon,
 } from "./icons/headerIcons";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -32,10 +33,18 @@ const Header: React.FC = () => {
       </div>
 
       <div className="flex justify-around py-[1%] border border-black rounded-[15px] mx-5 bg-black opacity-85 shadow-md">
-        <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
-        <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
-        <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
-        <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        <Link href="/">
+          <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        </Link>
+        <Link href="/work">
+          <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        </Link>
+        <Link href="/products">
+          <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        </Link>
+        <Link href="/contact">
+          <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+        </Link>
       </div>
     </div>
   );
