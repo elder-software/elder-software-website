@@ -11,12 +11,12 @@ interface HeaderIconContainerProps {
 }
 
 export interface HeaderIconProps {
-    size?: number;
-    textSize?: number;
-    isActive?: boolean;
-  }
+  size?: number;
+  textSize?: number;
+  isActive?: boolean;
+}
 
-export const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
+export const HeaderIcon: React.FC<HeaderIconContainerProps> = ({
   text,
   textSize,
   icon: IconComponent,
@@ -28,7 +28,7 @@ export const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
   const commonIconClassName = `
     icon self-center
     transition-colors duration-500 group-hover:text-black
-    ${isActive ? 'text-black' : 'text-white'}
+    ${isActive ? "text-black" : "text-white"}
   `;
 
   return (
@@ -37,11 +37,11 @@ export const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
         group flex flex-col items-center content-center text-center
         rounded px-2.5 py-1
         transition-colors duration-500 hover:bg-white
-        ${isActive ? 'bg-white' : 'bg-black'}
+        ${isActive ? "bg-white" : "bg-black"}
       `}
     >
       <IconComponent
-        className={`${commonIconClassName} ${iconProps?.className || ''}`}
+        className={`${commonIconClassName} ${iconProps?.className || ""}`}
         style={{ height: iconSize, width: iconSize, ...iconProps?.style }}
         {...iconProps}
       />
@@ -49,7 +49,7 @@ export const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
         className={`
           iconText m-0 p-0 border-0
           transition-colors duration-500 group-hover:text-black
-          ${isActive ? 'text-black' : 'text-white'}
+          ${isActive ? "text-black" : "text-white"}
         `}
         style={{ fontSize: textSize }}
       >

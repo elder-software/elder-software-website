@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 import React, { useState, useEffect } from "react";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { HeaderIconContainer } from "./icons/HeaderIconContainer";
+import { HeaderIcon } from "./icons/HeaderIcon";
 import { MdContactMail } from "react-icons/md";
 import { FaShoppingCart, FaHome, FaBriefcase } from "react-icons/fa";
 
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
   return (
     <div
       className="sticky top-0 z-10 transition-opacity duration-300"
-      style={{ opacity, pointerEvents: opacity < 0.1 ? 'none' : 'auto' }}
+      style={{ opacity, pointerEvents: opacity < 0.1 ? "none" : "auto" }}
     >
       <div className="flex flex-row justify-center m-[2%] my-12">
         <Image
@@ -48,39 +48,39 @@ const Header: React.FC = () => {
 
       <div className="flex justify-around py-[1%] border border-black rounded-[15px] mx-5 bg-black shadow-md">
         <Link href="/">
-          <HeaderIconContainer
+          <HeaderIcon
             text="Home"
             icon={FaHome}
             size={isMobile ? 15 : 23}
             textSize={isMobile ? 6 : 10}
-            isActive={pathname === '/'}
+            isActive={pathname === "/"}
           />
         </Link>
         <Link href="/work">
-          <HeaderIconContainer
+          <HeaderIcon
             text="Work"
             icon={FaBriefcase}
             size={isMobile ? 15 : 23}
             textSize={isMobile ? 6 : 10}
-            isActive={pathname === '/work'}
+            isActive={pathname === "/work"}
           />
         </Link>
         <Link href="/products">
-          <HeaderIconContainer
+          <HeaderIcon
             text="Products"
             icon={FaShoppingCart}
             size={isMobile ? 15 : 23}
             textSize={isMobile ? 6 : 10}
-            isActive={pathname === '/products'}
+            isActive={pathname === "/products"}
           />
         </Link>
         <Link href="/contact">
-          <HeaderIconContainer
+          <HeaderIcon
             text="Contact"
             icon={MdContactMail}
             size={isMobile ? 15 : 23}
             textSize={isMobile ? 6 : 10}
-            isActive={pathname === '/contact'}
+            isActive={pathname === "/contact"}
           />
         </Link>
       </div>
