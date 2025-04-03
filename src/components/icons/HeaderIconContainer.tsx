@@ -16,7 +16,7 @@ export interface HeaderIconProps {
     isActive?: boolean;
   }
 
-const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
+export const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
   text,
   textSize,
   icon: IconComponent,
@@ -58,5 +58,3 @@ const HeaderIconContainer: React.FC<HeaderIconContainerProps> = ({
     </div>
   );
 };
-
-export { HeaderIconContainer };

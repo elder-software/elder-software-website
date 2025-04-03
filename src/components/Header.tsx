@@ -2,14 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from 'next/navigation';
-import {
-  ContactIcon,
-  HomeIcon,
-  ProductsIcon,
-  WorkIcon,
-} from "./icons/headerIcons";
 import Image from "next/image";
 import Link from "next/link";
+import { HeaderIconContainer } from "./icons/HeaderIconContainer";
+import { MdContactMail } from "react-icons/md";
+import { FaShoppingCart, FaHome, FaBriefcase } from "react-icons/fa";
 
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -51,16 +48,40 @@ const Header: React.FC = () => {
 
       <div className="flex justify-around py-[1%] border border-black rounded-[15px] mx-5 bg-black shadow-md">
         <Link href="/">
-          <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/'} />
+          <HeaderIconContainer
+            text="Home"
+            icon={FaHome}
+            size={isMobile ? 15 : 23}
+            textSize={isMobile ? 6 : 10}
+            isActive={pathname === '/'}
+          />
         </Link>
         <Link href="/work">
-          <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/work'} />
+          <HeaderIconContainer
+            text="Work"
+            icon={FaBriefcase}
+            size={isMobile ? 15 : 23}
+            textSize={isMobile ? 6 : 10}
+            isActive={pathname === '/work'}
+          />
         </Link>
         <Link href="/products">
-          <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/products'} />
+          <HeaderIconContainer
+            text="Products"
+            icon={FaShoppingCart}
+            size={isMobile ? 15 : 23}
+            textSize={isMobile ? 6 : 10}
+            isActive={pathname === '/products'}
+          />
         </Link>
         <Link href="/contact">
-          <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/contact'} />
+          <HeaderIconContainer
+            text="Contact"
+            icon={MdContactMail}
+            size={isMobile ? 15 : 23}
+            textSize={isMobile ? 6 : 10}
+            isActive={pathname === '/contact'}
+          />
         </Link>
       </div>
     </div>
