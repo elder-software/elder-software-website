@@ -5,6 +5,23 @@ import { workInfo } from "./WorkInfo";
 import useIsMobile from "@/hooks/useIsMobile";
 import WorkTile from "./WorkTile";
 import ExpandedWorkItem from "./ExpandedWorkItem";
+import { motion, AnimatePresence } from 'framer-motion';
+
+// Define animation variants
+const workItemVariants = {
+    open: {
+        opacity: 1,
+        height: 'auto',
+        marginTop: 15, // Keep the margin when open
+        transition: { duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }
+    },
+    collapsed: {
+        opacity: 0,
+        height: 0,
+        marginTop: 0, // Remove margin when collapsed
+        transition: { duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }
+    }
+};
 
 const Work: React.FC = () => {
   const isMobile = useIsMobile();
@@ -40,17 +57,27 @@ const Work: React.FC = () => {
             isSelected={isSelected}
             isDimmed={isDimmed}
           />,
-          isSelected && (
-            <div
-              key={`${item.name}-expanded`}
-              style={{ gridColumn: `span ${columns}` }}
-            >
-              <ExpandedWorkItem
-                item={item}
-                onClose={() => handleTileClick(null)}
-              />
-            </div>
-          ),
+          // Use AnimatePresence to handle mount/unmount animations
+          <AnimatePresence initial={false} key={`${item.name}-presence`}>
+            {isSelected && (
+              <motion.div
+                key={`${item.name}-expanded`} // Unique key for framer-motion tracking
+                variants={workItemVariants}
+                initial="collapsed"
+                animate="open"
+                exit="collapsed"
+                style={{
+                    gridColumn: `span ${columns}`,
+                    overflow: 'hidden' // Prevent content spill during animation
+                }}
+              >
+                <ExpandedWorkItem
+                  item={item}
+                  onClose={() => handleTileClick(null)}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         ];
       })}
     </div>
