@@ -60,7 +60,11 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({ item, onClose }) =>
         <div>
           <h4 style={{ marginTop: 0, marginBottom: '10px', borderBottom: '1px solid #eee', paddingBottom: '5px' }}>Technologies Used</h4>
           <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            {item.technologies(30)}
+            {item.technologies(30).map((IconComponent, index) => (
+              <React.Fragment key={index}>
+                {IconComponent}
+              </React.Fragment>
+            ))}
           </div>
         </div>
 
