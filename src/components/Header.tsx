@@ -33,7 +33,10 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 z-10 transition-opacity duration-300" style={{ opacity }}>
+    <div
+      className="sticky top-0 z-10 transition-opacity duration-300"
+      style={{ opacity, pointerEvents: opacity < 0.1 ? 'none' : 'auto' }}
+    >
       <div className="flex flex-row justify-center m-[2%] my-12">
         <Image
           className={`${isMobile ? "w-[20%]" : "w-[10%]"} h-full`}
