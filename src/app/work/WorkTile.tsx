@@ -8,9 +8,10 @@ interface WorkTileProps {
   isSelected: boolean; // To apply selected styles
   isDimmed: boolean;   // To apply dimmed styles when another tile is selected
   style?: React.CSSProperties; // Add optional style prop
+  className?: string; // Add optional className prop
 }
 
-const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, isDimmed, style }) => {
+const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, isDimmed, style, className }) => {
   // Define base, selected, and dimmed styles
   const baseStyle: React.CSSProperties = {
     border: '1px solid #eee',
@@ -70,6 +71,7 @@ const WorkTile: React.FC<WorkTileProps> = ({ name, icon, onClick, isSelected, is
     <div
       onClick={onClick}
       style={combinedStyle}
+      className={className}
       // Remove inline mouse enter/leave styles if applying selectedStyle directly
       // onMouseEnter={...}
       // onMouseLeave={...}

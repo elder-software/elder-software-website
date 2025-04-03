@@ -24,58 +24,33 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
 }) => {
   return (
     <div
-      style={{
-        padding: "30px",
-        backgroundColor: "#ffffff",
-        borderRadius: "8px",
-        boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-        border: "1px solid #eee",
-        position: "relative",
-        display: "grid",
-        gridTemplateColumns: "1fr 2fr",
-        gap: "30px",
-        alignItems: "start",
-      }}
+      className="relative grid grid-cols-[1fr_2fr] items-start gap-8 rounded-lg border border-gray-200 bg-white p-8 shadow-lg"
     >
       <button
         onClick={onClose}
-        style={{
-          position: "absolute",
-          top: "15px",
-          right: "15px",
-          background: "none",
-          border: "none",
-          fontSize: "24px",
-          cursor: "pointer",
-          color: "#888",
-        }}
+        className="absolute right-4 top-4 cursor-pointer border-none bg-transparent text-2xl text-gray-500"
       >
         &times;
       </button>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+      <div className="flex flex-col gap-5">
+        <div className="flex items-center gap-4">
           <Image
             src={item.icon}
             alt={`${item.name} icon`}
             width={50}
             height={50}
           />
-          <h2 style={{ margin: 0, fontSize: "1.8em" }}>{item.name}</h2>
+          <h2 className="m-0 text-[1.8em]">{item.name}</h2>
         </div>
 
         <div>
           <h4
-            style={{
-              marginTop: 0,
-              marginBottom: "10px",
-              borderBottom: "1px solid #eee",
-              paddingBottom: "5px",
-            }}
+            className="mb-2.5 mt-0 border-b border-gray-200 pb-1"
           >
             Technologies Used
           </h4>
-          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <div className="flex flex-wrap gap-2.5">
             {item.technologies(30).map((IconComponent, index) => (
               <React.Fragment key={index}>{IconComponent}</React.Fragment>
             ))}
@@ -84,18 +59,13 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
 
         <div>
           <h4
-            style={{
-              marginTop: 0,
-              marginBottom: "10px",
-              borderBottom: "1px solid #eee",
-              paddingBottom: "5px",
-            }}
+            className="mb-2.5 mt-0 border-b border-gray-200 pb-1"
           >
             Key Details
           </h4>
-          <ul style={{ listStyle: "disc", paddingLeft: "20px", margin: 0 }}>
+          <ul className="m-0 list-disc pl-5">
             {item.keyDetails.map((detail) => (
-              <li key={detail} style={{ marginBottom: "5px" }}>
+              <li key={detail} className="mb-1">
                 {detail}
               </li>
             ))}
@@ -104,21 +74,12 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
 
         {item.testimonial && (
           <div
-            style={{
-              marginTop: "15px",
-              fontStyle: "italic",
-              borderLeft: "3px solid #eee",
-              paddingLeft: "15px",
-            }}
+            className="mt-4 border-l-1 border-gray-200 pl-4 italic"
           >
-            <p style={{ margin: 0 }}>&quot;{item.testimonial}&quot;</p>
+            <p className="m-0">&quot;{item.testimonial}&quot;</p>
             {item.testimonialAuthor && (
               <p
-                style={{
-                  margin: "5px 0 0",
-                  textAlign: "right",
-                  fontWeight: "bold",
-                }}
+                className="mt-1 text-right font-bold"
               >
                 - {item.testimonialAuthor}
               </p>
@@ -128,30 +89,20 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
       </div>
 
       {/* Right Column: Description and Screenshots */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+      <div className="flex flex-col gap-5">
         <div>
           <h4
-            style={{
-              marginTop: 0,
-              marginBottom: "10px",
-              borderBottom: "1px solid #eee",
-              paddingBottom: "5px",
-            }}
+            className="mb-2.5 mt-0 border-b border-gray-200 pb-1"
           >
             Description
           </h4>
-          <p style={{ margin: 0, lineHeight: 1.6 }}>{item.description}</p>
+          <p className="m-0 leading-relaxed">{item.description}</p>
         </div>
 
         {item.screenshots && item.screenshots.length > 0 && (
           <div>
             <h4
-              style={{
-                marginTop: 0,
-                marginBottom: "15px",
-                borderBottom: "1px solid #eee",
-                paddingBottom: "5px",
-              }}
+              className="mb-4 mt-0 border-b border-gray-200 pb-1"
             >
               Screenshots
             </h4>
@@ -163,11 +114,7 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
                   alt={`${item.name} screenshot ${index + 1}`}
                   width={500}
                   height={300}
-                  style={{
-                    objectFit: "contain",
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  className="h-auto w-full object-contain"
                 />
               ))}
             </Carousel>
