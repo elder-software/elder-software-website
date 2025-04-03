@@ -21,9 +21,9 @@ const Header: React.FC = () => {
 
   return (
     <div>
-      <div style={styles.logoDiv}>
+      <div className="flex flex-row justify-center m-[2%] opacity-85">
         <Image
-          style={{ width: isMobile ? "20%" : "10%", height: "100%" }}
+          className={`${isMobile ? "w-[20%]" : "w-[10%]"} h-full`}
           src="/logo.jpeg"
           alt="logo"
           width={100}
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         />
       </div>
 
-      <div style={styles.headingsDiv}>
+      <div className="flex justify-around py-[1%] border border-black rounded-[15px] mx-5 bg-black opacity-85 shadow-md">
         <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
         <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
         <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
@@ -39,32 +39,6 @@ const Header: React.FC = () => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  logoDiv: {
-    display: "flex",
-    flexDirection: "row",
-    flex: 1,
-    justifyContent: "center",
-    margin: "2%",
-    opacity: 0.85,
-  } as React.CSSProperties,
-  headingsDiv: {
-    display: "flex",
-    justifyContent: "space-around",
-    paddingTop: "1%",
-    paddingBottom: "1%",
-    border: "1px solid black",
-    borderRadius: 15,
-    marginRight: 20,
-    marginLeft: 20,
-    background: "black",
-    opacity: 0.85,
-    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
-    MozBoxShadow: "2px 2px 2px #DFDFDF",
-    boxShadow: "2px 2px 2px #DFDFDF",
-  } as React.CSSProperties,
 };
 
 export default Header;

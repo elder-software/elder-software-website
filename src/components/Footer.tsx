@@ -2,65 +2,18 @@ import React from 'react';
 import { GithubSmallIcon, LinkedInSmallIcon } from './icons/contacticons';
 
 const Footer: React.FC = () => (
-  <div style={styles.mainDiv}>
-    <div style={styles.innerDiv}>
-      <div style={styles.textDiv}>
+  <div className="flex flex-1 flex-row py-[1%] border border-black rounded-[15px] bg-black opacity-85 shadow-md fixed bottom-0 left-0 right-0 mx-5 my-2.5 items-center">
+    <div className="flex items-center flex-1 justify-center">
+      <div className="flex flex-col text-white p-2.5 text-xs text-center">
         <div>Website created using ReactJS</div>
         <div>Code available on GitHub</div>
       </div>
-      <div style={styles.iconsDiv}>
+      <div className="flex flex-row items-center p-2.5">
         <GithubSmallIcon />
         <LinkedInSmallIcon />
       </div>
     </div>
   </div>
 );
-
-const styles = {
-  mainDiv: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'row',
-    paddingTop: '1%',
-    paddingBottom: '1%',
-    border: '1px solid black',
-    borderRadius: 15,
-    background: 'black',
-    opacity: 0.85,
-    WebkitBoxShadow: '2px 2px 2px #DFDFDF',
-    MozBoxShadow: '2px 2px 2px #DFDFDF',
-    boxShadow: '2px 2px 2px #DFDFDF',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 10,
-    marginBottom: 10,
-    alignItems: 'center'
-  } as React.CSSProperties,
-  innerDiv: {
-    display: 'flex',
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center'
-  } as React.CSSProperties,
-  textDiv: {
-    display: 'flex',
-    flexDirection: 'column',
-    color: 'white',
-    padding: 10,
-    fontSize: 12,
-    textAlign: 'center'
-  } as React.CSSProperties,
-  iconsDiv: {
-    display: 'flex',
-    justifyContent: 'row',
-    alignContent: 'center',
-    alignItems: 'center',
-    padding: 10
-  } as React.CSSProperties
-};
 
 export default Footer;
