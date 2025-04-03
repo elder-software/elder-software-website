@@ -28,12 +28,17 @@ const Work: React.FC = () => {
     >
       {workInfo.flatMap((item) => {
         const isSelected = selectedItemKey === item.name;
+        // Determine if the tile should be dimmed (i.e., an item is selected, but it's not this one)
+        const isDimmed = selectedItemKey !== null && !isSelected;
+
         return [
           <WorkTile
             key={item.name}
             name={item.name}
             icon={item.icon}
             onClick={() => handleTileClick(item.name)}
+            isSelected={isSelected}
+            isDimmed={isDimmed}
           />,
           isSelected && (
             <div
