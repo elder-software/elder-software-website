@@ -2,7 +2,7 @@ import React from 'react';
 import { GithubSmallIcon, LinkedInSmallIcon } from './icons/contacticons';
 
 const Footer: React.FC = () => (
-  <div className="flex flex-1 flex-row py-[1%] border border-black rounded-[15px] bg-black opacity-85 shadow-md fixed bottom-0 left-0 right-0 mx-5 my-2.5 items-center">
+  <div className="flex flex-1 flex-row py-[1%] border border-black rounded-[15px] bg-black opacity-85 shadow-md mx-5 my-2.5 items-center">
     <div className="flex items-center flex-1 justify-center">
       <div className="flex flex-col text-white p-2.5 text-xs text-center">
         <div>Website created using ReactJS</div>

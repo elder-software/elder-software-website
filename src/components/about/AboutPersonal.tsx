@@ -40,7 +40,7 @@ const HomeAboutSection: React.FC = () => {
   }, [focusedIcon, iconIsHovered]);
 
   return (
-    <div className="bg-white py-8 w-full" style={{ position: 'relative' }}>
+    <div className="py-8 w-full" style={{ position: 'relative' }}>
       <div className="max-w-3xl mx-auto px-8 w-full">
         {/* Icon container */}
         <div className="grid grid-cols-5 gap-4 items-center justify-items-center mb-8">
