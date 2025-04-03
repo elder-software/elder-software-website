@@ -1,35 +1,18 @@
 import React from "react";
 import { FaHome, FaUser } from "react-icons/fa";
 import { HeaderIconProps } from "./styles";
-import Link from "next/link";
+import { HeaderIconContainer } from "./HeaderIconContainer";
 
 const HomeIcon: React.FC<HeaderIconProps> = ({ size, textSize }) => (
-  <Link href="/">
-    <div
+  <HeaderIconContainer href="/" text="Home" textSize={textSize}>
+    <FaHome
       className={`
-        group flex flex-col items-center content-center text-center
-        bg-black rounded px-2.5 py-1
-        transition-colors duration-500 hover:bg-white
+        icon self-center text-white
+        transition-colors duration-500 group-hover:text-black
       `}
-    >
-      <FaHome
-        className={`
-          icon self-center text-white
-          transition-colors duration-500 group-hover:text-black
-        `}
-        style={{ height: size || 80, width: size || 80 }}
-      />
-      <h5
-        className={`
-          iconText m-0 p-0 border-0 text-white
-          transition-colors duration-500 group-hover:text-black
-        `}
-        style={{ fontSize: textSize }}
-      >
-        Home
-      </h5>
-    </div>
-  </Link>
+      style={{ height: size || 80, width: size || 80 }}
+    />
+  </HeaderIconContainer>
 );
 
 export { HomeIcon };
