@@ -65,7 +65,7 @@ const Header: React.FC = () => {
             isActive={pathname === "/work"}
           />
         </Link>
-        <Link href="/products">
+        {/* <Link href="/products">
           <HeaderIcon
             text="Products"
             icon={FaShoppingCart}
@@ -73,7 +73,7 @@ const Header: React.FC = () => {
             textSize={isMobile ? 6 : 10}
             isActive={pathname === "/products"}
           />
-        </Link>
+        </Link> */}
         <Link href="/contact">
           <HeaderIcon
             text="Contact"
