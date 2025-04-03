@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react";
+import { usePathname } from 'next/navigation';
 import {
   ContactIcon,
   HomeIcon,
@@ -13,6 +14,7 @@ import Link from "next/link";
 const Header: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [opacity, setOpacity] = useState(1);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 1000);
@@ -49,16 +51,16 @@ const Header: React.FC = () => {
 
       <div className="flex justify-around py-[1%] border border-black rounded-[15px] mx-5 bg-black shadow-md">
         <Link href="/">
-          <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+          <HomeIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/'} />
         </Link>
         <Link href="/work">
-          <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+          <WorkIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/work'} />
         </Link>
         <Link href="/products">
-          <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+          <ProductsIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/products'} />
         </Link>
         <Link href="/contact">
-          <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} />
+          <ContactIcon size={isMobile ? 15 : 23} textSize={isMobile ? 6 : 10} isActive={pathname === '/contact'} />
         </Link>
       </div>
     </div>
