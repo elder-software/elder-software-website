@@ -7,7 +7,6 @@ import WorkTile from "./WorkTile";
 import ExpandedWorkItem from "./ExpandedWorkItem";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Define animation variants
 const workItemVariants = {
   open: {
     opacity: 1,
@@ -23,13 +22,12 @@ const workItemVariants = {
   },
 };
 
-// Define animation variants for the grid container and items
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Stagger the animation of children
+      staggerChildren: 0.1,
     },
   },
 };
@@ -49,19 +47,17 @@ const Work: React.FC = () => {
 
   const columns = isMobile ? 1 : 3;
 
-  // Find the selected item data if a key is set
   const selectedItem = selectedItemKey
     ? workInfo.find((item) => item.name === selectedItemKey)
     : null;
 
-  // Calculate grid position for the expanded item
-  let gridRowStart = 2; // Default row start (e.g., after the first row)
+  let gridRowStart = 2;
   if (selectedItem) {
     const itemIndex = workInfo.findIndex(
       (item) => item.name === selectedItemKey
     );
     if (itemIndex !== -1) {
-      gridRowStart = Math.floor(itemIndex / columns) + 2; // Place it in the row *after* the item's row
+      gridRowStart = Math.floor(itemIndex / columns) + 2;
     }
   }
 
@@ -71,7 +67,6 @@ const Work: React.FC = () => {
         isMobile ? "grid-cols-1" : "grid-cols-3"
       } gap-x-3 items-start auto-rows-min`}
     >
-      {/* Wrap the tiles mapping with motion.div for entry animation */}
       <motion.div
         className={`contents`}
         variants={containerVariants}
@@ -90,7 +85,7 @@ const Work: React.FC = () => {
               isSelected={isSelected}
               isDimmed={isDimmed}
               className="mb-3"
-              variants={itemVariants} // Pass item variants to WorkTile
+              variants={itemVariants}
             />
           );
         })}
