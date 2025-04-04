@@ -29,12 +29,12 @@ const About: React.FC = () => {
       animate="visible"
     >
       <motion.div
-        className="flex flex-col md:flex-row justify-center gap-8 md:gap-8 mx-auto py-4 md:py-8 px-32 md:px-8 w-full"
+        className="flex flex-col md:flex-row justify-center gap-8 md:gap-8 mx-auto py-4 md:py-8 px-2 md:px-16 w-full"
         variants={childVariants}
       >
-        <div className="w-1/3 md:w-1/3 flex-shrink-0">
+        <div className="w-1/3 md:w-1/3 flex-shrink-0 self-center">
           <Image
-            className="opacity-95 rounded-[25%] w-full h-auto object-cover"
+            className="opacity-95 rounded-[25%] w-full h-auto object-cover align-middle items-center"
             src={"/jamie-photo.webp"}
             alt="james-potrait"
             width={150}
@@ -65,7 +65,7 @@ const About: React.FC = () => {
 
       <div className="flex-1" />
       <motion.div
-        className="w-full px-32 pb-4 md:pb-8"
+        className="w-full px-2 md:px-16 pb-4 md:pb-8"
         variants={childVariants}
       >
         <AboutProfessionalSummary />
