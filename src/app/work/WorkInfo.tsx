@@ -39,7 +39,7 @@ export const workInfo: WorkInfoProps[] = [
     name: "Virgin Australia",
     icon: "/appIcons/virginIcon.jpeg",
     technologies: ["Android", "Kotlin", "Mobile"],
-    keyDetails: ["500,000+ downloads", "Android, Kotlin"],
+    keyDetails: ["500,000+ downloads"],
     description:
       "Virgin Australias official mobile app for assisting travellers, allowing them to book and manage flights. " +
       "We had a large team for this project, I was responsible for ensuring that key stakeholders were happy with the " +
@@ -56,11 +56,7 @@ export const workInfo: WorkInfoProps[] = [
     name: "myLearners",
     icon: "/appIcons/mylearners.jpeg",
     technologies: ["Android", "Kotlin", "RxJava", "Mobile"],
-    keyDetails: [
-      "100,000K+ downloads",
-      "Government owned project",
-      "Android, Kotlin",
-    ],
+    keyDetails: ["100,000K+ downloads", "Government owned project"],
     description:
       "myLearners is a mobile app for assisting learner drivers in Australia to track driving hours. The  " +
       "state of Victoria required an application that can be used to track the users hours driven, road conditions " +
@@ -77,7 +73,7 @@ export const workInfo: WorkInfoProps[] = [
     name: "My 7-Eleven",
     icon: "/appIcons/my7eleven.jpg",
     technologies: ["Android", "iOS", "Kotlin", "React Native", "TypeScript"],
-    keyDetails: ["1M+ downloads", "Android, Kotlin"],
+    keyDetails: ["1M+ downloads", "Partially integrated React-Native into existing Android app"],
     description:
       "7 Eleven loyalty awards, the ability to lock in a low fuel price, checkout items and petrol " +
       "using only the app. I was tasked to integrate React-Native for a feature into an existing Android app. " +
@@ -105,7 +101,7 @@ export const workInfo: WorkInfoProps[] = [
       "Dropbox",
       "PDF generation",
     ],
-    keyDetails: ["in-house app (<20 users)"],
+    keyDetails: ["in-house app (<20 users)", "UI and UX design"],
     description:
       "Completely designed and developed by myself for a company that manufactures and installs facades for buildings. " +
       "The app allows the company to perform quality control checks on their work.",
@@ -120,13 +116,15 @@ export const workInfo: WorkInfoProps[] = [
   {
     name: "Lautrec Façade Design",
     icon: "/appIcons/Lautrec.png",
-    technologies: ["Android", "Kotlin", "Mobile"],
-    keyDetails: [
-      "in-house app (<20 users)",
+    technologies: [
+      "Android",
+      "Kotlin",
+      "Mobile",
       "Firebase",
       "Dropbox",
       "PDF generation",
     ],
+    keyDetails: ["in-house app (<20 users)", "Included UI and UX design"],
     description:
       "Completely designed and developed by myself for a company that designs facades for buildings. " +
       "The app allowed the company to generate PDF reports used for engineering inspections.",
@@ -149,6 +147,7 @@ export const workInfo: WorkInfoProps[] = [
       "Automatically formatted PDF generation",
       "Dropbox file sync",
       "Firebase Database / Login",
+      "Included UI and UX design"
     ],
     description:
       "An in house app used to streamline internal process. This app helps with Quality Assurance for Site Inspections",
