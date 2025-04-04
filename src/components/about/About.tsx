@@ -14,7 +14,7 @@ const About: React.FC = () => {
               <div className="flex-[1_1_45%]">
                 <Image
                   className="rounded-l-[15px] opacity-95"
-                  src={"/jamie-photo.jpg"}
+                  src={"/jamie-photo.webp"}
                   alt="james-potrait"
                   width={200}
                   height={200}

@@ -21,10 +21,11 @@ export const workInfo: WorkInfoProps[] = [
       "Full rewrite (partially greenfield project)",
     ],
     description:
-      "The ABC is a free video streaming service for Australians. Watch Live Streams, TV shows and movies. " +
+      "I worked as a senior developer on the ABC iview project. Responsible for architecture decisions, " +
+      "coding and guiding others. IView is a free video streaming service for Australians to watch Live Streams, TV shows and movies. " +
       "The app was developed using Jetpack Compose and Kotlin, at the time the Jetpack Compose TV library was" +
       " very recently released (Still in alpha when we started) and I enjoyed the challenges that came with being one " +
-      "of the earliest adopters.",
+      "of the early adopters.",
     screenshots: [
       "/screenshots/iViewScreenShot1.jpg",
       "/screenshots/iViewScreenShot2.jpg",
@@ -40,9 +41,9 @@ export const workInfo: WorkInfoProps[] = [
     technologies: ["Android", "Kotlin", "Mobile"],
     keyDetails: ["500,000+ downloads", "Android, Kotlin"],
     description:
-      "Virgin Australias official mobile app for assisting travellers, allowing them to book and " +
-      "change flights, view boarding passes. The codebase used the latest recommended libraries" +
-      " Google for Android development regarding architecture and 3rd party libraries",
+      "Virgin Australias official mobile app for assisting travellers, allowing them to book and manage flights. " +
+      "We had a large team for this project, I was responsible for ensuring that key stakeholders were happy with the " +
+      "Android side of the app, developing high-quality code and mentoring other developers.",
     screenshots: [
       "/screenshots/virginScreenshot1.jpg",
       "/screenshots/virginScreenshot2.jpg",
@@ -61,9 +62,10 @@ export const workInfo: WorkInfoProps[] = [
       "Android, Kotlin",
     ],
     description:
-      "myLearners is a mobile app for assisting learner drivers in Australia. We worked with the government " +
-      "of the state of Victoria to develop an application that can be used to track the users hours driven, road conditions " +
-      "and provide useful learning materials to help learner drivers move on to their full license.",
+      "myLearners is a mobile app for assisting learner drivers in Australia to track driving hours. The  " +
+      "state of Victoria required an application that can be used to track the users hours driven, road conditions " +
+      "and provide useful learning materials to help learner drivers move on to their full license. There were some" +
+      "unique challenges with this project, such as the need to track the users location and distance travelled.",
     screenshots: [
       "/screenshots/mylearnersScreenshot1.jpg",
       "/screenshots/mylearnersScreenshot2.jpg",
@@ -78,7 +80,8 @@ export const workInfo: WorkInfoProps[] = [
     keyDetails: ["1M+ downloads", "Android, Kotlin"],
     description:
       "7 Eleven loyalty awards, the ability to lock in a low fuel price, checkout items and petrol " +
-      "using only the app. The development was an interesting challenge to complete these unique features.",
+      "using only the app. I was tasked to integrate React-Native for a feature into an existing Android app. " +
+      "It was an interesting challenge and gave me an in-depth understanding of how React-Native works at a low level.",
     screenshots: [
       "/screenshots/my7elevenScreenshot1.jpg",
       "/screenshots/my7elevenScreenshot2.jpg",
@@ -98,15 +101,14 @@ export const workInfo: WorkInfoProps[] = [
       "Swift",
       "React Native",
       "TypeScript",
-    ],
-    keyDetails: [
-      "in-house app (<20 users)",
       "Firebase",
       "Dropbox",
       "PDF generation",
     ],
+    keyDetails: ["in-house app (<20 users)"],
     description:
-      "An in house app used to streamline internal process. This app helps with Quality Assurance for Site Inspections",
+      "Completely designed and developed by myself for a company that manufactures and installs facades for buildings. " +
+      "The app allows the company to perform quality control checks on their work.",
     screenshots: ["/screenshots/KFISS1.png", "/screenshots/KFISS2.png"],
     testimonial: "",
     /*'We created an app with James to help automate some of our' +
@@ -126,7 +128,8 @@ export const workInfo: WorkInfoProps[] = [
       "PDF generation",
     ],
     description:
-      "An in house app used to streamline internal process. This app helps with Quality Assurance for Site Inspections",
+      "Completely designed and developed by myself for a company that designs facades for buildings. " +
+      "The app allowed the company to generate PDF reports used for engineering inspections.",
     screenshots: ["/screenshots/LautrecSS1.png", "/screenshots/LautrecSS2.png"],
     testimonial: "" /*
       'We gave James a brief & a suggested report format for a ' +
