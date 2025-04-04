@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { motion, Variants } from "framer-motion";
 
 interface WorkTileProps {
   name: string;
@@ -8,6 +9,7 @@ interface WorkTileProps {
   isSelected: boolean;
   isDimmed: boolean;
   className?: string;
+  variants?: Variants;
 }
 
 const WorkTile: React.FC<WorkTileProps> = ({
@@ -17,6 +19,7 @@ const WorkTile: React.FC<WorkTileProps> = ({
   isSelected,
   isDimmed,
   className,
+  variants,
 }) => {
   const baseClasses =
     "border border-gray-200 rounded-lg p-4 " +
@@ -49,7 +52,11 @@ const WorkTile: React.FC<WorkTileProps> = ({
     .join(" ");
 
   return (
-    <div onClick={onClick} className={combinedClasses}>
+    <motion.div
+      onClick={onClick}
+      className={combinedClasses}
+      variants={variants}
+    >
       <Image
         src={icon}
         alt={`${name} icon`}
@@ -59,7 +66,7 @@ const WorkTile: React.FC<WorkTileProps> = ({
       />
       <span className="text-center font-medium z-10 relative">{name}</span>
       <div className={overlayClasses} />
-    </div>
+    </motion.div>
   );
 };
 

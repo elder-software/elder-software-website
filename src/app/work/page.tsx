@@ -23,6 +23,22 @@ const workItemVariants = {
   },
 };
 
+// Define animation variants for the grid container and items
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1, // Stagger the animation of children
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+};
+
 const Work: React.FC = () => {
   const isMobile = useIsMobile();
   const [selectedItemKey, setSelectedItemKey] = useState<string | null>(null);
@@ -55,22 +71,30 @@ const Work: React.FC = () => {
         isMobile ? "grid-cols-1" : "grid-cols-3"
       } gap-x-3 items-start auto-rows-min`}
     >
-      {/* Render all tiles first */}
-      {workInfo.map((item) => {
-        const isSelected = selectedItemKey === item.name;
-        const isDimmed = selectedItemKey !== null && !isSelected;
-        return (
-          <WorkTile
-            key={item.name}
-            name={item.name}
-            icon={item.icon}
-            onClick={() => handleTileClick(item.name)}
-            isSelected={isSelected}
-            isDimmed={isDimmed}
-            className="mb-3"
-          />
-        );
-      })}
+      {/* Wrap the tiles mapping with motion.div for entry animation */}
+      <motion.div
+        className={`contents`}
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        {workInfo.map((item) => {
+          const isSelected = selectedItemKey === item.name;
+          const isDimmed = selectedItemKey !== null && !isSelected;
+          return (
+            <WorkTile
+              key={item.name}
+              name={item.name}
+              icon={item.icon}
+              onClick={() => handleTileClick(item.name)}
+              isSelected={isSelected}
+              isDimmed={isDimmed}
+              className="mb-3"
+              variants={itemVariants} // Pass item variants to WorkTile
+            />
+          );
+        })}
+      </motion.div>
 
       <AnimatePresence initial={false} mode="wait">
         {selectedItem && (
