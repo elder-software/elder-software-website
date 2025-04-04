@@ -1,142 +1,74 @@
-"use client"
+"use client";
 
-import { EmailIcon, PhoneIcon } from "@/components/icons/contacticons";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import React from "react";
+import Link from "next/link";
+
+interface ContactIconProps {
+  size?: number;
+}
+
+type ContactMethod = {
+  icon: React.ComponentType<ContactIconProps>;
+  label: string;
+  href: string;
+  bgColor: string;
+};
+
+const contactMethods: ContactMethod[] = [
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    href: "mailto:james@elder-software.com",
+    bgColor: "bg-[#a2b7ac]",
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    href: "https://github.com/elder-software",
+    bgColor: "bg-[#aa9590]",
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/james-elder-8a335119a/",
+    bgColor: "bg-[#b0b1c2]",
+  },
+];
 
 const Contact: React.FC = () => {
-  const [isMobile, setIsMobile] = React.useState(false);
-
-  React.useEffect(() => {
-    window.addEventListener("resize", resize);
-    resize();
-  }, []);
-
-  const resize = () => setIsMobile(window.innerWidth <= 1000);
-
   return (
-    <div style={styles.mainContainerDiv}>
-      <div style={styles.greyCardDiv}>
-        <div style={styles.headingContainerDiv}>
-          <div style={styles.headingDiv}>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "row",
-                alignItems: "center",
-              }}
+    <div className="flex flex-col items-center justify-center min-h-[80vh] p-5 box-border">
+      <h1 className="mb-10 text-4xl text-gray-800">Get in Touch</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
+        {contactMethods.map((method, index) => {
+          const Icon = method.icon;
+          return (
+            <Link
+              key={index}
+              href={method.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`
+                ${method.bgColor}
+                aspect-square
+                rounded-2xl
+                flex flex-col items-center justify-center
+                text-white no-underline text-center
+                p-5
+                transition-all duration-200 ease-in-out
+                hover:scale-105 hover:shadow-lg
+                cursor-pointer
+              `}
             >
-              <div
-                style={{
-                  padding: 30,
-                  alignContent: "center",
-                }}
-              >
-                <h1 style={{ margin: 0, fontSize: 20 }}>Contact</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style={styles.contactInfoDiv}>
-          <div style={styles.rowStyle}>
-            <EmailIcon size={80} />
-            <div
-              style={{
-                ...styles.rowTextStyle,
-                fontSize: isMobile ? 12 : 16,
-              }}
-            >
-              james@elder-software.com
-            </div>
-          </div>
-
-          <div style={styles.rowStyle}>
-            <PhoneIcon size={80} />
-            <div
-              style={{
-                ...styles.rowTextStyle,
-                fontSize: isMobile ? 12 : 16,
-              }}
-            >
-              +61 432 770 297
-            </div>
-          </div>
-        </div>
+              <Icon size={60} />
+              <span className="mt-4 text-base font-bold">{method.label}</span>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
-};
-
-const styles = {
-  mainContainerDiv: {
-    display: "flex",
-    flex: 1,
-    justifyContent: "center",
-    flexDirection: "column",
-    alignContent: "center",
-    marginTop: 10,
-    marginBottom: 10,
-  } as React.CSSProperties,
-  greyCardDiv: {
-    display: "flex",
-    flex: 1,
-    justifyContent: "center",
-    flexDirection: "column",
-    borderRadius: 15,
-    WebkitBoxShadow: "2px 2px 2px #DFDFDF",
-    MozBoxShadow: "2px 2px 2px #DFDFDF",
-    boxShadow: "2px 2px 2px #DFDFDF",
-    background: "#e8e8e8",
-    padding: 5,
-  } as React.CSSProperties,
-  headingContainerDiv: {
-    display: "flex",
-    flex: 1,
-    justifyContent: "center",
-    flexDirection: "column",
-    border: "0px solid lightgrey",
-    marginBottom: 0,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-  } as React.CSSProperties,
-  headingDiv: {
-    display: "flex",
-    justifyContent: "row",
-    alignSelf: "center",
-    flexDirection: "column",
-    borderRadius: 15,
-    background: "white",
-    margin: 30,
-  } as React.CSSProperties,
-  contactInfoDiv: {
-    display: "flex",
-    flex: 1,
-    flexDirection: "column",
-    alignContent: "center",
-    border: "1px solid #f2f2f2",
-    marginTop: 0,
-    borderRadius: 15,
-    justifyContent: "space-around",
-    width: "100%",
-    background: "white",
-    paddingTop: 30,
-  } as React.CSSProperties,
-  rowStyle: {
-    display: "flex",
-    justifyContent: "column",
-    flex: 1,
-    marginLeft: 30,
-    marginRight: 30,
-    marginBottom: 30,
-  } as React.CSSProperties,
-  rowTextStyle: {
-    display: "flex",
-    alignSelf: "center",
-    justifyContent: "center",
-    marginLeft: 30,
-    fontWeight: "lighter",
-    opacity: "80%",
-  } as React.CSSProperties,
 };
 
 export default Contact;
