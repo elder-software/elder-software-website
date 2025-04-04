@@ -24,7 +24,7 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
 }) => {
   return (
     <div
-      className="relative grid grid-cols-[1fr_2fr] items-start gap-8 rounded-lg border border-gray-200 bg-white p-8 shadow-lg"
+      className="relative flex flex-col md:grid md:grid-cols-[1fr_2fr] items-start gap-4 md:gap-8 rounded-lg border border-gray-200 bg-white p-4 md:p-8 shadow-lg"
     >
       <button
         onClick={onClose}
@@ -38,15 +38,18 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
           <Image
             src={item.icon}
             alt={`${item.name} icon`}
-            width={50}
-            height={50}
+            width={40}
+            height={40}
+            className="md:w-[50px] md:h-[50px]"
           />
-          <h2 className="m-0 text-[1.8em]">{item.name}</h2>
+          <h2 className="m-0 text-xl md:text-[1.8em] font-semibold">
+            {item.name}
+          </h2>
         </div>
 
         <div>
           <h4
-            className="mb-2.5 mt-0 border-b border-gray-200 pb-1"
+            className="mb-2.5 mt-0 border-b border-gray-200 pb-1 text-base md:text-lg font-semibold"
           >
             Technologies Used
           </h4>
@@ -54,7 +57,7 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
             {item.technologies.map((tech, index) => (
               <span
                 key={index}
-                className="rounded bg-gray-400 px-3 py-1 text-sm text-white"
+                className="rounded bg-gray-400 px-3 py-1 text-xs sm:text-sm text-white"
               >
                 {tech}
               </span>
@@ -64,13 +67,13 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
 
         <div>
           <h4
-            className="mb-2.5 mt-0 border-b border-gray-200 pb-1"
+            className="mb-2.5 mt-0 border-b border-gray-200 pb-1 text-base md:text-lg font-semibold"
           >
             Key Details
           </h4>
           <ul className="m-0 list-disc pl-5">
             {item.keyDetails.map((detail) => (
-              <li key={detail} className="mb-1">
+              <li key={detail} className="mb-1 text-sm md:text-base">
                 {detail}
               </li>
             ))}
@@ -79,13 +82,13 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
 
         {item.testimonial && (
           <div
-            className="mt-4 border-l-1 border-gray-200 pl-4 italic"
+            className="mt-4 border-l-2 border-gray-300 pl-4 italic"
           >
-            <p className="m-0">&quot;{item.testimonial}&quot;</p>
+            <p className="m-0 text-sm md:text-base">
+              &quot;{item.testimonial}&quot;
+            </p>
             {item.testimonialAuthor && (
-              <p
-                className="mt-1 text-right font-bold"
-              >
+              <p className="mt-1 text-right text-sm md:text-base font-semibold">
                 - {item.testimonialAuthor}
               </p>
             )}
@@ -97,17 +100,19 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
       <div className="flex flex-col gap-5">
         <div>
           <h4
-            className="mb-2.5 mt-0 border-b border-gray-200 pb-1"
+            className="mb-2.5 mt-0 border-b border-gray-200 pb-1 text-base md:text-lg font-semibold"
           >
             Description
           </h4>
-          <p className="m-0 leading-relaxed">{item.description}</p>
+          <p className="m-0 leading-relaxed text-sm md:text-base">
+            {item.description}
+          </p>
         </div>
 
         {item.screenshots && item.screenshots.length > 0 && (
           <div>
             <h4
-              className="mb-4 mt-0 border-b border-gray-200 pb-1"
+              className="mb-4 mt-0 border-b border-gray-200 pb-1 text-base md:text-lg font-semibold"
             >
               Screenshots
             </h4>

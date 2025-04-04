@@ -62,11 +62,7 @@ const Work: React.FC = () => {
   }
 
   return (
-    <div
-      className={`my-4 grid ${
-        isMobile ? "grid-cols-1" : "grid-cols-3"
-      } gap-x-3 items-start auto-rows-min`}
-    >
+    <div className="my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-3 items-start auto-rows-min">
       <motion.div
         className={`contents`}
         variants={containerVariants}
@@ -100,9 +96,7 @@ const Work: React.FC = () => {
             initial="collapsed"
             animate="open"
             exit="collapsed"
-            className={`${
-              isMobile ? "col-span-1" : "col-span-3"
-            } overflow-hidden`}
+            className="col-span-1 sm:col-span-2 md:col-span-3 overflow-hidden"
             style={{
               gridRowStart: gridRowStart,
             }}
