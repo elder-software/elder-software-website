@@ -1,19 +1,68 @@
-import React from 'react';
-import { GithubSmallIcon, LinkedInSmallIcon } from './icons/contacticons';
+"use client";
 
-const Footer: React.FC = () => (
-  <div className="flex flex-1 flex-row py-[1%] border border-black rounded-[15px] bg-black opacity-85 shadow-md my-2.5 items-center">
-    <div className="flex items-center flex-1 justify-center">
-      <div className="flex flex-col text-white p-2.5 text-xs text-center">
-        <div>Website created using ReactJS</div>
-        <div>Code available on GitHub</div>
-      </div>
-      <div className="flex flex-row items-center p-2.5">
-        <GithubSmallIcon />
-        <LinkedInSmallIcon />
-      </div>
+import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { HeaderIcon } from "./icons/HeaderIcon";
+import { MdContactMail } from "react-icons/md";
+import { FaHome, FaBriefcase } from "react-icons/fa";
+
+const Footer: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 1000);
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-10 flex justify-around py-4 border-t border-black bg-blue-700 shadow-md mx-32 rounded-t-xl">
+      <Link href="/">
+        <HeaderIcon
+          text="Home"
+          icon={FaHome}
+          size={isMobile ? 15 : 23}
+          textSize={isMobile ? 6 : 10}
+          isActive={pathname === "/"}
+        />
+      </Link>
+      <Link href="/work">
+        <HeaderIcon
+          text="Work"
+          icon={FaBriefcase}
+          size={isMobile ? 15 : 23}
+          textSize={isMobile ? 6 : 10}
+          isActive={pathname === "/work"}
+        />
+      </Link>
+      {/* <Link href="/products">
+        <HeaderIcon
+          text="Products"
+          icon={FaShoppingCart}
+          size={isMobile ? 15 : 23}
+          textSize={isMobile ? 6 : 10}
+          isActive={pathname === "/products"}
+        />
+      </Link> */}
+      <Link href="/contact">
+        <HeaderIcon
+          text="Contact"
+          icon={MdContactMail}
+          size={isMobile ? 15 : 23}
+          textSize={isMobile ? 6 : 10}
+          isActive={pathname === "/contact"}
+        />
+      </Link>
     </div>
-  </div>
-);
+  );
+};
 
 export default Footer;

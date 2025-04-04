@@ -1,32 +1,31 @@
 import React from 'react';
 import { FaAndroid } from 'react-icons/fa';
-import { iconStyles, TechIconProps } from './styles';
+import TechIconContainer from './TechIconContainer';
 
-const AndroidIcon: React.FC<TechIconProps> = ({
-  size,
-  fontSize,
+interface AndroidIconProps {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  isFocused?: boolean;
+  showLabel?: boolean;
+}
+
+const AndroidIcon: React.FC<AndroidIconProps> = ({
   onMouseEnter,
   onMouseLeave,
   isFocused,
   showLabel = true
 }) => (
-  <div
-    style={iconStyles.iconContainerStyle}
+  <TechIconContainer
+    label="Android"
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
+    isFocused={isFocused}
+    showLabel={showLabel}
   >
     <FaAndroid
-      style={{
-        ...iconStyles.iconStyle,
-        height: size || 80,
-        width: size || 80,
-        opacity: isFocused ? 1.0 : 0.5
-      }}
+      className="w-20 h-20 p-6 border border-gray-300 bg-white rounded-2xl text-gray-700"
     />
-    {showLabel && (
-      <h5 style={{ margin: 0, fontSize: fontSize || 15 }}>Android</h5>
-    )}
-  </div>
+  </TechIconContainer>
 );
 
 export { AndroidIcon };

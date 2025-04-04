@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import useIsMobile from '@/hooks/useIsMobile';
-import { CertificateIcon, MusicIcon, NewZealandIcon, SurfSkateIcon } from '@/components/icons/abouticons';
-import { AndroidIcon } from '@/components/icons/techicons';
+import React, { useEffect, useState } from "react";
+import useIsMobile from "@/hooks/useIsMobile";
+import { CertificateIcon, NewZealandIcon } from "@/components/icons/abouticons";
+import { AndroidIcon, MobileIcon } from "@/components/icons/techicons";
 
 const HomeAboutSection: React.FC = () => {
   const [infoText, setInfoText] = useState(text[0]);
@@ -40,9 +40,8 @@ const HomeAboutSection: React.FC = () => {
   }, [focusedIcon, iconIsHovered]);
 
   return (
-    <div className="py-8 w-full" style={{ position: 'relative' }}>
+    <div className="py-8 w-full" style={{ position: "relative" }}>
       <div className="max-w-3xl mx-auto px-8 w-full">
-        {/* Icon container */}
         <div className="grid grid-cols-5 gap-4 items-center justify-items-center mb-8">
           <NewZealandIcon
             size={isMobile ? 40 : 70}
@@ -50,8 +49,7 @@ const HomeAboutSection: React.FC = () => {
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 0}
           />
-          <AndroidIcon
-            size={isMobile ? 40 : 70}
+          <MobileIcon
             onMouseEnter={() => onMouseEnter(text[1], 1)}
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 1}
@@ -63,28 +61,18 @@ const HomeAboutSection: React.FC = () => {
             onMouseLeave={() => setIconIsHovered(false)}
             isFocused={focusedIcon === 2}
           />
-          <MusicIcon
-            size={isMobile ? 40 : 70}
-            onMouseEnter={() => onMouseEnter(text[3], 3)}
-            onMouseLeave={() => setIconIsHovered(false)}
-            isFocused={focusedIcon === 3}
-          />
-          <SurfSkateIcon
-            size={isMobile ? 40 : 70}
-            onMouseEnter={() => onMouseEnter(text[4], 4)}
-            onMouseLeave={() => setIconIsHovered(false)}
-            isFocused={focusedIcon === 4}
-          />
         </div>
 
-        {/* Text container - fixed height and layout */}
-        <div className="w-full" style={{ height: '200px', position: 'relative' }}>
-          <div 
+        <div
+          className="w-full"
+          style={{ height: "200px", position: "relative" }}
+        >
+          <div
             className="absolute inset-0 flex items-center justify-center"
-            style={{ 
-              opacity, 
-              transition: 'opacity 300ms ease-in-out',
-              width: '100%' 
+            style={{
+              opacity,
+              transition: "opacity 300ms ease-in-out",
+              width: "100%",
             }}
           >
             <p className="text-[10px] md:text-[20px] text-center max-w-2xl mx-auto">
@@ -98,15 +86,10 @@ const HomeAboutSection: React.FC = () => {
 };
 
 const text = [
-  'New Zealand, Mount Maunganui is where I was born and raised.',
-  'I am an Android developer with 6 years experience working on a variety of products in many sectors.',
-  'I studied Electrical and Electronic Engineering and obtained a BEng ' +
-    '(Honours) from the University of Canterbury. I directed my course to ' +
-    'have a heavy focus on programming and embedded systems.',
-  'I have played music since a young age, competent at guitar, vocals and drums. I have a ' +
-    'lot of experience composing and performing with bands and by myself.',
-  'Growing up close to the beach has resulted in surfing and skateboarding ' +
-    'being my favourite sports.'
+  "New Zealand, Mount Maunganui is where I was born and raised.",
+  "I am an Android developer with 8 years experience working on a variety of products in many sectors.",
+  "I studied Electrical and Electronic Engineering and obtained a BEng " +
+    "(Honours) from the University of Canterbury.",
 ];
 
 export default HomeAboutSection;

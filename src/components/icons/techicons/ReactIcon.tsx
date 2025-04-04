@@ -1,18 +1,31 @@
 import React from 'react';
 import { FaReact } from 'react-icons/fa';
-import { iconStyles, TechIconProps } from './styles';
+import TechIconContainer from './TechIconContainer';
 
-const ReactIcon: React.FC<TechIconProps> = ({ size }) => (
-  <div style={iconStyles.iconContainerStyle}>
+interface ReactIconProps {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  isFocused?: boolean;
+  showLabel?: boolean;
+}
+
+const ReactIcon: React.FC<ReactIconProps> = ({
+  onMouseEnter,
+  onMouseLeave,
+  isFocused,
+  showLabel
+}) => (
+  <TechIconContainer
+    label="React Native"
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    isFocused={isFocused}
+    showLabel={showLabel}
+  >
     <FaReact
-      style={{
-        ...iconStyles.iconStyle,
-        height: size || 80,
-        width: size || 80
-      }}
+      className="w-20 h-20 p-6 border border-gray-300 bg-white rounded-2xl text-[#61DAFB]"
     />
-    <h5 style={{ margin: 0, fontSize: size === 30 ? 8 : 15 }}>React Native</h5>
-  </div>
+  </TechIconContainer>
 );
 
 export { ReactIcon };

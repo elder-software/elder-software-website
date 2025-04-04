@@ -27,8 +27,8 @@ export const HeaderIcon: React.FC<HeaderIconContainerProps> = ({
   const iconSize = size || 80;
   const commonIconClassName = `
     icon self-center
-    transition-colors duration-500 group-hover:text-black
-    ${isActive ? "text-black" : "text-white"}
+    transition-colors duration-500 group-hover:text-blue-700
+    ${isActive ? "text-blue-700" : "text-white"}
   `;
 
   return (
@@ -37,7 +37,7 @@ export const HeaderIcon: React.FC<HeaderIconContainerProps> = ({
         group flex flex-col items-center content-center text-center
         rounded px-2.5 py-1
         transition-colors duration-500 hover:bg-white
-        ${isActive ? "bg-white" : "bg-black"}
+        ${isActive ? "bg-white" : "bg-blue-700"}
       `}
     >
       <IconComponent
@@ -48,8 +48,8 @@ export const HeaderIcon: React.FC<HeaderIconContainerProps> = ({
       <h5
         className={`
           iconText m-0 p-0 border-0
-          transition-colors duration-500 group-hover:text-black
-          ${isActive ? "text-black" : "text-white"}
+          transition-colors duration-500 group-hover:text-blue-700
+          ${isActive ? "text-blue-700" : "text-white"}
         `}
         style={{ fontSize: textSize }}
       >

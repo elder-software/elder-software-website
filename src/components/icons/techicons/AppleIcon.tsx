@@ -1,18 +1,31 @@
 import React from 'react';
 import { FaApple } from 'react-icons/fa';
-import { iconStyles, TechIconProps } from './styles';
+import TechIconContainer from './TechIconContainer';
 
-const AppleIcon: React.FC<TechIconProps> = ({ size, fontSize }) => (
-  <div style={iconStyles.iconContainerStyle}>
+interface AppleIconProps {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  isFocused?: boolean;
+  showLabel?: boolean;
+}
+
+const AppleIcon: React.FC<AppleIconProps> = ({
+  onMouseEnter,
+  onMouseLeave,
+  isFocused,
+  showLabel
+}) => (
+  <TechIconContainer
+    label="iOS"
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    isFocused={isFocused}
+    showLabel={showLabel}
+  >
     <FaApple
-      style={{
-        ...iconStyles.iconStyle,
-        height: size || 80,
-        width: size || 80
-      }}
+      className="w-20 h-20 p-6 border border-gray-300 bg-white rounded-2xl text-gray-700"
     />
-    <h5 style={{ margin: 0, fontSize }}>iOS</h5>
-  </div>
+  </TechIconContainer>
 );
 
 export { AppleIcon };
