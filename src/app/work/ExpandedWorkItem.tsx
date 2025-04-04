@@ -5,7 +5,7 @@ import Carousel from "./carousel/Carousel";
 interface WorkItem {
   name: string;
   icon: string;
-  technologies: (size: number) => React.ReactNode[];
+  technologies: string[];
   keyDetails: string[];
   description: string;
   screenshots: string[];
@@ -51,8 +51,13 @@ const ExpandedWorkItem: React.FC<ExpandedWorkItemProps> = ({
             Technologies Used
           </h4>
           <div className="flex flex-wrap gap-2.5">
-            {item.technologies(30).map((IconComponent, index) => (
-              <React.Fragment key={index}>{IconComponent}</React.Fragment>
+            {item.technologies.map((tech, index) => (
+              <span
+                key={index}
+                className="rounded bg-gray-400 px-3 py-1 text-sm text-white"
+              >
+                {tech}
+              </span>
             ))}
           </div>
         </div>

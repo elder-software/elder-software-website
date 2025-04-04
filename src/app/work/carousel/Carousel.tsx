@@ -17,7 +17,7 @@ const Carousel: React.FC<CarouselProps> = ({
   const [startX, setStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null); // Ref for the main container to attach events
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const totalSlides = children.length;
   const swipeThreshold = 50; // Min pixels to swipe to change slide
@@ -105,20 +105,19 @@ const Carousel: React.FC<CarouselProps> = ({
 
   return (
     <div
-      ref={containerRef} // Attach ref
-      className={`relative ${width} mx-auto my-4 touch-pan-y`} // Add touch-pan-y to allow vertical scroll
+      ref={containerRef}
+      className={`relative ${width} mx-auto my-4 touch-pan-y`}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerLeave} // Handle leaving the carousel area
-      onPointerCancel={handlePointerUp} // Handle cancellation (e.g., browser intervention)
-      onDragStart={preventDefault} // Prevent browser image drag
+      onPointerLeave={handlePointerLeave}
+      onPointerCancel={handlePointerUp}
+      onDragStart={preventDefault}
     >
       <div className={`${height} overflow-hidden rounded-lg shadow-md cursor-grab active:cursor-grabbing`}>
         <div
           className="flex whitespace-nowrap"
           ref={ref}
-          // Style is now handled by useEffect
         >
           {children.map((child, index) => (
             <div className="inline-block w-full flex-shrink-0" key={index}>

@@ -51,7 +51,7 @@ const Work: React.FC = () => {
 
   return (
     <div
-      className={`m-4 grid ${
+      className={`my-4 grid ${
         isMobile ? "grid-cols-1" : "grid-cols-3"
       } gap-x-3 items-start auto-rows-min`}
     >

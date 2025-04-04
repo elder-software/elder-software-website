@@ -46,7 +46,7 @@ const Header: React.FC = () => {
         />
       </div>
 
-      <div className="flex justify-around py-[1%] border border-black rounded-[15px] mx-5 bg-black shadow-md">
+      <div className="flex justify-around py-[1%] border border-black rounded-[15px] bg-black shadow-md">
         <Link href="/">
           <HeaderIcon
             text="Home"
