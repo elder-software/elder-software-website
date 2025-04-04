@@ -17,6 +17,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens: {
+        sm: "640px", // Mobile devices
+        md: "900px", // Tablet devices
+      },
       colors: {
         vermillion: {
           50: "#e8e4e2",

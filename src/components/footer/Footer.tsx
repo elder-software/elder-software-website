@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-10 flex justify-around py-4 border-t border-black bg-blue-700 shadow-md mx-32 rounded-t-xl">
+    <div className="fixed bottom-0 left-0 right-0 z-10 flex justify-around py-4 border-t border-black bg-blue-700 shadow-md rounded-t-xl mx-2 sm:mx-4 md:mx-32">
       <Link href="/">
         <FooterIcon
           text="Home"

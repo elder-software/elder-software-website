@@ -23,18 +23,18 @@ const childVariants = {
 const About: React.FC = () => {
   return (
     <motion.div
-      className="bg-white rounded-xl overflow-hidden justify-items-center mx-auto my-8 shadow-lg"
+      className="bg-white rounded-xl overflow-hidden w-full shadow-lg p-4 md:p-0 h-full flex flex-col justify-center my-16 sm:my-6 md:my-16"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
     >
       <motion.div
-        className="w-[80%] flex items-center justify-center mx-auto pt-4"
+        className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-8 mx-auto py-4 md:py-8 px-2 md:px-8"
         variants={childVariants}
       >
-        <div className="flex-[1_1_45%]">
+        <div className="w-1/2 md:w-1/3 flex-shrink-0">
           <Image
-            className="opacity-95 rounded-3xl w-[100%] h-[100%]"
+            className="opacity-95 rounded-[25%] w-full h-auto object-cover"
             src={"/jamie-photo.webp"}
             alt="james-potrait"
             width={200}
@@ -43,27 +43,26 @@ const About: React.FC = () => {
           />
         </div>
 
-        <div className="flex-[2_1_55%] p-8 flex items-center justify-center">
+        <div className="flex flex-col md:flex-row items-center justify-center p-4 gap-4 md:gap-8">
           <Image
             src="/logo512.png"
             alt="Elder Software Logo"
-            width={90}
-            height={90}
-            className="mr-8"
+            width={60}
+            height={60}
+            className="md:w-[90px] md:h-[90px]"
           />
-          <div>
-            <h1 className="text-center text-[20px] md:text-[40px]">
+          <div className="text-center md:text-left">
+            <h1 className="text-xl md:text-3xl lg:text-4xl font-semibold">
               James Elder
             </h1>
-            <h1 className="text-center text-[14px] md:text-[26px]">
+            <h2 className="text-md md:text-xl lg:text-2xl text-gray-600">
               Mobile Developer
-            </h1>
+            </h2>
           </div>
         </div>
       </motion.div>
-      <div className="h-10" />
       <motion.div
-        className="w-[60%] flex items-center justify-center mx-auto pb-4"
+        className="w-full px-32 pb-4 md:pb-8"
         variants={childVariants}
       >
         <AboutProfessionalSummary />
