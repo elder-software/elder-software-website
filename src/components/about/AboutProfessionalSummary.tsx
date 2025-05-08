@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const summaryData = [
   {
     Icon: FaLaptop,
-    text: "Expert software engineer with 8 years of professional experience.",
+    text: "Expert software engineer with 7 years of professional experience.",
     key: "experience",
   },
   {
